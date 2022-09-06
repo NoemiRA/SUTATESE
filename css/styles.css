@@ -1,0 +1,96 @@
+.navbar{
+background-color: #00102E !important;
+
+}
+
+.titulo{
+    text-decoration: none;
+}
+
+.navbar-color, .nav-link{
+    color: white;
+}
+
+
+.login{
+    background-color: ghostwhite;
+    margin-left: 10%;
+    margin-right: 50%;
+    margin-right: 200px;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.login{
+    background-color: #EEEEEE;
+    margin: 30px;
+    font-size: 25px;
+    padding: 30px;
+    text-align: center;
+}
+
+.align-items-center{
+    flex-direction: column;
+}
+
+.iniciar{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.preguntas{
+    display: grid;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.form-control{
+    font-size: 18px;
+    background-color: ghostwhite;
+}
+
+.form-control:focus{
+    box-shadow: .5px .5px 2.5px 5px #00102E;
+    color: #00102E;
+    border-color: #00102E;
+}
+
+
+/*Boton*/
+.btn, .boton-ingresar{
+    background-color: #00102E;
+    font-size: 15px;
+    margin: 20px 0px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover{
+    cursor:pointer;
+    background-color: #00102E;
+    
+}
+
+.btn:focus{
+   
+    background-color: #00102E;
+    box-shadow: 1px 1px 10px 2.5px #00102E;
+    border-color: #00102E;
+}
+
+    
+
+
+
+
+.navbar-toggler{
+    background-color: white;
+    margin: 5px 45%; 
+   }
+
+.nav-link:hover{
+    cursor: pointer;
+    color: #d65050;
+    
+}
+
