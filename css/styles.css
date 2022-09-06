@@ -26,13 +26,14 @@ background-color: #00102E !important;
     margin: 30px;
     font-size: 25px;
     padding: 30px;
-    text-align: center;
+    text-align: left;
 }
 
+/*
 .align-items-center{
     flex-direction: column;
 }
-
+*/
 .iniciar{
     font-size: 30px;
     font-weight: 700;
