@@ -27,12 +27,14 @@ background-color: #00102E !important;
     color: white;
 }
 
-.login{
+.contenedor-login{
     background-color: ghostwhite;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 30px;
+    margin: 20px;
+    font-size: 25px;
+    padding: 70px;
+    text-align: center; 
 }
+
 
 .login{
     background-color: ghostwhite;
