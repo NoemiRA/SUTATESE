@@ -34,12 +34,11 @@ background-color: #00102E !important;
     padding: 30px;
 }
 
-.contenedor-login{
+.login{
     background-color: ghostwhite;
-    margin: 20px;
-    font-size: 25px;
-    padding: 70px;
-    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
 }
 
 
@@ -101,7 +100,7 @@ background-color: #00102E !important;
     background-color: #00102E;
     box-shadow: 1px 1px 10px 2.5px #00102E;
     border-color: #00102E;
-}
+}*/
 
 .navbar-toggler{
     background-color: white;
