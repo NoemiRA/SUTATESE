@@ -1,3 +1,13 @@
+/*Registro*/
+h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.registro{
+    text-align: center;
+}
+
 .navbar{
 background-color: #00102E !important;
 
@@ -14,20 +24,11 @@ background-color: #00102E !important;
 
 .login{
     background-color: ghostwhite;
-    margin-left: 10%;
-    margin-right: 50%;
-    margin-right: 200px;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 30px;
 }
 
-.login{
-    background-color: #EEEEEE;
-    margin: 30px;
-    font-size: 25px;
-    padding: 30px;
-    text-align: left;
-}
 
 /*
 .align-items-center{
@@ -77,7 +78,7 @@ background-color: #00102E !important;
     background-color: #00102E;
     box-shadow: 1px 1px 10px 2.5px #00102E;
     border-color: #00102E;
-}
+}*/
 
     
 
