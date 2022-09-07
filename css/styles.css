@@ -3,37 +3,39 @@ background-color: #00102E !important;
 
 }
 
+.img-login{
+    margin-bottom: 2.5rem;
+}
+
 .titulo{
     text-decoration: none;
+    color: white;
+    margin-left: 2rem;
 }
 
 .navbar-color, .nav-link{
     color: white;
 }
 
+.navbar-brand{
+    display: flex;
+    padding: 10px;
+}
 
-.login{
+.contenedor-login{
     background-color: ghostwhite;
-    margin-left: 10%;
-    margin-right: 50%;
-    margin-right: 200px;
-    margin-top: 20px;
-    padding: 30px;
-}
-
-.login{
-    background-color: #EEEEEE;
-    margin: 30px;
+    margin: 20px;
     font-size: 25px;
-    padding: 30px;
-    text-align: left;
+    padding: 70px;
+    text-align: center; 
 }
 
-/*
+
 .align-items-center{
     flex-direction: column;
-}
-*/
+    
+}  
+
 .iniciar{
     font-size: 30px;
     font-weight: 700;
@@ -47,24 +49,34 @@ background-color: #00102E !important;
 
 .form-control{
     font-size: 18px;
-    background-color: ghostwhite;
+    background-color: ghostwhite;  
 }
 
+
+/*
 .form-control:focus{
-    box-shadow: .5px .5px 2.5px 5px #00102E;
-    color: #00102E;
-    border-color: #00102E;
-}
+    box-shadow: .5px .5px 2.5px 5px #c7ebff;
+    color: #c7ebff;
+    border-color: #c7ebff;
+} */
 
 
 /*Boton*/
 .btn, .boton-ingresar{
     background-color: #00102E;
     font-size: 15px;
-    margin: 20px 0px;
+    margin: 10px 0px;
     text-decoration: none;
     color: white;
+    
 }
+
+.btn{
+    width: 100px;
+    height: 40px;
+    border-color: #00102E;
+}
+
 
 .btn:hover{
     cursor:pointer;
@@ -79,11 +91,6 @@ background-color: #00102E !important;
     border-color: #00102E;
 }
 
-    
-
-
-
-
 .navbar-toggler{
     background-color: white;
     margin: 5px 45%; 
@@ -94,4 +101,3 @@ background-color: #00102E !important;
     color: #d65050;
     
 }
-
