@@ -11,23 +11,46 @@
     <title>SUTATESE</title>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://www.sutatese.org/" style="margin-left: 5%;">
                 <img src="resources\SUTATESE.png" alt="" width="60" height="80" class="d-inline-block align-text-top">
             </a>
             <a class="titulo" href="https://www.sutatese.org/">
-                <div class="navbar-text navbar-color">
+                <span class="navbar-text navbar-color">
                     SUTATESE 
                     <br>
                     Sindicato Único de Trabajadores Académicos del Tecnológico de Estudios Superiores de Ecatepec
-                </div>
+                </span>
             </a>
-            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-color" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-1" style="margin-left: 10%;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Datos Generales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Prestamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Caja de ahorro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registro</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="login">
+    
+   
+    <div class="contenedor-login">
+        <img class="img-login" src="resources\SUTATESE.png" alt="imagenlogo" width="80" height="100">
         <div class="row align-items-center">
+            
             <h2 class="iniciar">INICIAR SESIÓN</h2>
             <div class="col-6 col-md-4">
                 <label for="correo" class="form-label">Correo:</label>
@@ -40,16 +63,19 @@
                     <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
                 </div>
 
-                <a class="boton-ingresar" href="#">
-                    <button type="button" class="btn btn-success">  Ingresar </button>
-                </a>
+                
+                </div>
+               
+                    <a href="#"><button type="button" class="btn btn-success">  Ingresar </button></a>
+                
                 <br>
                 <div class="preguntas"> 
                     <a href="#" >¿Olvidaste tu contraseña?</a>
                     <a href="#" >Registrarse</a>
-                </div>
             </div>
+
         </div>
+       
     </div>
 
    
