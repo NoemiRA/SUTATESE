@@ -1,3 +1,16 @@
+:root{
+    --primary: #00102E;
+}
+
+.inicio{
+    text-align: center;
+    margin-bottom: 1rem ;
+}
+
+#hero{
+    height: 850px;
+}
+
 /*Registro*/
 h3{
     margin-top: 2%;
@@ -9,7 +22,7 @@ h3{
 }
 
 .navbar{
-background-color: #00102E !important;
+background-color: var(--primary) !important;
 
 }
 
@@ -43,10 +56,8 @@ background-color: #00102E !important;
     padding: 30px;
 }
 
-
 .align-items-center{
     flex-direction: column;
-    
 }  
 
 .iniciar{
@@ -76,7 +87,7 @@ background-color: #00102E !important;
 
 /*Boton*/
 .btn, .boton-ingresar{
-    background-color: #00102E;
+    background-color: var(--primary);
     font-size: 15px;
     margin: 10px 0px;
     text-decoration: none;
@@ -87,27 +98,25 @@ background-color: #00102E !important;
 .btn{
     width: 100px;
     height: 40px;
-    border-color: #00102E;
+    border-color: var(--primary);
 }
 
 
 .btn:hover{
     cursor:pointer;
-    background-color: #00102E;
-    
+    background-color: var(--primary); 
 }
 
 .btn:focus{
-   
-    background-color: #00102E;
-    box-shadow: 1px 1px 10px 2.5px #00102E;
-    border-color: #00102E;
+    background-color: var(--primary);
+    box-shadow: 1px 1px 10px 2.5px var(--primary);
+    border-color: var(--primary);
 }*/
 
 .navbar-toggler{
     background-color: white;
     margin: 5px 45%; 
-   }
+}
 
 .nav-link:hover{
     cursor: pointer;
