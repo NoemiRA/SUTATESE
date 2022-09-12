@@ -136,9 +136,6 @@ background-color: var(--primary) !important;
 }
 
 /*Registro Aval*/
-.col-lg-6{
-    height: 60%;
-}
 .parrafo-aval{
     text-align: justify;
 }
