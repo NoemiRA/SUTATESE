@@ -11,6 +11,11 @@
     height: 850px;
 }
 
+/*Perfil*/
+.perfil{
+    width: 100%;
+}
+
 /*Registro*/
 h3{
     margin-top: 2%;
@@ -118,7 +123,7 @@ background-color: var(--primary) !important;
     margin: 5px 45%; 
 }
 
-.nav-link:hover{
+.nav-link:hover, .btn:hover{
     cursor: pointer;
     color: #d65050;
     
