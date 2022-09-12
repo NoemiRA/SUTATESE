@@ -1,3 +1,8 @@
+.borrar{
+    text-decoration: none;
+}
+
+
 :root{
     --primary: #00102E;
     --fondocontenedor: #F8F8FF;
@@ -9,7 +14,7 @@
 }
 
 #hero{
-    height: 850px;
+    height: 700px;
 }
 
 /*Perfil*/
