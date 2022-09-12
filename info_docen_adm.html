@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/css/normalize.css">   
     <link rel="stylesheet" href="/css/styles.css">  
 
-    <title>SUTATESE</title>
+    <title>SUTATESE - Docente Administrativo</title>
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
 
-            <div class="d-flex navbar-color">
+            <div class="d-flex navbar-color ">
                 <img src="resources\SUTATESE.png" class="me-3 mx-2" alt="" width="60" height="80">
                 <div class="my-auto">
                     <p class="fw-bold mb-0 ">SUTATESE</p>
@@ -43,41 +43,69 @@
     </nav>
 
 </head>
+
 <body>
 
     <div class="container-xl text-center login">
-   <!-- <section id="hero"> -->
+  <!--  <section id="hero"> -->
         <div class="row g-0 h-100">
             <div class="col-lg-6 d-flex">
+                
                 <div class="content mx-auto px-4 my-auto">
                     <div class="inicio">
-                        <img src="resources\SUTATESE.png">
-                        <h2>INICIAR SESIÓN</h2>
-                    </div>
-                    <div class="col mt-4">
-                        <label for="correo" class="form-label">Correo:</label>
-                        <input type="email" class="form-control" id="correo" placeholder="correo@example.com">
+                        <h2>Información Docente/Administrativo</h2>
                     </div>
 
-                    <div class="col mt-4">
-                        <label for="contraseña" class="form-label">Contraseña:</label>
-                        <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
+                    <div class="col-md-auto">
+                        <label for="numEmpleado" class="form-label">Número empleado</label>
+                        <input type="number" class="form-control" id="numEmpleado" disabled placeholder="172172903 (Ejemplo)">
                     </div>
-                    
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4">INGRESAR</button>
-                    <div class="inicio">
-                        <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
-                        <a href="registro.html" class=" mx-auto px-4 my-auto">Registrarse</a>
+                    <hr>
+                    <div class="col-md-auto">
+                        <label for="nombre" class="form-label">División</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Informática" disabled>
                     </div>
+                    <hr>
+                    <div class="col">
+                        <label for="fechaIngreso" class="form-label">Fecha de Ingreso al TESE</label>
+                        <input type="date" class="form-control" id="fechaIngreso" placeholder="Ingresa tu fecha de ingreso al TESE">
+                    </div>
+                    <hr>
+                    <div class="col-md-auto">
+                        <label for="experienciaD" class="form-label">Experiencia Docente</label>
+                        <input type="number" class="form-control" id="experienciaD" placeholder="25 años">
+                    </div>
+                    <hr>
+                    <div class="col-md-auto">
+                        <label for="experienciaP" class="form-label">Experiencia Profesional</label>
+                        <input type="number" class="form-control" id="experienciaP" placeholder="40 años">
+                    </div>
+
+                   
+                    <button type="button" class="btn btn-primary d-block mx-auto my-4">GUARDAR</button>   
                 </div>
             </div>
+
+
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto">
-                    <img src="resources\INICIO.jpeg" width="100%" height="100%">
+                    <p class="parrafo-doc-admin">Para la correción de un registro es importante que se capture y reviselos datos
+                        ingresados, posteriormente presionar el botón "Guardar" para ver los cambios reflejados.</p>
+                        
+                        <br><br>
+                    
+                    <p class="parrafo-manifiesto">"Manifiesto bajo protesta de decir verdad que toda la documentación presentada para este trámite, 
+                        así como la información ofrecida en respuesta a los formularios de aplicación, es verídica y comprobable."</p>
+                        <br><br>
+                        
+
+
                 </div>
             </div>
         </div>
-      <!-- </section> -->
+
+        
+  <!--  </section> --> 
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
