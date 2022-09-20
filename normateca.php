@@ -28,13 +28,16 @@
             <div class="collapse navbar-collapse navbar-color" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-1" style="margin-left: 10%">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="perfil.html">Datos Generales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Prestamos</a>
+                        <a class="nav-link" aria-current="page" href="registroaval.html">Prestamos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Caja de ahorro</a>
+                        <a class="nav-link" aria-current="page" href="registroCA.php">Caja de ahorro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Salir</a>

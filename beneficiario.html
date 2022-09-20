@@ -8,13 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <title>SUTATESE - Beneficiario</title>
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-
             <div class="d-flex navbar-color ">
                 <img src="resources\SUTATESE.png" class="me-3 mx-2" alt="" width="60" height="80">
                 <div class="my-auto">
@@ -30,13 +29,16 @@
             <div class="collapse navbar-collapse navbar-color" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-1" style="margin-left: 10%;">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="perfil.html">Datos Generales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Prestamos</a>
+                        <a class="nav-link" aria-current="page" href="registroaval.html">Prestamos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Caja de ahorro</a>
+                        <a class="nav-link" aria-current="page" href="registroCA.php">Caja de ahorro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Salir</a>
@@ -45,11 +47,9 @@
             </div>
         </div>
     </nav>
-
 </head>
 
 <body>
-
     <div class="container-xl text-center bg-light">
         <div style="text-align: center; margin-top: 2%">
             <h1>LISTADO DE BENEFICIARIOS</h1> 
@@ -89,7 +89,6 @@
                 </div>
             </form>
             <hr>
-
             <form class="row g-3 mt-3">
                 <h2>Beneficiario 2</h2>
                 <div class="col">
@@ -125,7 +124,6 @@
                 </div>
             </form>
             <hr>
-
             <form class="row g-3 mt-3">
                 <h2>Beneficiario 3</h2>
                 <div class="col">
@@ -198,7 +196,6 @@
                 </div>
             </form>
             <hr>
-
             <form class="row g-3 mt-3">
                 <h2>Beneficiario 2</h2>
                 <div class="col">
@@ -234,7 +231,6 @@
                 </div>
             </form>
             <hr>
-
             <form class="row g-3 mt-3">
                 <h2>Beneficiario 3</h2>
                 <div class="col">
@@ -269,11 +265,10 @@
                     <span class="input-group-text" id="basic-addon2">%</span>
                 </div>
             </form>
-
-            <div class="m-4">
-                <button type="button" class="btn btn-success" onclick=location.href="registroCA.php">Registrar Beneficiario</button>
-                <button type="button" class="btn btn-danger" onclick=location.href="registroCA.php">Cancelar</button>
-            </div>
+            <form class="row">
+                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="registroCA.php">ACEPTAR</button>
+                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="registroCA.php">CANCELAR</button>
+            </form>
         </div>
     </div>
 
