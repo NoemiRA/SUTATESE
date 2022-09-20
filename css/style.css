@@ -1,0 +1,39 @@
+:root{
+    --primary: #00102E;
+    --container: #F8F8FF;
+}
+
+#hero{
+    height: 800px;
+    margin: 3rem;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover{
+    cursor: pointer;
+    color: #d65050;
+}
+
+.navbar, .nav-link{
+    background-color: var(--primary) !important;
+    color:white;
+}
+
+.navbar-toggler{
+    background-color: white;
+}
+
+/*registroCA*/
+.passed{
+    color:green;
+    text-decoration: none;
+}
+
+.passed:hover{
+    color:#d65050;
+}
