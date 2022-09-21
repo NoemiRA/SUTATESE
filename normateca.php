@@ -54,7 +54,7 @@
             <div class="col-sm-6 my-5">
                 <div class="card text-center">
                     <div class="card-body">
-                        <h2 class="card-title">Reglamento del Sindicato Unico de Trabajadores Academicos del TESE</h2>
+                        <h3 class="card-title">Reglamento de la caja de ahorro del Sindicato Único de Trabajadores Académicos del Tecnológico de Estudios Superiores de Ecatepec. </h3>
                         <p class="card-text">
                             Reglamento de la caja de ahorro de la asociación de servidores
                             publicos academicos del Tecnológico de Estudios Superiores de

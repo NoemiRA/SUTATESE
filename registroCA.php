@@ -52,9 +52,9 @@
 </head>
 
 <body>
-    <section id="hero">
-        <div class="row g-0 p-5">
-            <div class="col-lg-7 d-flex bg-light">  
+    <!-- <section id="hero"> -->
+        <div class="row g-0 p-4">
+            <div class="col-lg-7 d-flex bg-light">
                 <div class="content mx-auto p-5">
                     <h1><b>REGISTRO A LA CAJA DE AHORRO</b></h1>
                     <h2>Procedimiento:</h2>
@@ -67,15 +67,15 @@
                             Una vez que ha terminado, deberá llenar el apartado <b>"BENEFICIARIO"</b> en donde se solicita llene completa y correctamente el formulario.
                         </li>
                         <li>
-                            Cuando se haya terminado el proceso, las opciones de <b>"FORMATO DE CUOTA" </b> y <b>"SOLICITUD DE APORTACIÓN" </b> serán habilitadas, es cuando usted podrá visualizarlas, corroborar que sus datos esten escritos correctamente y descargar dichos documentos.</b> 
+                            Cuando se haya terminado el proceso, las opciones de <b>"FORMATO DE CUOTA" </b> y <b>"SOLICITUD DE APORTACIÓN" </b> serán habilitadas, es cuando usted podrá visualizarlas, corroborar que sus datos esten escritos correctamente y descargar dichos documentos.</b>
                         </li>
                         <li>
                             Una vez descargados, deberá imprimirlos y dirigirse al <i>Sindicato Único de Trabajadores Académicos
-                            del Tecnológico de Estudios Superiores de Ecatepec</i> para solicitar la firma correspondiente del <i>prof. Nicolás Cortés Martínez</i>, Secretario general. 
+                            del Tecnológico de Estudios Superiores de Ecatepec</i> para solicitar la firma correspondiente del <i>prof. Nicolás Cortés Martínez</i>, Secretario general.
                         </li>
                         <li>
-                            Ya firmado deberá escanear por separado tanto el <b>"FORMATO DE CUOTA"</b> y <b>"SOLICITUD DE APORTACIÓN"</b> para subirlos en el apartado que corresponda en la opción de <b>"SUBIR DOCUMENTOS"</b>. 
-                        </li> 
+                            Ya firmado deberá escanear por separado tanto el <b>"FORMATO DE CUOTA"</b> y <b>"SOLICITUD DE APORTACIÓN"</b> para subirlos en el apartado que corresponda en la opción de <b>"SUBIR DOCUMENTOS"</b>.
+                        </li>
                     </ol>
                     <hr>
                     <h2><i>Nota:</i></h2>
@@ -99,73 +99,73 @@
                         $var = 1;
                         if($var == 1){
                             echo '
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" onclick=location.href="cantidad-ahorro.html">
                                         <i class="fa-solid fa-money-bills fa-4x"></i><span class="display-6 m-lg-5">Cantidad a ahorrar</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.html">
                                         <i class="fa-solid fa-users-rectangle fa-4x"></i><span class="display-6 m-lg-5">Beneficiario</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" disabled>
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Formato de Cuota</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" disabled>
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Solicitud de Aportación</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" disabled>
                                     <i class="fa-solid fa-file-circle-plus fa-4x"></i><span class="display-6 m-lg-5">Subir documentos</span>
                                     </button>
                                 </div>
-                            ';  
+                            ';
                         }if($var == 2){
                             echo '
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" onclick=location.href="registroCA.php" disabled>
                                         <i class="fa-solid fa-money-bills fa-4x"></i><span class="display-6 m-lg-5">Cantidad a ahorrar</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.html" disabled>
                                         <i class="fa-solid fa-users-rectangle fa-4x"></i><span class="display-6 m-lg-5">Beneficiario</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed">
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Formato de Cuota</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
+                                <div class="d-flex">
                                     <button type="button" class="btn btn-link passed">
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Solicitud de Aportación</span>
                                     </button>
                                 </div>
 
-                                <div class="d-flex"> 
-                                    <button type="button" class="btn btn-link passed" onclick=location.href="documentos-generales.php">
+                                <div class="d-flex">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="documentos-generales.html">
                                     <i class="fa-solid fa-file-circle-plus fa-4x"></i><span class="display-6 m-lg-5">Subir documentos</span>
                                     </button>
                                 </div>
                             ';
                         }
-                    ?> 
+                    ?>
                 </div>
             </div>
-    </section>
+    <!-- </section> -->
 
 
 
