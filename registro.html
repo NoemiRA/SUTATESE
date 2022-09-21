@@ -96,11 +96,10 @@
 
         <form class="row g-3 mt-3">
             <h3>Datos personales</h3>
-            <div class="col-md-auto">
-                <label for="nombre" class="form-label">Nombre</label>
+            <div class="col">
+                <label for="nombre" class="form-label">Nombre(s)</label>
                 <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre(s)" />
             </div>
-
             <div class="col-md-auto">
                 <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
                 <input type="text" class="form-control" id="apellidoPaterno" placeholder="Ingresa tu primer apellido" />
@@ -111,13 +110,28 @@
                 <input type="text" class="form-control" id="apellidoMaterno"
                     placeholder="Ingresa tu segundo apellido" />
             </div>
-            <div class="col-md-auto">
-                <label for="edad" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="edad" placeholder="Ingresa tu edad" />
-            </div>
+        </form>
+        <form class="row g-3 mt-3">
             <div class="col">
+                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fechaNacimiento"
+                    placeholder="Ingresa tu fecha de nacimiento" />
+            </div>
+            <div class="col-md-auto">
                 <label for="curp" class="form-label">CURP</label>
                 <input type="text" class="form-control" id="curp" placeholder="Ingresa tu CURP" />
+            </div>
+            <div class="col-md-auto">
+                <label for="rfc" class="form-label">RFC con homoclave</label>
+                <input type="text" class="form-control" id="rfc" placeholder="Ingresa tu RFC" />
+            </div>
+            <div class="col-md-auto">
+                <label for="celular" class="form-label">Celular</label>
+                <input type="text" class="form-control" id="celular" placeholder="Ingresa tu RFC" />
+            </div>
+            <div class="col-md-auto">
+                <label for="telefono" class="form-label">Teléfono Casa</label>
+                <input type="text" class="form-control" id="telefono" placeholder="Ingresa tu RFC" />
             </div>
         </form>
         <hr />
