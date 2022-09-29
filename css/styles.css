@@ -157,6 +157,10 @@ background-color: var(--primary) !important;
     font-style:italic
 }
 
-.banco{
-     !important;
-}
+.swal-overlay {
+    background-color: rgb(0, 16, 46, .45);
+  }   
+  
+  .swal-text{
+    text-align: center;
+  }
