@@ -96,7 +96,7 @@
             <div class="col-lg-5 d-flex bg-light align-content-center">
                 <div class="content mx-auto my-5">
                 <?php
-                        $var = 1;
+                        $var = 2;
                         if($var == 1){
                             echo '
                                 <div class="d-flex">

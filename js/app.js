@@ -12,17 +12,20 @@ function Saludo(){
     }
    
      if(hora >= 12 && hora < 19){
+      imagen = "resources/tarde.png";
       texto = "Buenas Tardes, Noemi Ruiz";
-       imagen = "resources/tarde.png";
+      
      }
    
      if(hora >= 19 && hora < 24){
-       texto = "Buenas Noches, Noemi Ruiz";
-       imagen = "resources/noche.png";
+      imagen = "resources/noche.png";
+      texto = "Buenas Noches, Noemi Ruiz";
+       
      }
    
-    document.images["tiempo"].src = imagen;
+  
     document.getElementById('txtsaludo').innerHTML = texto;
+    document.images["tiempo"].src = imagen;
     document.getElementById('fechactual').innerHTML = fechaHoy;
     
    
@@ -53,11 +56,17 @@ function Saludo(){
     segundo = (segundo < 10) ? "0" + segundo : segundo;
     
     var tiempo = hora + ":" + minuto + ":" + segundo + " " + meridiano;    
-    document.getElementById("relojnumerico").innerText = tiempo;
+    // document.getElementById("relojnumerico").innerText = tiempo;
     document.getElementById("relojnumerico").textContent = tiempo;
     setTimeout(cargarReloj, 500);
     
 }
  
-cargarReloj();
+ cargarReloj();
 
+
+function alertaPrestamos(){
+   swal('¡PRESTAMO EN REVISIÓN!', 'Para conocer el estatus del prestamo puedes visitar el apartado "CONOCE EL ESTATUS DE TU PRESTAMOS"', 'success');     
+  
+}
+   
