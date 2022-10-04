@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>SUTATESE - Prestamo Nómina</title>
+
     <?php include("navbar.php");
     $poderCrediticio = 1481.06;
     $descuentoQuincenal = 0;
@@ -82,7 +83,7 @@
             </div>
             <div class="col-lg-2">
                 <div class="row m-3">
-                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="index.html" name="calcular">
+                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="index.php" name="calcular">
                         ¡CALCULAR!
                     </button>
                     <?php
@@ -92,12 +93,12 @@
                     ?>
                 </div>
                 <div class="row m-3">
-                    <button type="button" class="btn btn-success boton-ingresar" onclick=location.href="index.html">
+                    <button type="button" class="btn btn-success boton-ingresar" onclick="alertaPrestamo()">
                         ¡SOLICITAR!
                     </button>
                 </div>
                 <div class="row m-3">
-                    <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="index.html">
+                    <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
                         CANCELAR
                     </button>
                 </div>
@@ -149,6 +150,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
+         <script type="text/javascript" src="js/app.js" ></script>  
 
+   
+
+        </body>
 </html>

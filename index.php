@@ -45,17 +45,16 @@
                         <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
                     </div>
                     
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="inicio.html">INGRESAR</button>
+                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="inicio.php">INGRESAR</button>
                     
                     <hr>
                     <h3>Registrarse</h3>
                         <div class="d-flex">
-                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="inicio.html">Docente</button>
-                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="inicio.html">Administrativo</button>
+                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Docente</button>
+                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Administrativo</button>
                         </div>  
                         <div class="inicio">
                             <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
-                            <!-- <a href="registro.html" class=" mx-auto px-4 my-auto">Registrarse</a> -->
                         </div>  
                 </div>
             </div>

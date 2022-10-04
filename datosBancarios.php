@@ -61,10 +61,10 @@
             </div>
         </div>
         <div>
-            <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="inicio.html">
+            <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="inicio.php">
                 Cancelar
             </button>
-            <button type="button" class="btn btn-outline-secondary" onclick=location.href="inicio.html">
+            <button type="button" class="btn btn-outline-secondary" onclick=location.href="inicio.php">
                 Aceptar
             </button>
         </div>

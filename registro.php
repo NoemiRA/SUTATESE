@@ -221,7 +221,7 @@
             </div>
         </form>
         
-        <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.html">
+        <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
             Cancelar
         </button>
         <button type="button" class="btn btn-outline-secondary" onclick=location.href="registroNomina.php">

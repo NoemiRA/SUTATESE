@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <!-- <section id="hero"> -->
+     <section id="hero"> 
         <div class="row g-0 p-4">
             <div class="col-lg-7 d-flex bg-light">
                 <div class="content mx-auto p-5">
@@ -52,7 +52,7 @@
                             Numero de empleado al igual que nombre completo <i>(para corroborar datos)</i>.
                         </li>
                         <li>
-                            Ultimo recibo de pago al igual que la credencial vigente del TESE debidamente escaneados <i>(se solicita en el apartado de <b>"CANTIDAD A AHORRRAR"</b>)</i>.
+                            Ultimo recibo de pago al igual que la credencial vigente del TESE debidamente escaneados <i>(se solicita en el apartado de <b>"CANTIDAD A AHORRAR"</b>)</i>.
                         </li>
                         <li>
                             Datos generales de asociados <i>(nombre completo, teléfono, correo electrónico)</i>.
@@ -67,13 +67,13 @@
                         if($var == 1){
                             echo '
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed" onclick=location.href="cantidad-ahorro.html">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="cantidad-ahorro.php">
                                         <i class="fa-solid fa-money-bills fa-4x"></i><span class="display-6 m-lg-5">Cantidad a ahorrar</span>
                                     </button>
                                 </div>
 
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.html">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.php">
                                         <i class="fa-solid fa-users-rectangle fa-4x"></i><span class="display-6 m-lg-5">Beneficiario</span>
                                     </button>
                                 </div>
@@ -105,7 +105,7 @@
                                 </div>
 
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.html" disabled>
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="beneficiario.php" disabled>
                                         <i class="fa-solid fa-users-rectangle fa-4x"></i><span class="display-6 m-lg-5">Beneficiario</span>
                                     </button>
                                 </div>
@@ -123,7 +123,7 @@
                                 </div>
 
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed" onclick=location.href="documentos-generales.html">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="documentos-generales.php">
                                     <i class="fa-solid fa-file-circle-plus fa-4x"></i><span class="display-6 m-lg-5">Subir documentos</span>
                                     </button>
                                 </div>
@@ -132,7 +132,7 @@
                     ?>
                 </div>
             </div>
-    <!-- </section> -->
+     </section> 
 
 
 

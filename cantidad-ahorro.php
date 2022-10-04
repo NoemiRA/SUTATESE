@@ -10,46 +10,14 @@
 
     <title>SUTATESE - Cantidad a Ahorrar</title>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-
-            <div class="d-flex navbar-color ">
-                <img src="resources\SUTATESE.png" class="me-3 mx-2" alt="" width="60" height="80">
-                <div class="my-auto">
-                    <p class="fw-bold mb-0 ">SUTATESE</p>
-                    <small>Sindicato Único de Trabajadores Académicos del Tecnológico de Estudios Superiores de Ecatepec</small>
-                </div>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar-color" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-1" style="margin-left: 10%;">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="perfil.html">Datos Generales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="registroaval.html">Prestamos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="registroCA.php">Caja de ahorro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Salir</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("navbar.php");
+    ?>
 
 </head>
 
 <body>
     <div class="container-xl text-center login">
-     <section id="hero"> 
+     <!-- <section id="hero">  -->
         <div class="row g-0 h-100">
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto ">  <!-- Si se le queita el "my-auto" y se alinea con el titulo de la derecha -->
@@ -57,15 +25,14 @@
                     <br>
                     <p class="parrafo-aval">
                     1. Las aportaciones a la Caja de Ahorro tendrá 3 orígenes: </p>
-                    <p class="parrafo-aval">a) Fondo ASPATESE. 
-                    Es un ahorro del asociado en forma quincenal vía nómina del TESE con un mínimo de $100.00 (cien pesos 00/100 M.N.) y múltiplos de $50.00 (Cincuenta pesos 00/100 M.N.), el cual se devolverá los primeros diez días del mes de Diciembre después del cierre del ejercicio.</p>
+                    <p class="parrafo-aval">a) Fondo SUTATESE. 
+                    Es la aportación del Ahorrador. Se brinda de forma quincenal vía nómina del TESE con un mínimo de $100.00 (cien pesos 00/100 M.N.) y múltiplos de $50.00 (Cincuenta pesos 00/100 M.N). La cantidad recabada a lo largo de las 24 quincenas más el interés generado, será devuelto los primeros diez días del mes de Diciembre después del cierre del ejercicio.</p>
 
-                    <p class="parrafo-aval">b) Fondo Fijo ASPATESE.
-                    Es un ahorro voluntario permanente de un mínimo de 1% del sueldo base quincenal. Solo puede ser retirado por baja de la Caja de Ahorro, Fallecimiento o Separación del TESE. </p>
+                    <p class="parrafo-aval">b) Fondo Fijo Voluntario SUTATESE.
+                        Es una aportación voluntaria y sin plazo de término del AHORRADOR que consiste en un mínimo de 1% del sueldo base quincenal. Solo podrá ser retirado por previa solicitud de baja de la Caja de Ahorro, Separación del TESE o Fallecimiento.</p>
                     
-                    <p class="parrafo-aval">c) Fondo Variable. 
-                    Es una opción de ahorro adicional a través de aportaciones extraordinarias que constituyen el Fondo Variable Inversionista que se puede realizar en cualquier momento en que se establezca en una convocatoria y podrá ser por la cantidad mínima de $20,000.00 (Veinte mil pesos 00/100 M.N.) y máxima de $30,000.00 (Treinta mil pesos 00/100 M.N.). 
-                    Estas aportaciones se recibirán en el orden de folio de participación del Asociado siendo el límite la cantidad necesaria para la Caja de Ahorro de préstamos pendientes de otorgar a los Asociados. Su rendimiento será del 1% mensual y serán reintegrados a los Asociados de acuerdo en el mismo orden de folio y en el momento que sean innecesarios para solvencia de la Caja de Ahorro.</p>
+                    <p class="parrafo-aval">c) Fondo Variable INVERSIONISTA
+                    Es una opción de ahorro adicional a través de aportaciones extraordinarias que constituyen el Fondo Variable INVERSIONISTA siendo el límite la cantidad necesaria para tener liquidez y poder otorgar préstamos pendientes a los Asociados en los primeros meses de operación de la Caja de Ahorro. Su rendimiento será del 1% mensual y serán reintegrados a los (las) INVERSIONISTAS de acuerdo con el mismo orden de folio y en cuanto dejen de ser necesarios por alcanzar solvencia de la Caja de Ahorro. La cantidad mínima de inversión es de  $20,000.00 (Veinte mil pesos 00/100 M.N.) y máxima de $30,000.00 (Treinta mil pesos 00/100 M.N.). </p>
 
                     <p class="parrafo-aval">El límite de ahorro quincenal (inciso a) será del 30% del sueldo, considerando la suma de los Fondos. </p>
                     <p class="parrafo-aval">
@@ -99,9 +66,9 @@
                             <label for="division" class="form-label">Seleccione un tipo de fondo</label>
                                 <select class="form-select" aria-label="Division">
                                     <option disabled selected>Fondo de aportaciones</option>
-                                    <option value="Uno">Fondo ASPATESE</option>
-                                    <option value="Dos">Fondo Fijo ASPATESE</option>
-                                    <op   tion value="tres">Fondo Variable</option> Comentada porque no se si se pone o es aparte
+                                    <option value="Uno">Fondo SUTATESE</option>
+                                    <option value="Dos">Fondo Fijo Voluntario SUTATESE</option>
+                                    <option value="tres">Fondo Variable Inversionista</option> Comentada porque no se si se pone o es aparte
                                     
                                 </select>
                         </div>
@@ -119,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </section> 
+    <!-- </section>  -->
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
