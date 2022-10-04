@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-2">
                 <div class="row m-3">
-                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="index.php" name="calcular">
+                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="prestamoNomina.php" name="calcular">
                         ¡CALCULAR!
                     </button>
                     <?php
