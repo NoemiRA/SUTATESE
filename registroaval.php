@@ -82,8 +82,8 @@
                     </div>
                     
                     <div class="d-flex">
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">ACEPTAR</button>
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">CANCELAR</button>
+                        <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">CANCELAR</button>
+                        <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">ACEPTAR</button>
                     </div>
                 </div>
             </div>

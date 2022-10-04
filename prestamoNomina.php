@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <title>SUTATESE - Prestamo Nómina</title>
 
@@ -83,7 +84,7 @@
             </div>
             <div class="col-lg-2">
                 <div class="row m-3">
-                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="index.php" name="calcular">
+                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="prestamoNomina.php" name="calcular">
                         ¡CALCULAR!
                     </button>
                     <?php
