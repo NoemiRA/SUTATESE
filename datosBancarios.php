@@ -34,7 +34,7 @@
             <div class="form-group">
                 <label for="Banco" class="form-label">Institución Bancaria</label>
                 <select class="form-control" id="Banco">
-                    <option selected>Elige una institución Bancaria...</option>
+                    <option selected disabled>Elige una institución Bancaria...</option>
                     <option>BBVA México</option>
                     <option>Santander</option>
                     <option>Banorte</option>

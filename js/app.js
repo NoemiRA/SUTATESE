@@ -69,4 +69,7 @@ function alertaPrestamos(){
    swal('¡PRESTAMO EN REVISIÓN!', 'Para conocer el estatus del prestamo puedes visitar el apartado "CONOCE EL ESTATUS DE TU PRESTAMOS"', 'success');     
   
 }
-   
+
+function alertaCorreo(){
+  swal('¡REGISTRO EN REVISIÓN!', 'Tu contraseña para accesar al sistema se enviará al correo electrónico proporcionado "FAVOR DE REVISARLO"', 'success');
+}

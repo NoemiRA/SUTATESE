@@ -9,11 +9,22 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+
+            <div class="d-flex navbar-color">
+                <img src="resources\SUTATESE.png" class="me-3 mx-2" alt="" width="60" height="80">
+                <div class="my-auto">
+                    <p class="fw-bold mb-0 ">SUTATESE</p>
+                    <small>Sindicato Único de Trabajadores Académicos del Tecnológico de Estudios Superiores de Ecatepec</small>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <title>SUTATESE-Registro Nomina</title>
-
-    <?php include("navbar.php");
-    ?>
 </head>
 
 <body>
@@ -149,7 +160,7 @@
             <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
                     Cancelar
                 </button>
-                <button type="button" class="btn btn-outline-secondary" onclick=location.href="registroNomina.php">
+                <button type="button" class="btn btn-outline-secondary" onclick="alertaCorreo()">
                     Continuar
             </button>
         </div>
@@ -158,6 +169,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="js/app.js" ></script> 
 </body>
 
 </html>
