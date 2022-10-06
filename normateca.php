@@ -52,39 +52,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 my-5">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h2 class="card-title">Estatutos del Sindicato Unico de Trabajadores Academicos del TESE</h2>
-                        <p class="card-text">
-                            Ordenamiento o conjunto de normas que tienen fuerza de ley para el Sindicato Unico de
-                            Trabajadores Academicos del Tecnológico de Estudios Superiores de Ecatepec. Asimismo,
-                            alude al régimen jurídico especial al cual se encuentran sometidas a este.
-                        </p>
-                        <a type="button" class="btn btn-outline-dark" target="_black"
-                            href="http://localhost/SUTATESE/docs/Pagare2023.pdf">
-                            Ver archivo
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 my-5">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h2 class="card-title">Reglamento de condiciones Generales de trabajo 2021-2023</h2>
-                        <p class="card-text">
-                            Reglamento de condiciones generales de trabajo que celebran por una parte el Tecnológico de
-                            Estudios Superiores de Ecatepec y por la otra el Sindicato Único de Trabajadores Académicos
-                            del Tecnológico de Estudios Superiores de Ecatepec.
-                        </p>
-                        <a type="button" class="btn btn-outline-dark" target="_black"
-                            href="http://localhost/SUTATESE/docs/Pagare2023.pdf">
-                            Ver archivo
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

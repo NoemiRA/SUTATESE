@@ -149,7 +149,7 @@
             <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
                     Cancelar
                 </button>
-                <button type="button" class="btn btn-outline-secondary" onclick=location.href="registroNomina.php">
+                <button type="button" class="btn btn-outline-secondary" onclick=location.href="index.php">
                     Continuar
             </button>
         </div>

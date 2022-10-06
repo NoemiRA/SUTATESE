@@ -5,13 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>SUTATESE-Registro</title>
 
@@ -35,13 +32,12 @@
             <img src="resources\Logo.jpg" class="img-thumbnail" alt="..." width="140" height="140" />
             <h1>REGISTRATE</h1>
         </div>
-        
+
         <form class="row g-3 mt-3">
             <h3>Datos personales</h3>
             <div class="col-md-2">
                 <label for="numEmpleado" class="form-label">No. empleado</label>
-                <input type="number" class="form-control" id="numEmpleado"
-                    placeholder="Ingresa tu número de empleado" />
+                <input type="number" class="form-control" id="numEmpleado" placeholder="Ingresa tu número de empleado" />
             </div>
             <div class="col-md-4">
                 <label for="nombre" class="form-label">Nombre(s)</label>
@@ -54,15 +50,13 @@
 
             <div class="col-md-3">
                 <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
-                <input type="text" class="form-control" id="apellidoMaterno"
-                    placeholder="Ingresa tu segundo apellido" />
+                <input type="text" class="form-control" id="apellidoMaterno" placeholder="Ingresa tu segundo apellido" />
             </div>
         </form>
         <form class="row g-3 mt-3">
             <div class="col-md-3">
                 <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="fechaNacimiento"
-                    placeholder="Ingresa tu fecha de nacimiento" />
+                <input type="date" class="form-control" id="fechaNacimiento" placeholder="Ingresa tu fecha de nacimiento" />
             </div>
             <div class="col-md-3">
                 <label for="curp" class="form-label">CURP</label>
@@ -70,7 +64,7 @@
                     <input type="text" class="form-control" id="curp" placeholder="Ingresa tu CURP" />
 
                     <span class="input-group-text" id="basic-addon2"><abbr title="Click para conocer su CURP"> <a class="m-0" href="https://www.gob.mx/curp/" target="_blank"><i class="fa-solid fa-circle-info"></i></a></span>
-                        </abbr>
+                    </abbr>
                 </div>
             </div>
             <div class="col-md-3">
@@ -79,14 +73,13 @@
             </div>
             <div class="col-md-3">
                 <label for="fechaIngreso" class="form-label">Ingreso al TESE</label>
-                <input type="date" class="form-control" id="fechaIngreso"
-                    placeholder="Ingresa tu fecha de ingreso al TESE" />
+                <input type="date" class="form-control" id="fechaIngreso" placeholder="Ingresa tu fecha de ingreso al TESE" />
             </div>
-            </form>
-            <form class="row g-3 mt-3">
+        </form>
+        <form class="row g-3 mt-3">
             <div class="col">
                 <label for="correo" class="form-label">Correo electrónico Personal</label>
-                <input type="text" class="form-control" id="correo" placeholder="correo@example.com"/>
+                <input type="text" class="form-control" id="correo" placeholder="correo@example.com" />
             </div>
             <div class="col-md-auto">
                 <label for="celular" class="form-label">Celular</label>
@@ -96,7 +89,7 @@
                 <label for="telefono" class="form-label">Teléfono Casa</label>
                 <input type="text" class="form-control" id="telefono" placeholder="Ingresa tu número fijo" />
             </div>
-            
+
         </form>
         <hr />
 
@@ -135,7 +128,7 @@
 
         <form class="row g-3 mt-3">
             <h3>Docente / Adminitrativo</h3>
-            <div class="col-md-auto">
+            <div class="col-md-4">
                 <label for="division" class="form-label">División</label>
                 <select class="form-select" aria-label="Division">
                     <option disabled selected>Selecciona tu división</option>
@@ -152,19 +145,17 @@
                     <option value="Once">Sistemas Computacionales</option>
                 </select>
             </div>
-            <div class="col-md-auto">
+            <div class="col-md-4">
                 <label for="experienciaD" class="form-label">Experiencia Docente</label>
-                <input type="text" class="form-control" id="experienciaD"
-                    placeholder="Ingresa los años de experiencia" />
+                <input type="text" class="form-control" id="experienciaD" placeholder="Ingresa los años de experiencia" />
             </div>
 
-            <div class="col-md-auto">
+            <div class="col-md-4">
                 <label for="experienciaP" class="form-label">Experiencia Profesional</label>
-                <input type="text" class="form-control" id="experienciaP"
-                    placeholder="Ingresa los años de experiencia" />
+                <input type="text" class="form-control" id="experienciaP" placeholder="Ingresa los años de experiencia" />
             </div>
         </form>
-        <hr/>
+        <hr />
 
         <form class="row g-3 mt-3">
             <h3>Estudios</h3>
@@ -220,7 +211,7 @@
                 <input type="text" class="form-control" id="institucionD" placeholder="Ingresa Institución" />
             </div>
         </form>
-        
+
         <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
             Cancelar
         </button>
@@ -228,12 +219,8 @@
             Continuar
         </button>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

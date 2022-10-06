@@ -30,18 +30,18 @@
             <div class="row p-5">
                 <div class="row">
                     <div class="col">
-                        <a href="info_docen_adm.php" class="borrar"><button type="button" class="btn btn-primary" style="width: 100%; height: 100px;">INFORMACIÓN DOCENTE / ADMINISTRATIVO</button></a>
+                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="info_docen_adm.php">INFORMACIÓN DOCENTE / ADMINISTRATIVO</button>
                     </div>
                     <div class="col">
-                        <a href="info-personal.php" class="borrar"><button type="button" class="btn btn-primary" style="width: 100%; height: 100px;">INFORMACIÓN PERSONAL</button></a>
+                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="info-personal.php">INFORMACIÓN PERSONAL</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;">INFORMACIÓN DOMICILIO</button>
+                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="info_doc.php">INFORMACIÓN DOMICILIO</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;">INFORMACIÓN BANCARIA</button>
+                        <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="datosBancarios.php">INFORMACIÓN BANCARIA</button>
                     </div>
                 </div>
             </div>

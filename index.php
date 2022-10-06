@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">    
-    <link rel="stylesheet" href="css/normalize.css">   
-    <link rel="stylesheet" href="css/styles.css">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <title>SUTATESE</title>
 
@@ -24,12 +25,12 @@
     </nav>
 
 </head>
+
 <body>
 
     <div class="container-xl text-center login">
-    <!-- <section id="hero"> Si se quita este hero se hace pequeña la pagina de abajo -->
         <div class="row g-0 h-50">
-            <div class="col-lg-6 d-flex">
+            <div class="col-lg-6">
                 <div class="content mx-auto px-4 my-auto">
                     <div class="inicio">
                         <img src="resources\SUTATESE.png">
@@ -44,32 +45,31 @@
                         <label for="contraseña" class="form-label">Contraseña:</label>
                         <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
                     </div>
-                    
+
                     <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="inicio.php">INGRESAR</button>
-                    
+
                     <hr>
                     <h3>Registrarse</h3>
-                        <div class="d-flex">
-                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Docente</button>
-                            <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Administrativo</button>
-                        </div>  
-                        <div class="inicio">
-                            <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
-                        </div>  
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Docente</button>
+                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Administrativo</button>
+                    </div>
+                    <div class="inicio">
+                        <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
+                    </div>
                 </div>
             </div>
 
-
-            
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto">
                     <img src="resources\INICIO.jpeg" width="100%" height="100%">
                 </div>
             </div>
-            
+
         </div>
-    <!-- </section> -->
-</div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
-</html> 
+
+</html>

@@ -17,7 +17,7 @@
 
 <body>
     <div class="container-xl text-center login">
-     <!-- <section id="hero">  -->
+    <!-- <section id="hero">  -->
         <div class="row g-0 h-100">
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto ">

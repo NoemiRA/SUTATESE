@@ -61,7 +61,7 @@
             </div>
         </div>
         <div>
-            <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="inicio.php">
+            <button type="button" class="btn btn-secondary boton-ingresar" onclick="history.go(-1);">
                 Cancelar
             </button>
             <button type="button" class="btn btn-outline-secondary" onclick=location.href="inicio.php">

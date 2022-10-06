@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <title>SUTATESE - Prestamo Nómina</title>
+    <title>SUTATESE - Simulador Prestamos</title>
 
     <?php include("navbar.php");
     $poderCrediticio = 1481.06;
     $descuentoQuincenal = 0;
-
     ?>
 </head>
 
 <body>
     <div class="text-center m-5 p-3 rounded">
         <div class="row bg-light">
-            <h1 class="m-3">PRÉSTAMO VÍA NÓMINA</h1>
+            <h1 class="m-3">SIMULADOR DE PÉSTAMOS</h1>
             <div class="col-lg-5">
                 <div class="form-group row m-3">
                     <label for="description" class="col col-form-label">
@@ -105,43 +104,45 @@
                 </div>
             </div>
         </div>
-        <div class="table-responsive my-4">
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">Quincenas</th>
-                            <th scope="col">Amortización capital</th>
-                            <th scope="col">Intereses</th>
-                            <th scope="col">Abonos</th>
-                            <th scope="col">Saldos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>10000.00<strong></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>$955.82</td>
-                            <td>$100.00</td>
-                            <td>$1055.82</td>
-                            <td>9044.18</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>$965.38</td>
-                            <td>$90.44</td>
-                            <td>$1055.82</td>
-                            <td>8078.80</td>
-                        </tr>
-                        <tr>
+        <div class="m-5">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Quincenas</th>
+                        <th scope="col">Amortización capital</th>
+                        <th scope="col">Intereses</th>
+                        <th scope="col">Abonos</th>
+                        <th scope="col">Saldos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>10000.00<strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>$955.82</td>
+                        <td>$100.00</td>
+                        <td>$1055.82</td>
+                        <td>9044.18</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>$965.38</td>
+                        <td>$90.44</td>
+                        <td>$1055.82</td>
+                        <td>8078.80</td>
+                    </tr>
+                    <tr>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
