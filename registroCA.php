@@ -60,7 +60,7 @@
             <div class="col-lg-5 d-flex bg-light align-content-center">
                 <div class="content mx-auto my-5">
                     <?php
-                    $var = 1;
+                    $var = 2;
                     if ($var == 1) {
                         echo '
                                 <div class="d-flex">
@@ -115,7 +115,7 @@
                                 </div>
 
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="FormatoCuota.php">
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Formato de Cuota</span>
                                     </button>
                                 </div>
