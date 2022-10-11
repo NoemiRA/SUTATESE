@@ -33,7 +33,7 @@
                     <p class="parrafo-aval">b) Fondo Fijo Voluntario SUTATESE.
                     Es una aportación voluntaria y sin plazo de término del AHORRADOR que consiste en un mínimo de 1% del sueldo base quincenal. Solo podrá ser retirado por previa solicitud de baja de la Caja de Ahorro, Separación del TESE o Fallecimiento.</p>
                     
-                    <p class="parrafo-aval">c) Fondo Variable INVERSIONISTA
+                    <p class="parrafo-aval">c) Fondo Variable INVERSIONISTA.
                     Es una opción de ahorro adicional a través de aportaciones extraordinarias que constituyen el Fondo Variable INVERSIONISTA siendo el límite la cantidad necesaria para tener liquidez y poder otorgar préstamos pendientes a los Asociados en los primeros meses de operación de la Caja de Ahorro. Su rendimiento será del 1% mensual y serán reintegrados a los (las) INVERSIONISTAS de acuerdo con el mismo orden de folio y en cuanto dejen de ser necesarios por alcanzar solvencia de la Caja de Ahorro. La cantidad mínima de inversión es de  $20,000.00 (Veinte mil pesos 00/100 M.N.) y máxima de $30,000.00 (Treinta mil pesos 00/100 M.N.).</p>
 
                     <p class="parrafo-aval">El límite de ahorro quincenal (inciso a) será del 30% del sueldo, considerando la suma de los Fondos. </p>
