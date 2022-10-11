@@ -160,11 +160,7 @@
             <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
                     Cancelar
                 </button>
-<<<<<<< HEAD
-                <button type="button" class="btn btn-outline-secondary" onclick=location.href="index.php">
-=======
                 <button type="button" class="btn btn-outline-secondary" onclick="alertaCorreo()">
->>>>>>> 4e4d1ff7543c5469a39183f42173cf68eaafcfdb
                     Continuar
             </button>
         </div>
