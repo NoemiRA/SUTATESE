@@ -50,7 +50,6 @@
                     <span class="input-group-text" id="basic-addon2"><i class="fa-regular fa-credit-card"></i></i></span>
                     <select class="form-select" aria-label="Division">
                         <option disabled selected class="text-center">Selecciona tu forma de pago</option>
-                        <option value="nomina" class="text-center">Pago por vía: Nómina</option>
                         <option value="efectivo" class="text-center">Pago por vía: Efectivo</option>
                         <option value="banco" class="text-center">Pago por vía: Transferencia/Depósito</option>
                     </select>
