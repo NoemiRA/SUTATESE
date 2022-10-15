@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <title>SUTATESE-Registro</title>
 
@@ -213,12 +215,20 @@
                 <input type="text" class="form-control" id="institucionD" placeholder="Ingresa Institución" />
             </div>
         </form>
-
+        <hr>
+        <div class="text-center my-4">
+            <h1>DOCUMENTOS</h1>
+            <label for="reciboNomina" class="form-label ">Último recibo de nómina (PDF):</label>
+            <input type="file" class="form-control sm-2" id="reciboNomina" placeholder="Ingresa recibo de nómina">
+            <label for="credencial" class="form-label m-3">Credencial (PDF):</label>
+            <input type="file" class="form-control sm-2" id="credencial" placeholder="Ingresa credencial">
+        </div>
+    
         <button type="button" class="btn btn-secondary boton-ingresar" onclick=location.href="index.php">
             Cancelar
         </button>
-        <button type="button" class="btn btn-outline-secondary" onclick=location.href="registroNomina.php">
-            Continuar
+        <button type="button" class="btn btn-outline-secondary" onclick="alertaCorreo()";>
+            Enviar
         </button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

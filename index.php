@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
+
+    
     <title>SUTATESE</title>
 
     <nav class="navbar navbar-expand-lg bg-light">
@@ -36,23 +40,25 @@
                         <img src="resources\SUTATESE.png">
                         <h2>INICIAR SESIÓN</h2>
                     </div>
-                    <div class="col mt-4">
-                        <label for="correo" class="form-label">Correo:</label>
-                        <input type="email" class="form-control" id="correo" placeholder="correo@example.com">
-                    </div>
+                    <form action="login.php" method="post">
+                        <div class="col mt-4">
+                            <label for="correo" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="correo" placeholder="correo@example.com" name="CorreoElec">
+                        </div>
 
-                    <div class="col mt-4">
-                        <label for="contraseña" class="form-label">Contraseña:</label>
-                        <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
-                    </div>
+                        <div class="col mt-4">
+                            <label for="contraseña" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña">
+                        </div>
 
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="inicio.php">INGRESAR</button>
-
+                        <button type="submit" class="btn btn-primary d-block mx-auto my-4" value="Ingresar" >INGRESAR</button>
+                        <!-- onclick=location.href="inicio.php" -->
+                    </form>
                     <hr>
                     <h3>Registrarse</h3>
                     <div class="d-flex">
-                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Docente</button>
-                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Administrativo</button>
+                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Registrate</button>
+                    
                     </div>
                     <div class="inicio">
                         <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
@@ -70,6 +76,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
