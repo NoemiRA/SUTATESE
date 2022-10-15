@@ -121,7 +121,7 @@
                                 </div>
 
                                 <div class="d-flex">
-                                    <button type="button" class="btn btn-link passed">
+                                    <button type="button" class="btn btn-link passed" onclick=location.href="solicitudAportacion.php">
                                         <i class="fa-solid fa-file-pdf fa-4x"></i><span class="display-6 m-lg-5">Solicitud de Aportación</span>
                                     </button>
                                 </div>

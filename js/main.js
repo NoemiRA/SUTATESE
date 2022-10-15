@@ -41,3 +41,16 @@
         
 
         }
+
+        function docente()
+        {   
+        element = document.getElementById("experiencia");
+        check = document.getElementById("chec");
+        if (check.checked){
+                element.disabled=true;
+                element.value="";
+        }
+        else
+                element.disabled=false; 
+        }
+        

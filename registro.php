@@ -127,7 +127,7 @@
         <hr />
 
         <form class="row g-3 mt-3">
-            <h3>Docente / Adminitrativo</h3>
+            <h3>Docente / Administrativo</h3>
             <div class="col-md-4">
                 <label for="division" class="form-label">División</label>
                 <select class="form-select" aria-label="Division">
@@ -146,18 +146,20 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="experienciaD" class="form-label">Experiencia Docente</label>
-                <input type="text" class="form-control" id="experienciaD" placeholder="Ingresa los años de experiencia" />
+                <label for="experiencia" class="form-label">Experiencia Docente</label>
+                <input type="text" class="form-control" id="experiencia" placeholder="Ingresa los años de experiencia"/>
+                <br>
+                <input name="chec" type="checkbox" id="chec" onChange="docente();"/>
+                <label for="chec" class="form-label m-0">Administrativo</label>
             </div>
-
             <div class="col-md-4">
                 <label for="experienciaP" class="form-label">Experiencia Profesional</label>
-                <input type="text" class="form-control" id="experienciaP" placeholder="Ingresa los años de experiencia" />
+                <input type="text" class="form-control" id="experienciaP" placeholder="Ingresa los años de experiencia"/>
             </div>
         </form>
         <hr />
 
-        <form class="row g-3 mt-3">
+        <form class="row g-3 mt-4">
             <h3>Estudios</h3>
             <i style="
             font-size: small;
@@ -221,6 +223,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
