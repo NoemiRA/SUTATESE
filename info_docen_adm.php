@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" id="nombre" placeholder="Informática" disabled>
                     </div>
                     <hr>
-                    <div class="col">
+                    <div class="col-md-auto">
                         <label for="fechaIngreso" class="form-label">Fecha de Ingreso al TESE</label>
                         <input type="date" class="form-control" id="fechaIngreso" placeholder="Ingresa tu fecha de ingreso al TESE">
                     </div>

@@ -53,7 +53,7 @@
             <div class="col-lg-6 d-flex">
                 <div class="content mx-auto px-4 my-auto">
                     <div class="inicio">
-                        <h2>Cantidad ahorrar</h2>
+                        <h2>Cantidad a ahorrar</h2>
                     </div>
 
                     <div class="col-md-auto">
@@ -75,15 +75,18 @@
                                 <option disabled selected>Fondo de aportaciones</option>
                                 <option value="Uno">Fondo SUTATESE</option>
                                 <option value="Dos">Fondo Fijo Voluntario SUTATESE</option>
-                                <option value="tres">Fondo Variable Inversionista</option> Comentada porque no se si se pone o es aparte
-
+                            
                             </select>
                         </div>
                     </div>
-                    <hr>
+                    
+                        <button type="button" class="btn btn-primary mt-4" style="width: 100%; height: 40px;" onclick=location.href="AhorroInversionista.php">
+                        Fondo Variable INVERSIONISTA
+                        </button>
+            <hr>
                     <div class="col-md-auto">
                         <label for="numEmpleado" class="form-label">Ingrese la cantidad a ahorrar quincenalmente</label>
-                        <input type="number" class="form-control" id="numEmpleado" placeholder="Ejemplo: 1500">
+                        <input type="number" class="form-control" id="ahorroQuincenal" placeholder="Ejemplo: 1500">
                     </div>
 
                     <div class="text-center my-3">

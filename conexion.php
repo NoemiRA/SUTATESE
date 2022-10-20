@@ -1,8 +1,8 @@
 <?php
-    $servidor = "localhost";
-    $base = "sutatese";
-    $username = "root";
-    $password = "";
+$servidor = "localhost:33065";
+$base = "sutatese";
+$username = "root";
+$password = "";
 
     $conn = mysqli_connect($servidor, $username, $password, $base);
     $conn->set_charset("utf8");

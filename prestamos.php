@@ -71,10 +71,10 @@
         </div>
         <div class="col-lg-5 d-flex bg-light">
             <div class="content mx-auto align-self-center px-4 my-5">
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">CONOCE TU PODER CREDITICIO</button>
+                <!-- <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">CONOCE TU PODER CREDITICIO</button> -->
                 <button type="button" class="btn btn-warning" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRESTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRESTAMOS!</button>
                 <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoCA.php">PRESTAMO POR CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoNomina.php">PRESTAMO VÍA NÓMINA</button>
+                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRESTAMO VÍA NÓMINA</button>
                 <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroaval.php">PRESTAMO POR AVAL</button>
             </div>
         </div>
