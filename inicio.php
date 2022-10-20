@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <title>SUTATESE - Inicio</title>
     <?php include("navbar.php");
     ?>
+    
+    
 </head>
 
-<body onload="Saludo();">
+<body onload="Saludo();" class="">
     <!-- <section id="hero"> Si se quita este hero se hace pequeña la pagina de abajo -->
         <div class="row g-0 h-50 p-5">
             <div class="col-lg-7 d-flex">
@@ -37,6 +40,7 @@
 
                     </div>
                 </div>
+                
             </div>
             <div class="col-lg-5 d-flex bg-light">
                 <div class="content mx-auto align-self-center px-4 my-5">
@@ -44,12 +48,23 @@
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamos.php">PRESTAMOS</button>                     
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroCA.php">CAJA DE AHORRO</button>
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="datosBancarios.php">DATOS BANCARIOS</button>
+                    
                 </div>
-            </div>
+            <!-- </div> -->
+            
         </div>
+    </div>
+        
     <!-- </section>  -->
+    
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js" ></script> 
+    
+    
+
 </body>
 
 </html>
+ 

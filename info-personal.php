@@ -45,7 +45,7 @@
                             <input type="number" class="form-control" id="edad" placeholder="Ingresa tu edad">
                         </div>
                         <hr>
-                        <div class="col">
+                        <div class="col-md-auto">
                             <label for="curp" class="form-label">CURP</label>
                             <input type="text" class="form-control" id="curp" placeholder="Ingresa tu CURP">
                         </div>

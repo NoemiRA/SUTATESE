@@ -2,10 +2,21 @@
     text-decoration: none;
 }
 
+.footer{
+    display: grid;
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
 
 :root{
     --primary: #00102E;
     --fondocontenedor: #F8F8FF;
+}
+
+.color{
+    background-color: var(--primary) !important;
 }
 
 .inicio{
@@ -163,4 +174,8 @@ background-color: var(--primary) !important;
   
   .swal-text{
     text-align: center;
+  }
+
+  .foot{
+    font-family: Arial, Helvetica, sans-serif;
   }

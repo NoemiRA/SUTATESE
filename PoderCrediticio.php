@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body onload="quincenas();">
    <h1 class="text-center" >PODER CREDITICIO</h1>
    <div class="row g-0 h-50 p-5">
         <div class="col-lg-6 bg-light justify-content-center">
@@ -39,9 +39,9 @@
                 </div>
 
                 <div class="form-group row my-3 mx-3 fw-bold">
-                    <label for="quincena" class="col-sm-2 col-form-label">Quincena:</label>
+                    <label for="quincena" class="col-sm-2 col-form-label">Recibos Solicitados:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="quincena" placeholder="2da de Octubre" disabled>
+                        <input type="text" class="form-control bg-info bg-opacity-50" id="quincena" style="height: 38px;" disabled ></input>
                     </div>
                 </div>
 
@@ -74,10 +74,15 @@
                     </div>
                 </div>
 
-                <div class="form-group row my-1">
+                <div class="form-group row">
                     <small class="form-text text-muted">
                         <i>*En caso de no contar con alguna cifra coloque un cero (0) o deje vacio*</i>
                     </small>
+                </div>
+
+                <div class="form-group row my-3 mx-3 fw-bold">
+                    <label for="reciboNomina" class="form-label ">Subir cualquiera de los recibos de nómina (PDF) de los meses que se solicitan en el recuadro azul:</label>
+                    <input type="file" class="form-control mb-3 mx-3" id="reciboNomina" placeholder="Ingresa recibo de nómina">
                 </div>
 
                 <div class="form-group row my-3 mx-3 fw-bold">
@@ -86,14 +91,14 @@
                         <input type="number" class="form-control bg-warning bg-opacity-50" id="poderCred" style="height: 38px;" disabled ></input>
                     </div> 
                 </div>
-               
+
                 <button type="button" class="btn btn-danger m-2" onclick=location.href="prestamos.php">
                     Cancelar
                 </button>
-            <button type="button" class="btn btn-primary m-2" id="solicitar">
+            <button type="button" class="btn btn-primary m-2" id="solicitar"  onclick=location.href="prestamoNomina.php">
                     Solicitar Préstamo
             </button>
-
+           
             </form>
         </div>  
         
@@ -109,6 +114,7 @@
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/quincena.js"></script>
 
  
     
