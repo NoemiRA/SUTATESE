@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['NumEmpleado5'])){
+        header("location: index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

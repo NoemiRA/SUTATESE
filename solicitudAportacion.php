@@ -56,4 +56,5 @@ $pdf->Cell(190,10,'NOMBRE Y FIRMA',0,1,'C');
 
 //$pdf->setAutoPageBreak(true,0); Salto de pagina cuando se termina la pagina
 
-$pdf->Output();
+$pdf->Close();
+$pdf->Output('D','Solicitud_Aportación_SUTATESE.pdf',true);  

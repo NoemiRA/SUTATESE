@@ -1,35 +1,27 @@
 <?php
-$CorreoElec = $_POST['CorreoElec'];
-$contraseña = $_POST['contraseña'];
 session_start();
-$_SESSION['CorreoElec'] = $CorreoElec;
 
- include("conexion.php");
-// $servidor = "localhost:33065";
-// $base = "sutatese";
-// $username = "root";
-// $password = "";
-
-// $conn = mysqli_connect($servidor, $username, $password, $base);
-
-$consulta = "SELECT * FROM logeo where CorreoElec = '$CorreoElec' and contraseña = '$contraseña'";
-$resultado = mysqli_query($conn,$consulta);
-
-$filas = mysqli_num_rows($resultado);
-
-if($filas){
-    header("location:inicio.php");
-
-}else{
-    ?>
-    <?php
-    include("index.php");
-    ?>
-    <h1>ERROR EN LA AUTENTICACION</h1>
-    
-    <?php
+if (!empty($_POST["btnIngresar"])) {
+    if (!empty($_POST["CorreoElec"]) and !empty($_POST["Contraseña"])) {
+        $user = $_POST["CorreoElec"];
+        $pass = $_POST["Contraseña"];
+        $sql = $conn->query(" SELECT NumEmpleado5, Contraseña, Nombres, ApellidoPat, ApellidoMat FROM logeo INNER JOIN empleado on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE CorreoElec = '$user' and Contraseña = '$pass' ");
+        if ($datos = $sql->fetch_object()) {
+            $_SESSION["NumEmpleado5"] = $datos->NumEmpleado5;
+            $_SESSION["Contraseña"] = $datos->Contraseña;
+            $_SESSION["Nombres"] = $datos->Nombres;
+            $_SESSION["ApellidoPat"] = $datos->ApellidoPat;
+            $_SESSION["ApellidoMat"] = $datos->ApellidoMat;
+            header("location: inicio.php");
+        } else {
+            echo '<div class="alert alert-danger" role="alert">
+            <b>¡Correo o Contraseña Incorrectos!</b> Por favor, intente más tarde.
+          </div>';
+        }
+    } else {
+        echo '<div class="alert alert-primary" role="alert">
+        Por favor, <b>ingrese Correo y Contraseña!</b>
+          </div>';
+    }
 }
-
-mysqli_free_result($resultado);
-mysqli_close($conexion);
 

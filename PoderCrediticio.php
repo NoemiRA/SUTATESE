@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['NumEmpleado5'])){
+        header("location: index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +19,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
         
-
     <title>SUTATESE - Poder Crediticio</title>
    
 

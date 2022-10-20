@@ -38,3 +38,14 @@
 .passed:hover{
     color:#d65050;
 }
+
+.parrafo-aval{
+    text-align: justify;
+}
+
+.login{
+    background-color: var(--fondocontenedor);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+} 

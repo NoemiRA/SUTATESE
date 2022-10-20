@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="resources/SUTATESE.png" />
 
 
     
@@ -40,7 +41,7 @@
                         <img src="resources\SUTATESE.png">
                         <h2>INICIAR SESIÓN</h2>
                     </div>
-                    <form action="login.php" method="post">
+                    <form action="" method="post">
                         <div class="col mt-4">
                             <label for="correo" class="form-label">Correo:</label>
                             <input type="email" class="form-control" id="correo" placeholder="correo@example.com" name="CorreoElec">
@@ -48,10 +49,9 @@
 
                         <div class="col mt-4">
                             <label for="contraseña" class="form-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña">
+                            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="Contraseña">
                         </div>
-
-                        <button type="submit" class="btn btn-primary d-block mx-auto my-4" value="Ingresar" >INGRESAR</button>
+                        <button type="submit" class="btn btn-primary d-block mx-auto my-4" value="Ingresar" name="btnIngresar">INGRESAR</button>
                         <!-- onclick=location.href="inicio.php" -->
                     </form>
                     <hr>
@@ -60,14 +60,18 @@
                         <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Registrate</button>
                     
                     </div>
-                    <div class="inicio">
+                    <!--<div class="inicio">
                         <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto">
+                    <?php 
+                        include "conexion.php";
+                        include "login.php";
+                    ?>
                     <img src="resources\INICIO.jpeg" width="100%" height="100%">
                 </div>
             </div>

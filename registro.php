@@ -46,18 +46,18 @@
                 <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre(s)" />
             </div>
             <div class="col-md-3">
-                <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+                <label for="apellidoPaterno" class="form-label">Apellido paterno</label>
                 <input type="text" class="form-control" id="apellidoPaterno" placeholder="Ingresa tu primer apellido" />
             </div>
 
             <div class="col-md-3">
-                <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+                <label for="apellidoMaterno" class="form-label">Apellido materno</label>
                 <input type="text" class="form-control" id="apellidoMaterno" placeholder="Ingresa tu segundo apellido" />
             </div>
         </form>
         <form class="row g-3 mt-3">
             <div class="col-md-3">
-                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
                 <input type="date" class="form-control" id="fechaNacimiento" placeholder="Ingresa tu fecha de nacimiento" />
             </div>
             <div class="col-md-3">
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="rfc" class="form-label">RFC con homoclave</label>
+                <label for="rfc" class="form-label">RFC (con homoclave)</label>
                 <input type="text" class="form-control" id="rfc" placeholder="Ingresa tu RFC" />
             </div>
             <div class="col-md-3">
@@ -80,15 +80,15 @@
         </form>
         <form class="row g-3 mt-3">
             <div class="col">
-                <label for="correo" class="form-label">Correo electrónico Personal</label>
+                <label for="correo" class="form-label">Correo electrónico personal</label>
                 <input type="text" class="form-control" id="correo" placeholder="correo@example.com" />
             </div>
             <div class="col-md-auto">
-                <label for="celular" class="form-label">Celular</label>
+                <label for="celular" class="form-label">Teléfono móvil</label>
                 <input type="text" class="form-control" id="celular" placeholder="Ingresa tu número celular" />
             </div>
             <div class="col-md-auto">
-                <label for="telefono" class="form-label">Teléfono Casa</label>
+                <label for="telefono" class="form-label">Teléfono fijo</label>
                 <input type="text" class="form-control" id="telefono" placeholder="Ingresa tu número fijo" />
             </div>
 
@@ -108,8 +108,8 @@
             </div>
 
             <div class="col">
-                <label for="delegacion" class="form-label">Delegacion/municipio</label>
-                <input type="text" class="form-control" id="delegacion" placeholder="Ingresa Delegación/Municipio" />
+                <label for="delegacion" class="form-label">Delegación / municipio</label>
+                <input type="text" class="form-control" id="delegacion" placeholder="Ingresa Delegación / Municipio" />
             </div>
         </form>
         <form class="row g-3 mt-3">
@@ -148,15 +148,13 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="experiencia" class="form-label">Experiencia Docente</label>
-                <input type="text" class="form-control" id="experiencia" placeholder="Ingresa los años de experiencia"/>
-                <br>
-                <input name="chec" type="checkbox" id="chec" onChange="docente();"/>
-                <label for="chec" class="form-label m-0">Administrativo</label>
+                <label for="experiencia" class="form-label">Experiencia docente / administrativo</label>
+                <input type="text" class="form-control" id="experiencia" placeholder="Ingresa tiempo de experiencia"/>
+                
             </div>
             <div class="col-md-4">
-                <label for="experienciaP" class="form-label">Experiencia Profesional</label>
-                <input type="text" class="form-control" id="experienciaP" placeholder="Ingresa los años de experiencia"/>
+                <label for="experienciaP" class="form-label">Experiencia profesional</label>
+                <input type="text" class="form-control" id="experienciaP" placeholder="Ingresa tiempo de experiencia"/>
             </div>
         </form>
         <hr />
@@ -233,7 +231,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>

@@ -9,19 +9,19 @@ function Saludo(){
   
   
     if(hora >= 0 && hora < 12){
-      texto = "Buenos Días, Noemi Ruiz";
+      texto = "Buenos Días";
       imagen = "resources/dia.png";
     }
    
      if(hora >= 12 && hora < 19){
       imagen = "resources/tarde.png";
-      texto = "Buenas Tardes, Noemi Ruiz";
+      texto = "Buenas Tardes";
       
      }
    
      if(hora >= 19 && hora < 24){
       imagen = "resources/noche.png";
-      texto = "Buenas Noches, Noemi Ruiz";
+      texto = "Buenas Noches";
        
      }
    

@@ -53,5 +53,5 @@ $pdf->Cell(190,10,'___________________________',0,1,'C');
 $pdf->Cell(190,10,'NOMBRE Y FIRMA',0,1,'C');
 
 //$pdf->setAutoPageBreak(true,0); Salto de pagina cuando se termina la pagina
-
-$pdf->Output();
+$pdf->Close();
+$pdf->Output('D','Formato_Cuota_SUTATESE.pdf');  
