@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(empty($_SESSION['NumEmpleado5'])){
-        header("location: index.php");
-    }
+session_start();
+if (empty($_SESSION['NumEmpleado5'])) {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +100,7 @@
                     ?>
                 </div>
                 <div class="row m-3">
-                    <button type="button" class="btn btn-success boton-ingresar" onclick= "alertaPrestamos()">
+                    <button type="button" class="btn btn-success boton-ingresar" onclick="alertaPrestamos()">
                         ¡SOLICITAR!
                     </button>
                 </div>
@@ -112,46 +112,46 @@
             </div>
         </div>
         <div class="table-responsive my-4">
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">Quincenas</th>
-                            <th scope="col">Amortización capital</th>
-                            <th scope="col">Intereses</th>
-                            <th scope="col">Abonos</th>
-                            <th scope="col">Saldos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>10000.00<strong></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>$955.82</td>
-                            <td>$100.00</td>
-                            <td>$1055.82</td>
-                            <td>9044.18</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>$965.38</td>
-                            <td>$90.44</td>
-                            <td>$1055.82</td>
-                            <td>8078.80</td>
-                        </tr>
-                        <tr>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Quincenas</th>
+                        <th scope="col">Amortización capital</th>
+                        <th scope="col">Intereses</th>
+                        <th scope="col">Abonos</th>
+                        <th scope="col">Saldos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>10000.00<strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>$955.82</td>
+                        <td>$100.00</td>
+                        <td>$1055.82</td>
+                        <td>9044.18</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>$965.38</td>
+                        <td>$90.44</td>
+                        <td>$1055.82</td>
+                        <td>8078.80</td>
+                    </tr>
+                    <tr>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="js/app.js"></script>
 
 
 
