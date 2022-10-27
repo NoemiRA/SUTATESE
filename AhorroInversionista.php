@@ -73,9 +73,6 @@
                         <label for="numEmpleado" class="form-label">Ingrese la cantidad a ahorrar quincenalmente</label>
                         <input type="number" class="form-control" id="ahorroQuincenalFVI" disabled placeholder="Ejemplo: 1500">
                     </div>
-
-                    
-
                 </div>
             </div>
         </div>

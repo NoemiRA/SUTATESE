@@ -1,8 +1,10 @@
 <?php
-session_start();
-if (empty($_SESSION['NumEmpleado5'])) {
-    header("location: index.php");
-}
+    session_start();
+    include('conexion.php');
+
+    if(empty($_SESSION['NumEmpleado5'])){
+        header("location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +27,16 @@ if (empty($_SESSION['NumEmpleado5'])) {
 </head>
 
 <body onload="Saludo();" class="">
+<?php
+        if (isset($_SESSION['NumEmpleado5'])) {
+            $NumEmpleado = $_SESSION['NumEmpleado5'];
+            
+            $sql = "Select foto from empleado where NumEmpleado = '$NumEmpleado'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_array($result);
+            $Img = $row['foto'];
+            
+    ?>
     <!-- <section id="hero"> Si se quita este hero se hace pequeña la pagina de abajo -->
     <div class="row g-0 h-50 p-5">
         <div class="col-lg-7 d-flex">
@@ -37,12 +49,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>  -->
 
                     <div id="saludo" class="mb-5 mt-5">
-                        <h2 id="txtsaludo" class="p-3 fw-bold fs-1"></h2>
+                        <img src="data:image/png; base64,<?php echo base64_encode($Img) ?>" width="120" height="120" style="border-radius: 50%;">
                         <h2 class="fs-1">
                             <?php
                             echo $_SESSION['Nombres'] . " " . $_SESSION['ApellidoPat'] . " " . $_SESSION['ApellidoMat'];
                             ?>
                         </h2>
+                        <h2 id="txtsaludo" class="p-3 fw-bold fs-1 mt-5"></h2>
                         <img name="tiempo" height="60" width="60">
                         <p id="fechactual" class="fst-italic fs-4"></p>
                         <p id="relojnumerico" onload="cargarReloj()" class="fw-bold fs-4"></p>
@@ -66,7 +79,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
     <!-- </section>  -->
 
-
+<?php
+        }
+?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js"></script>

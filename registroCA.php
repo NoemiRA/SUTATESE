@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include('conexion.php');
+
     if(empty($_SESSION['NumEmpleado5'])){
         header("location: index.php");
     }
@@ -16,13 +18,13 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>SUTATESE-inicio</title>
+    <title>SUTATESE-Caja ahorro</title>
     <?php include("navbar.php");
     ?>
 </head>
 
 <body>
-    <div class="row g-0 p-4" style="text-align:justify">
+    <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="col-lg-7 d-flex">
             <div class="content mx-auto p-5">
                 <h1><b>REGISTRO A LA CAJA DE AHORRO</b></h1>
@@ -63,10 +65,32 @@
                 </ul>
             </div>
         </div>
+        <?php
+        if (isset($_SESSION['NumEmpleado5'])) {
+            $NumEmpleado = $_SESSION['NumEmpleado5'];
+
+
+            $ahorrador = "SELECT IdAhorrador, NumEmpleado1 from cajaahorro where NumEmpleado1 = '$NumEmpleado'";
+            $resultahorrador = mysqli_query($conn, $ahorrador);
+            $row = mysqli_fetch_array($resultahorrador);
+            $countahorrador = mysqli_num_rows($resultahorrador);
+
+
+            $beneficiarios = "SELECT IdBeneficiario from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 where NumEmpleado1 = '$NumEmpleado'";
+            $resultbeneficiarios = mysqli_query($conn, $beneficiarios);
+            $row = mysqli_fetch_array($resultbeneficiarios);
+            $countbeneficiarios = mysqli_num_rows($resultbeneficiarios);
+
+            if($countahorrador == 1 && $countbeneficiarios >=1){
+                $var = 2;
+            }else{
+                $var = 1;
+            }
+        
+        ?>
         <div class="col-lg-5 d-flex p-3 bg-light">
             <div class="my-auto">
                 <?php
-                $var = 1;
                 if ($var == 1) {
                     echo '
                         <div class="d-flex">
@@ -135,7 +159,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <button type="button" class="btn btn-link passed" style="text-align: center; font-size: 40px;"> 
+                            <button type="button" class="btn btn-link passed" onclick=location.href="documentos-generales.php" style="text-align: center; font-size: 40px;"> 
                                 <span><i class="fa-solid fa-file-circle-plus"></i></span><span class="display-6 m-lg-2">Subir archivos</span>
                             </button>
                         </div>
@@ -188,9 +212,11 @@
                         </div>
                     ';
                 }
+            }
                 ?>
             </div>
         </div>
+    </form>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

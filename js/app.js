@@ -75,4 +75,3 @@ function alertaPrestamos(){
 function alertaCorreo(){
   swal('¡REGISTRO EN REVISIÓN!', 'Tu contraseña para accesar al sistema se enviará al correo electrónico proporcionado "FAVOR DE REVISARLO"', 'success');
 }
-

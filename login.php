@@ -15,13 +15,12 @@ if (!empty($_POST["btnIngresar"])) {
             header("location: inicio.php");
         } else {
             echo '<div class="alert alert-danger" role="alert">
-            <b>¡Correo o Contraseña Incorrectos!</b> Por favor, intente más tarde.
-          </div>';
+                    <b>¡Correo o Contraseña Incorrectos!</b> Por favor, intente más tarde.
+                </div>';
         }
     } else {
         echo '<div class="alert alert-primary" role="alert">
-        Por favor, <b>ingrese Correo y Contraseña!</b>
-          </div>';
+                    Por favor, <b>ingrese Correo y Contraseña!</b>
+                </div>';
     }
 }
-

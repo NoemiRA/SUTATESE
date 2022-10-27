@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include('conexion.php');
+
     if(empty($_SESSION['NumEmpleado5'])){
         header("location: index.php");
     }
@@ -21,17 +23,30 @@
     ?>
 </head>
 <body>
+    <?php
+        if (isset($_SESSION['NumEmpleado5'])) {
+            $NumEmpleado = $_SESSION['NumEmpleado5'];
+            $NombreEmp = $_SESSION['Nombres'];
+            $ApellidoPatEmp = $_SESSION['ApellidoPat'];
+            $ApellidoMatEmp = $_SESSION['ApellidoMat'];
+            
+            $sql = "Select foto from empleado where NumEmpleado = '$NumEmpleado'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_array($result);
+            $Img = $row['foto'];
+            
+    ?>
     <div class="container-xl login">
         <h1>Perfil del Usuario</h1>
         <div style="margin-top: 2%;">
             <form class="row g-3 mt-3">
                 <div class="col-md-auto">
-                    <img src="resources/Image.jpg" width="120" height="120" style="border-radius: 50%;">
+                    <img src="data:image/png; base64,<?php echo base64_encode($Img) ?>" width="120" height="120" style="border-radius: 50%;">
                 </div>
                 <div class="col-md-auto">
-                    <h2>Noemi Ruiz</h2>
-                    <h4>Administrativo</h3>
-                    <p>Número de empleado: 123456789A</p>
+                    <h2><?php echo $NombreEmp . " " . $ApellidoPatEmp . " " . $ApellidoMatEmp?></h2>
+                    <p>Número de empleado: <?php echo $NumEmpleado ?></p>
+                    <button type="button" class="btn" style="width: 30%; height: 35px;" onclick=location.href="">Cambiar foto</button>
                 </div>
 
             <div class="row p-5">
@@ -55,6 +70,9 @@
             </form>
         </div>
     </div>
+    <?php
+        }
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
