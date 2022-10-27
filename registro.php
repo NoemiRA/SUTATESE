@@ -65,7 +65,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" id="curp" placeholder="Ingresa tu CURP" />
 
-                    <span class="input-group-text" id="basic-addon2"><abbr title="Click para conocer su CURP"> <a class="m-0" href="https://www.gob.mx/curp/" target="_blank"><i class="fa-solid fa-circle-info"></i></a></span>
+                    <span class="input-group-text" id="basic-addon2"><abbr title="Click para conocer su CURP"><a class="m-0" href="https://www.gob.mx/curp/" target="_blank"><i class="fa-solid fa-circle-info"></i></a></span>
                     </abbr>
                 </div>
             </div>
@@ -229,6 +229,8 @@
             Enviar
         </button>
     </div>
+    <?php include("footer.php");
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="js/app.js"></script>

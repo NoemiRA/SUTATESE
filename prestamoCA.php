@@ -49,22 +49,21 @@
             <br><br>
         </div>
 
-        <form>
+        <!-- <form>
             <div class="col d-grid text-center">
                 <label for="division" class="form-label text-center fw-bold fs-5 mb-3"">Forma de Pago</label>
-        <div class=" input-group">
+                <div class=" input-group">
                     <span class="input-group-text" id="basic-addon2"><i class="fa-regular fa-credit-card"></i></i></span>
                     <select class="form-select" aria-label="Division">
                         <option disabled selected class="text-center">Selecciona tu forma de pago</option>
                         <option value="efectivo" class="text-center">Pago por vía: Efectivo</option>
                         <option value="banco" class="text-center">Pago por vía: Transferencia/Depósito</option>
                     </select>
+                </div>
             </div>
-            </div>
-        </form>
-      
+        </form> -->
     </section>
-    <div class="col-lg text-center">
+    <div class="col-lg text-center mb-5">
         <button type="button" class="btn btn-primary mx-5 text-center" style="width: 25%; height: 75px;" onclick=location.href="prestamos.php">
             Cancelar
         </button>
@@ -73,6 +72,8 @@
         </button>
     </div>
 
+    <?php include("footer.php");
+    ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

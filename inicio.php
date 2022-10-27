@@ -55,7 +55,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             <div class="content mx-auto align-self-center px-4 my-5">
 
                 <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroCA.php">CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamos.php">PRESTAMOS</button>
+                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamos.php">PRÉSTAMOS</button>
                 <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="datosBancarios.php">DATOS BANCARIOS</button>
                 <button type="button" class="btn btn-warning" style="width: 100%; height: 100px;" onclick=location.href="normateca.php">NORMATECA</button>
             </div>
@@ -66,7 +66,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
     <!-- </section>  -->
 
-
+    <?php include("footer.php");
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js"></script>

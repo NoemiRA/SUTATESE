@@ -135,7 +135,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <button type="button" class="btn btn-link passed" style="text-align: center; font-size: 40px;"> 
+                            <button type="button" class="btn btn-link passed" style="text-align: center; font-size: 40px;" onclick=location.href="documentos-generales.php"> 
                                 <span><i class="fa-solid fa-file-circle-plus"></i></span><span class="display-6 m-lg-2">Subir archivos</span>
                             </button>
                         </div>
@@ -191,7 +191,9 @@
                 ?>
             </div>
         </div>
-
+    </div>
+        <?php include("footer.php");
+    ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

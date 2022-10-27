@@ -52,7 +52,7 @@
                 <div class="form-group row my-3 mx-3 fw-bold">
                     <label for="tpercepciones" class="col-sm-2 col-form-label">Total Percepciones: </label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="tpercepciones" placeholder="Ejemp: 1500.00" oninput="hacerSuma();">
+                        <input type="number" class="form-control" id="tpercepciones" placeholder="Ejemp: 1500.00" oninput="hacerSuma();" min="100">
                     </div>
                 </div>
 
@@ -95,14 +95,28 @@
                         <input type="number" class="form-control bg-warning bg-opacity-50" id="poderCred" style="height: 38px;" disabled ></input>
                     </div> 
                 </div>
+                <div class="form-group row my-3 mx-3 fw-bold">
+                    <label for="cantMax" class="col-sm-2 col-form-label">Cantidad Máxima: </label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control bg-warning bg-opacity-50" id="cantMax" style="height: 38px;" disabled ></input>
+                    </div> 
+                </div>
 
                 <button type="button" class="btn btn-danger m-2" onclick=location.href="prestamos.php">
                     Cancelar
                 </button>
-            <button type="button" class="btn btn-primary m-2" id="solicitar"  onclick=location.href="prestamoNomina.php">
-                    Solicitar Préstamo
+            <button type="button" class="btn btn-primary m-2" id="solicitar"  onclick=location.href="peticionPrestamo.php">
+                    Solicitar Préstamo Por Nómina
             </button>
-           
+            <hr>
+            <div class="form-group row ">
+                    <small class="form-text text-muted my-0">
+                        <p class="my-0">¿Necesitas un préstamo de mayor cantidad?</p>  
+                    </small>
+                </div>
+                <small class="form-text text-muted my-0">
+                <a href="registroaval.php">Registra un Aval</a>
+                </small>
             </form>
         </div>  
         
@@ -113,6 +127,8 @@
 
     </div>
 
+    <?php include("footer.php");
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="

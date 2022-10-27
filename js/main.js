@@ -1,46 +1,122 @@
-let poderCred = document.getElementById("poderCred");
+// let poderCred = document.getElementById("poderCred");
+// let cantMax   = document.getElementById("cantMax");
 
-function hacerSuma() {
-  try {
-    let isr = parseFloat(document.getElementById("isr").value) || 0;
-    let issemym = parseFloat(document.getElementById("issemym").value) || 0;
-    let tpercepciones = parseFloat(document.getElementById("tpercepciones").value) || 0;
-    let totaldeducciones = parseFloat(document.getElementById("tdeducciones").value) || 0;
+ function hacerSuma() {
+   try {
+     let isr = parseFloat(document.getElementById("isr").value) || 0;
+     let issemym = parseFloat(document.getElementById("issemym").value) || 0;
+     let tpercepciones = parseFloat(document.getElementById("tpercepciones").value) || 0;
+     let totaldeducciones = parseFloat(document.getElementById("tdeducciones").value) || 0;
 
     let x = isr + issemym;
     let y = tpercepciones - x;
     let porcentaje = y * 0.3;
     let p = totaldeducciones - isr - issemym;
     let poderCrediticio = porcentaje - p;
+    let cantidadMax;
 
-    document.getElementById("poderCred").value = poderCrediticio;
-  } catch (e) {}
-}
+     var fechaActual = new Date();
+     var Sdia = (fechaActual.getDate());
+     var mes = (fechaActual.getMonth()+1); //enero = 1 y diciembre = 12
+  
+  //SIMULAR
+      // Sdia = 1;
+      // mes = 8;
+
+    totalQuincenas = 21; 
+    totalMeses = 13;
+    finQuincena = 31;
+    mitadQuincena = 15;
+    inicioQuincena=1;
+  
+     
+    quincenasPago = (totalQuincenas) - (mes*2);
+    
+        
+            if(Sdia <= mitadQuincena && Sdia >= inicioQuincena){
+              quincenasPago =  quincenasPago + 1;
+              
+              cantidadMax = poderCrediticio * quincenasPago;
+              var resultadoDos = quincenasPago+" quincenas";
+              
+                if(quincenasPago == 0){
+                  resultadoDos = "El prestamo debe ser pagado antes del 15 de noviembre";
+                   cantidadMax = poderCrediticio * 1;
+                   
+
+                  
+                }  
+                 if(mes == 12 && Sdia <= 15){
+                     quincenasPago = (mes *2) -2;
+                     resultadoDos = quincenasPago+" quincenas";
+
+                    cantidadMax = poderCrediticio * quincenasPago;
+                    cantidadMax = poderCrediticio * 1;
+                    
+                   }  
+                  //  resultadoFinal = cantidadMax;
+                   
+            }else if(Sdia >= mitadQuincena && Sdia <= finQuincena){
+              quincenasPago = quincenasPago;
+              
+              cantidadMax = poderCrediticio * quincenasPago;
+              var resultadoDos = quincenasPago + " quincenas";
+              
+  
+              if(quincenasPago == -1){
+                  resultadoDos = "El prestamo debe ser pagado antes del 30 de noviembre";
+                }
+                if(mes == 12 && Sdia >= 16){
+                    quincenasPago = (mes *2) -3;
+                    resultadoDos = quincenasPago+" quincenas";
+                    cantidadMax = poderCrediticio * quincenasPago;
+                    cantidadMax = poderCrediticio * 1;
+                   
+                  } 
+                  
+                  // resultadoFinal = ;
+                  
+            }
+
+            document.getElementById("cantMax").value = cantidadMax;
+     document.getElementById("poderCred").value = poderCrediticio;
+     
+   } catch (e) {}
+
+   }
+
+
+
+
+
 
 function docente() {
   element = document.getElementById("experiencia");
   check = document.getElementById("chec");
-  if (check.checked) {
-    element.disabled = true;
-    element.value = "";
-  } else element.disabled = false;
-}
+   if (check.checked) {
+     element.disabled = true;
+     element.value = "";
+   } else element.disabled = false;
+ }
 
-function inversion() {
-  cantidadAhorrar = document.getElementById("ahorroQuincenalFVI");
-  tipoFondo = document.getElementById("tipoFondo");
-  checkFVI = document.getElementById("checFVI");
-  if (checkFVI.checked) {
-    cantidadAhorrar.disabled = false;
-    cantidadAhorrar.value = "";
+ function inversion() {
+   cantidadAhorrar = document.getElementById("ahorroQuincenalFVI");
+   tipoFondo = document.getElementById("tipoFondo");
+   checkFVI = document.getElementById("checFVI");
+    if (checkFVI.checked) {
+     cantidadAhorrar.disabled = false;
+     cantidadAhorrar.value = "";
 
-    tipoFondo.disabled = false;
-    tipoFondo.value = "Fondo de aportaciones";
-  } else {
-    cantidadAhorrar.disabled = true;
-    tipoFondo.disabled = true;
+     tipoFondo.disabled = false;
+     tipoFondo.value = "Fondo de aportaciones";
+   } else {
+     cantidadAhorrar.disabled = true;
+     tipoFondo.disabled = true;
 
-    tipoFondo.value = "Fondo de aportaciones";
-    cantidadAhorrar.value = 0;
-}
-}
+     tipoFondo.value = "Fondo de aportaciones";
+     cantidadAhorrar.value = "";
+ }
+ 
+
+ }
+ 
