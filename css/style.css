@@ -49,3 +49,13 @@
     margin-bottom: 20px;
     padding: 30px;
 } 
+
+
+.tamanoLetra{
+    font-size: 33px;
+}
+
+.icono{
+    text-align: center;
+    font-size: 40px;
+}

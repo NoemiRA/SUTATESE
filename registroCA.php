@@ -100,14 +100,14 @@
                     function Etapas($point, $opc1, $opc2, $opc3){
                         ?>
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc1;?> onclick=location.href="cantidad-ahorro.php" id="saving" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-money-bills"></i></span><span class="display-6 m-lg-2">Cantidad a ahorrar</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc1;?> onclick=location.href="cantidad-ahorro.php" id="saving" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-money-bills"></i></span><span class="display-6 m-lg-2 tamanoLetra">Cantidad a ahorrar</span>
                                 </button>
                             </div>
 
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc1;?> onclick=location.href="registrobeneficiarios.php" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-users-rectangle"></i></span><span class="display-6 m-lg-2">Beneficiario</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc1;?> onclick=location.href="registrobeneficiarios.php" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-users-rectangle"></i></span><span class="display-6 m-lg-2 tamanoLetra">Beneficiario</span>
                                 </button>
                             </div>
                             <?php
@@ -116,27 +116,27 @@
                                 }
                             ?>
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc2;?> onclick=location.href="FormatoCuota.php" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-file-pdf"></i></span><span class="display-6 m-lg-2">Formato cuota</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc2;?> onclick=location.href="FormatoCuota.php" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-file-pdf"></i></span><span class="display-6 m-lg-2 tamanoLetra">Formato cuota</span>
                                 </button>
                             </div>
 
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc2;?> onclick=location.href="solicitudAportacion.php" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-file-pdf"></i></span><span class="display-6 m-lg-2">Solicitud aportación</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc2;?> onclick=location.href="solicitudAportacion.php" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-file-pdf"></i></span><span class="display-6 m-lg-2 tamanoLetra">Solicitud aportación</span>
                                 </button>
                                 
                             </div>
 
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc2;?> onclick=location.href="documentos-generales.php" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-file-circle-plus"></i></span><span class="display-6 m-lg-2">Subir archivos</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc2;?> onclick=location.href="documentos-generales.php" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-file-circle-plus"></i></span><span class="display-6 m-lg-2 tamanoLetra">Subir archivos</span>
                                 </button>
                             </div>
 
                             <div class="d-flex">
-                                <button type="button" class="btn btn-link passed" <?php echo $opc3;?> onclick=location.href="cajaAhorro.php" style="text-align: center; font-size: 40px;"> 
-                                    <span><i class="fa-solid fa-right-to-bracket"></i></span><span class="display-6 m-lg-2">Ingresar</span>
+                                <button type="button" class="btn btn-link passed icono" <?php echo $opc3;?> onclick=location.href="cajaAhorro.php" style="text-align: center; font-size: 40px;"> 
+                                    <span><i class="fa-solid fa-right-to-bracket"></i></span><span class="display-6 m-lg-2 tamanoLetra">Ingresar</span>
                                 </button>
                             </div>
                         <?php
