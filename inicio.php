@@ -57,7 +57,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
             <div class="col-lg-5 d-flex bg-light">
                 <div class="content mx-auto align-self-center px-4 my-5">
-                    <button type="button" class="btn btn-primary" style="width: 100%; height: 90px;" onclick=location.href="AhorroInversionista.php">INVERSIONISTAS</button>
+                    <button type="button" class="btn btn-primary" style="width: 100%; height: 90px;" onclick=location.href="registroInversionista.php">INVERSIONISTAS</button>
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 90px;" onclick=location.href="registroCA.php">CAJA DE AHORRO</button>
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 90px;" onclick=location.href="prestamos.php">PRÉSTAMOS</button>
                     <button type="button" class="btn btn-primary" style="width: 100%; height: 90px;" onclick=location.href="datosBancarios.php">DATOS BANCARIOS</button>
