@@ -1,28 +1,29 @@
-  function quincenas(){
+    function quincenas(){
 
     
-          var fechaActual = new Date();
-            // var dia = (fechaActual.getDate());
-            // var mes = (fechaActual.getMonth()+1); //enero = 1 y diciembre = 12
-          
-          
-          
-          
-           dia = 1;
-           mes = 11;
-           mesDos = mes;
-           mesTres = 0;
+            var fechaActual = new Date();
+               var dia = (fechaActual.getDate());
+                var mes = (fechaActual.getMonth()+1); //enero = 1 y diciembre = 12
+           
 
+        //-----SIMULAR
+              // dia = 1;
+              // mes = 8;
+
+          //CALCULO PARA LOS RECIBOS DE LAS QUINCENAS
+          mesDos = mes;
+          mesTres = 0;
           totalMeses = 13;
           finQuincena = 31;
           mitadQuincena = 15;
           inicioQuincena=1;
+
+          //CALCULO PARA CUANTAS QUINCENAS FALTAN
         
-          
+      
           if(dia <= mitadQuincena && dia >= inicioQuincena){
             mes = mes-1;
             mesDos= mes-1;
-            
             if(mes == 0){
               var nombreMes = "Diciembre"
             }
@@ -114,14 +115,13 @@
             if(mesDos == 12){
               var nombreMesDos = "Diciembre"
             }
-            // var resultado = '1era y/o 2da de '+nombreMes+" ó 2da de "+nombreMesDos;
-            var resultado ="Meses comprendidos para subir recibo: "+nombreMes+" ó "+nombreMesDos;
-            
-            
+
+          
+            var resultado ="Meses comprendidos para subir recibo: "+nombreMes+" - "+nombreMesDos
+      
             
 
           }else if(dia >= mitadQuincena && dia <= finQuincena){
-            
             mesDos= mes-1;
             
             if(mes == 0){
@@ -216,12 +216,21 @@
               var nombreMesDos = "Diciembre"
             }
             // var resultado = "1era de "+nombreMes+' ó 1era y/o 2da de '+nombreMesDos;
+      
             var resultado ="Meses comprendidos para subir recibo: "+ nombreMesDos+' - '+nombreMes;
-            // console.log(resultado);
-            // console.log(mesDos);
+
+            
+          //  console.log(resultadoDos);
           }
-          document.getElementById("quincena").value = resultado;
-         }
+           document.getElementById("quincena").value = resultado;
+          
+           
+           }
+
+          
+
+        
+
         
 
         

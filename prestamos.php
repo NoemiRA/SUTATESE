@@ -70,16 +70,18 @@
             </div>
         </div>
         <div class="col-lg-5 d-flex bg-light">
-            <div class="content mx-auto align-self-center px-4 my-5">
-                <!-- <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">CONOCE TU PODER CREDITICIO</button> -->
-                <button type="button" class="btn btn-warning" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRESTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRESTAMOS!</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoCA.php">PRESTAMO POR CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRESTAMO VÍA NÓMINA</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroaval.php">PRESTAMO POR AVAL</button>
-            </div>
+            <div class="content mx-auto align-self-center px-4 my-4">
+                <button type="button" class="btn btn-warning my-4" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
+                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoCA.php">PRÉSTAMO POR CAJA DE AHORRO</button>
+                <button type="button" class="btn btn-primary my-4" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA O POR AVAL</button>
+                <!-- <button type="button" class="btn btn-primary my-4" style="width: 100%; height: 100px;" onclick=location.href="registroaval.php">PRÉSTAMO POR AVAL</button>-->
+            </div> 
         </div>
     </div>
+    
     <!-- </section>  -->
+    <?php include("footer.php");
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </body>

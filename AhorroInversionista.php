@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION['NumEmpleado5'])){
+        header("location: index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +27,20 @@
         <!-- <section id="hero">  -->
         <div class="row g-0 h-100">
             <div class="col-lg-6 d-flex">
+            <div class="content px-4 my-auto">
+                    <!-- Si se le queita el "my-auto" y se alinea con el titulo de la derecha -->
+                    <h2>Aportaciones a la caja de ahorro </h2>
+                
+            
+           
+            <p class="parrafo-aval"> El Fondo Variable INVERSIONISTA.
+                    Es una opción de ahorro adicional a través de aportaciones extraordinarias que constituyen el Fondo Variable INVERSIONISTA siendo el límite la cantidad necesaria para tener liquidez y poder otorgar préstamos pendientes a los Asociados en los primeros meses de operación de la Caja de Ahorro. Su rendimiento será del 1% mensual y serán reintegrados a los (las) INVERSIONISTAS de acuerdo con el mismo orden de folio y en cuanto dejen de ser necesarios por alcanzar solvencia de la Caja de Ahorro. La cantidad mínima de inversión es de  $20,000.00 (Veinte mil pesos 00/100 M.N.) y máxima de $30,000.00 (Treinta mil pesos 00/100 M.N.).</p>
+                    <p class="parrafo-aval"><span class="fw-bold">NOTA:</span> Si de desea además de hacer la inversión ahorrar una cantidad de dinero dentro de la caja de ahorro seleccionar "Sí, deseo ahorrar" y llenas las casillas solicitadas.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-content-start">
+                <div class="content mx-auto px-4 my-auto">
                 <div class="content px-4 my-auto ">
                     <!-- lado izquierdo -->
                     <div class="inicio">
@@ -51,10 +71,8 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="col-lg-6 d-flex align-content-start">
-                <div class="content mx-auto px-4 my-auto">
                     <div class="col mt-4">
+                        
                         <div class="inicio">
                             <h2>Cantidad a ahorrar</h2>
                         </div>

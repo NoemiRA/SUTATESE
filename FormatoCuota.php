@@ -15,7 +15,7 @@
         $ApellidoPatEmp = $_SESSION['ApellidoPat'];
         $ApellidoMatEmp = $_SESSION['ApellidoMat'];
 
-        $sql = "SELECT Nombres, ApellidoPat, ApellidoMat, CantidadQuincenal, IdAhorrador FROM empleado inner join cajaahorro on empleado.NumEmpleado = cajaahorro. NumEmpleado1 WHERE NumEmpleado = '$NumEmpleado' ";
+        $sql = "SELECT Nombres, ApellidoPat, ApellidoMat, CantidadQuincenal, IdAhorrador, Division FROM empleado inner join cajaahorro on empleado.NumEmpleado = cajaahorro. NumEmpleado1 inner join division on empleado.IdDivision1 = division.IdDivision WHERE NumEmpleado = '$NumEmpleado' ";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
 
@@ -55,7 +55,7 @@ function Footer()
 }
 
 }
-
+$id_encoded = base64_encode($row[4]);
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
@@ -65,7 +65,7 @@ $pdf->Cell(190,10,'FORMATO  CUOTA  S.U.T.A.T.E.S.E.',0,1,'C');
 $pdf->SetFont('helvetica','',10);
 $pdf->Cell(160,10,utf8_decode('Número de Folio: '),0,0,'R');
 $pdf->SetFont('helvetica','B',10);
-$pdf->Cell(30,10,utf8_decode($row[4]),0,1,'C');
+$pdf->Cell(30,10,utf8_decode($id_encoded),0,1,'C');
 $pdf->SetFont('helvetica','',10);
 $pdf->Cell(145,10,utf8_decode('Ecatepec de Morelos, Estado de México a '),0,0,'R');
 $pdf->Cell(45,10,utf8_decode($day.' de '.$month.' del '.$year),0,1,'C');
@@ -74,7 +74,7 @@ $pdf->Cell(190,10,utf8_decode('PROF. NICOLÁS CORTÉS MARTÍNEZ'),0,1,'L');
 $pdf->Cell(190,10,utf8_decode('SECRETARIO GENERAL'),0,1,'L');
 $pdf->Cell(190,10,utf8_decode('P R E S E N T E'),0,1,'L');
 $pdf->Ln(10);
-$pdf->MultiCell(0, 7, utf8_decode('El que suscribe servidor público '.$row[0].' '.$row[1].' '.$row[2].' con número de empleado '.$NumEmpleado.' adscrito a _________________________________________________ solicito de manera voluntaria que el Tecnológico de Estudios Superiores de Ecatepec, a través del Departamento de Personal descuente de mi sueldo de forma quincenal y por vía nómina la cantidad de $'.$row[3].' ( '.$letra.' 00/100 M.N.), por el periodo comprendido: DE LA PRIMERA  QUINCENA DE DICIEMBRE  DE 2022 A LA SEGUNDA QUINCENA DE NOVIEMBRE DE 2023, con depósito en la cuenta del Sindicato S.U.T.A.T.E.S.E.'), 0, 'J');
+$pdf->MultiCell(0, 7, utf8_decode('El que suscribe servidor público '.$row[0].' '.$row[1].' '.$row[2].' con número de empleado '.$NumEmpleado.' adscrito a la División de '.$row[5].' solicito de manera voluntaria que el Tecnológico de Estudios Superiores de Ecatepec, a través del Departamento de Personal descuente de mi sueldo de forma quincenal y por vía nómina la cantidad de $'.$row[3].' ( '.$letra.' 00/100 M.N.), por el periodo comprendido: DE LA PRIMERA  QUINCENA DE DICIEMBRE  DE 2022 A LA SEGUNDA QUINCENA DE NOVIEMBRE DE 2023, con depósito en la cuenta del Sindicato S.U.T.A.T.E.S.E.'), 0, 'J');
 $pdf->Ln(7);
 $pdf->MultiCell(0, 7, utf8_decode('De acuerdo al Contrato Colectivo de Trabajo Capítulo Cuarto, Sección I Cláusula 66 fracción II y Artículo 110 fracción IV de la Ley Federal del Trabajo.'), 0, 'J');
 $pdf->Ln(10);
