@@ -33,6 +33,24 @@ function Saludo(){
    
   }
 
+  function contraseña(){
+    var contraseña = document.getElementById("contraseña"); 
+    var icono = document.getElementById("ojo");
+
+   if(contraseña.type == 'password'){
+      contraseña.type = 'text';
+      icono.classList.remove("fa-eye-slash");
+      icono.classList.add("fa-eye");
+
+   } else if(contraseña.type == 'text'){
+      contraseña.type = 'password';
+      icono.classList.remove("fa-eye");
+      icono.classList.add("fa-eye-slash");
+   }
+
+}
+
+
   function cargarReloj(){
  
     var fechahora = new Date();
@@ -75,4 +93,3 @@ function alertaPrestamos(){
 function alertaCorreo(){
   swal('¡REGISTRO EN REVISIÓN!', 'Tu contraseña para accesar al sistema se enviará al correo electrónico proporcionado "FAVOR DE REVISARLO"', 'success');
 }
-

@@ -120,23 +120,20 @@
             </form>
         </div>  
         
-        <div class="col-lg-6 p-4 bg-light justify-content-center">
+        <div class="col-lg-6 p-4 bg-light text-center">
             <p class="text-center fs-4 fw-bold">Imágen guía y de demostración</p>
         <img src="resources\reciboNomina.jpg" class="me-3 mx-2 img-fluid" width="695" height="840">
         </div>
-
     </div>
 
-    <?php include("footer.php");
-    ?>
+    <?php include("footer.php");?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/quincena.js"></script>
 
- 
-    
 </body>
 </html>

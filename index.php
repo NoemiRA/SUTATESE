@@ -50,10 +50,15 @@
 
                         <div class="col mt-4">
                             <label for="contraseña" class="form-label">Contraseña:</label>
-                            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="Contraseña">
+                            <div class="input-group ">
+                                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="Contraseña">
+                                <!-- <span class="input-group-text icon-eye" id="basic-addon2"  onclick="contraseña();"><abbr title="Ver contraseña" type="button"><i class="fa-solid fa-eye-slash"></i></span>
+                                </abbr> -->
+                                <span class="input-group-text" id="basic-addon2" type="button" onclick="contraseña();"><abbr title="Ver contraseña" type="button"><i class="fa-solid fa-eye-slash" type="button" id="ojo"></i></span>
+                                </abbr>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary d-block mx-auto my-4" value="Ingresar" name="btnIngresar">INGRESAR</button>
-                        <!-- onclick=location.href="inicio.php" -->
                     </form>
                     <hr>
                     <h3>Registrarse</h3>
@@ -61,9 +66,6 @@
                         <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Registrate</button>
                     
                     </div>
-                    <!--<div class="inicio">
-                        <a href="#" class=" mx-auto px-4 my-auto">¿Olvidaste tu contraseña?</a>
-                    </div>-->
                 </div>
             </div>
 

@@ -27,9 +27,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
 </head>
 
 <body onload="plazo();">
-    
     <div class="text-center m-5 p-3 rounded">
-    <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
+        <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
         <div class="row bg-light">
             <div class="col-lg-5">
                 <div class="form-group row mx-3 my-2 d-grid">
@@ -39,7 +38,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="col">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" value="$ <?php echo $poderCrediticio ?>" disabled>
-                            
+
                             <span class="input-group-text " id="basic-addon2">
                                 <abbr title="¡Conoce más sobre tu poder crediticio!" onclick=location.href="#"><i class="fa-solid fa-circle-info"></i></abbr>
                             </span>
@@ -51,7 +50,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </div>
                 <div class="form-group row mx-3 my-2 d-grid">
                     <label for="description" class="col col-form-label">
-                       Cantidad Disponible
+                        Cantidad Disponible
                     </label>
                     <div class="col">
                         <input type="text" class="form-control" value="$" disabled>
@@ -71,7 +70,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         Plazo de máximo a pagar:
                     </label>
                     <div class="col">
-                    <input type="text" class="form-control" id="meses" style="height: 38px;" disabled ></input>
+                        <input type="text" class="form-control" id="meses" style="height: 38px;" disabled></input>
                     </div>
                 </div>
 
@@ -91,8 +90,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="col">
                         <input type="number" class="form-control" placeholder="Ejemp: 5" name="CantidadSolicitada" id="plazoPago">
                     </div>
-            </div>   
-        <!-- <form>
+                </div>
+                <!-- <form>
             <div class="form-group row m-3">
                 <label for="pago" class="col col-form-label fw-bold">Forma de Pago:</label>
                     <div class=" col">
@@ -111,30 +110,30 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </div>
     </form> -->
-    <div class="d-flex justify-content-center my-3">
-                <div class="row m-3">
-                    <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
-                        CANCELAR
-                    </button>
-                </div>
-                <div class="row m-3">
-                    <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="prestamoNomina.php" name="calcular">
-                        ¡CALCULAR!
-                    </button>
-                    <?php
-                    if (isset($_POST['calcular'])) {
-                        echo $_POST['CantidadSolicitada'];
-                    }
-                    ?>
-                </div>
-                <div class="row m-3">
-                    <button type="button" class="btn btn-success boton-ingresar" onclick="alertaPrestamos()">
-                        ¡SOLICITAR!
-                    </button>
-                </div>
+                <div class="d-flex justify-content-center my-3">
+                    <div class="row m-3">
+                        <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
+                            CANCELAR
+                        </button>
+                    </div>
+                    <div class="row m-3">
+                        <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="prestamoNomina.php" name="calcular">
+                            ¡CALCULAR!
+                        </button>
+                        <?php
+                        if (isset($_POST['calcular'])) {
+                            echo $_POST['CantidadSolicitada'];
+                        }
+                        ?>
+                    </div>
+                    <div class="row m-3">
+                        <button type="button" class="btn btn-success boton-ingresar" onclick="alertaPrestamos()">
+                            ¡SOLICITAR!
+                        </button>
+                    </div>
 
+                </div>
             </div>
-</div>
             <div class="col-lg-7">
                 <div class="table-responsive my-4 ">
                     <table class="table table-sm">
@@ -171,27 +170,27 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </tr>
                             <tr>
 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-   
-        </div>
+
+    </div>
 
     <?php include("footer.php");
     ?>
-            
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script type="text/javascript" src="js/plazo.js"></script>
-            <script type="text/javascript" src="js/main.js"></script>
-            <script type="text/javascript" src="js/app.js"></script>
-            
-            
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="js/plazo.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+
 
 
 
