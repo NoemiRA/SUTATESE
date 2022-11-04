@@ -56,7 +56,7 @@
                    }  
                  
                    
-            }else if(Sdia >= mitadQuincena && Sdia <= finQuincena){
+            } else if(Sdia >= mitadQuincena && Sdia <= finQuincena){
               quincenasPago = quincenasPago;
               
               cantidadMax = poderCrediticio * quincenasPago;
@@ -86,38 +86,4 @@
 
    }
 
-
-
-
-
-
-function docente() {
-  element = document.getElementById("experiencia");
-  check = document.getElementById("chec");
-   if (check.checked) {
-     element.disabled = true;
-     element.value = "";
-   } else element.disabled = false;
- }
-
- function inversion() {
-   cantidadAhorrar = document.getElementById("ahorroQuincenalFVI");
-   tipoFondo = document.getElementById("tipoFondo");
-   checkFVI = document.getElementById("checFVI");
-    if (checkFVI.checked) {
-     cantidadAhorrar.disabled = false;
-     cantidadAhorrar.value = "";
-
-     tipoFondo.disabled = false;
-     tipoFondo.value = "Fondo de aportaciones";
-   } else {
-     cantidadAhorrar.disabled = true;
-     tipoFondo.disabled = true;
-
-     tipoFondo.value = "Fondo de aportaciones";
-     cantidadAhorrar.value = "";
- }
- 
-
- }
  
