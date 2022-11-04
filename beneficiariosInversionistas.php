@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>SUTATESE - Beneficiarios</title>
+    <title>SUTATESE - Beneficiarios Inversionistas</title>
     <?php include("navbar.php");
     ?>
 
@@ -23,7 +23,7 @@
 
 <body>
     <!-- <section id="hero"> Si se quita este hero se hace pequeña la pagina de abajo -->
-    <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS</strong></h2>
+    <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS INVERSIONISTAS</strong></h2>
     <div class="row g-0 h-50 p-3">
         <div class="col-lg-6 d-flex">
             <div class="content px-3 my-auto">
@@ -259,7 +259,7 @@
         <button type="button" class="btn btn-secondary boton-ingresar" onclick="history.go(-1);">
             Cancelar
         </button>
-        <button type="button" class="btn btn-outline-secondary" onclick=location.href="registroCA.php">
+        <button type="button" class="btn btn-outline-secondary" onclick=location.href="AhorroInversionista.php">
             Continuar
         </button>
     </div>

@@ -66,7 +66,7 @@
         <div class="col-lg-5 d-flex p-3 bg-light">
             <div class="my-auto">
                 <?php
-                $var = 1;
+                $var = 3;
                 if ($var == 1) {
                     echo '
                         <div class="d-flex">
