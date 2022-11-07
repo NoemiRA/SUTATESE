@@ -117,11 +117,16 @@ $pdf->Cell(30,6, 'Porcentaje', 1,1,'C',0);
 
 
 
+$pdf->Ln(10);
+$pdf->Cell(90,10,'INTERESADO',0,0,'C');
+$pdf->Cell(90,10,'Vo. Bo.',0,0,'C');
 $pdf->Ln(15);
-$pdf->Cell(190,10,'INTERESADO',0,1,'C');
-$pdf->Ln(8);
-$pdf->Cell(190,10,'___________________________',0,1,'C');
-$pdf->Cell(190,0,'NOMBRE Y FIRMA',0,1,'C');
+$pdf->Cell(90,10,'___________________________',0,0,'C');
+$pdf->Cell(90,10,'___________________________',0,1,'C');
+$pdf->Cell(90,5,utf8_decode($NombreEmp.' '.$ApellidoPatEmp.' '.$ApellidoMatEmp),0,0,'C');
+$pdf->Cell(90,5,utf8_decode('PROF. NICOLÁS CORTÉS MARTÍNEZ'),0,1,'C');
+$pdf->Cell(90,4,'ASOCIADO',0,0,'C');
+$pdf->Cell(90,4,'SECRETARIO GENERAL',0,1,'C');
 
 //$pdf->setAutoPageBreak(true,0); Salto de pagina cuando se termina la pagina
 
