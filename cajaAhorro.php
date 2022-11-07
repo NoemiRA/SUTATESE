@@ -1,8 +1,10 @@
 <?php
-    session_start();
-    if(empty($_SESSION['NumEmpleado5'])){
-        header("location: index.php");
-    }
+session_start();
+include('conexion.php');
+
+if (empty($_SESSION['NumEmpleado5'])) {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,48 +26,78 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION['NumEmpleado5'])) {
+        $NumEmpleado = $_SESSION['NumEmpleado5'];
+        $NombreEmp = $_SESSION['Nombres'];
+        $ApellidoPatEmp = $_SESSION['ApellidoPat'];
+        $ApellidoMatEmp = $_SESSION['ApellidoMat'];
+
+        $sql = "SELECT IdAhorrador, NumEmpleado1, CantidadQuincenal, FormatoCuota, SolicitudAportacion, IdTipoAhorro, TipoAhorro  FROM cajaahorro inner join tipoahorro on cajaahorro.IdTipoAhorro1 = tipoahorro.IdTipoAhorro WHERE NumEmpleado1 = '$NumEmpleado' ";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $count = mysqli_num_rows($result);
+        $id = $row[5];
+    ?>
     <div class="text-center m-5 p-3 rounded">
         <div class="row bg-light">
             <h1 class="m-3">CAJA DE AHORRO</h1>
             <div class="col-lg-3">
                 <h3 class="display-5"><strong>Agremiado a la caja de ahorro</strong></h3>
             </div>
-            <?php
-                    $i = 0;
-                    $abono = 1500;
-                    $saldo = 0;
-                    ?>
+            
             <div class="col-lg-9">
-                <div class="form-group row m-3">
-                    <label for="description" class="col col-form-label">
-                        Tipo de fondo
+                <div class="form-group row m-3 ">
+                    <label for="description" class="col col-form-label fw-bold text-end">
+                        Tipo de fondo:
                     </label>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="" name="tipoFondo" id="tipoFondo" value="Fondo ...">
-
+                        <input type="text" class="form-control " name="tipoFondo" id="tipoFondo" value="<?php echo $row[6] ?>" disabled>
+                        
                     </div>
                 </div>
+                <?php
+                    $i = 0;
+                     $abono = "$row[2]";
+                    $saldo = 0;
+                    $total = $abono * 24;
+                    
+                    ?>
                 <div class="form-group row m-3">
-                    <label for="description" class="col col-form-label">
-                        Descuento quincenal
+                    <label for="description" class="col col-form-label fw-bold text-end">
+                        Descuento quincenal:
                     </label>
                     <div class="col">
-                        <input type="text" class="form-control" value="$<?php echo $abono ?>" disabled>
+                        <input type="text" class="form-control" value="<?php echo $row[2] ?>" disabled>
                     </div>
+                    
                 </div>
+                <div class="form-group row m-3">
+                    <label for="description" class="col col-form-label fw-bold text-end">
+                        Total a ahorrar:
+                    </label>
+                    <div class="col">
+                        <input type="text" class="form-control" value="$<?php echo $total ?> MXN" disabled>
+                    </div>
+                    
+                </div>
+                
             </div>
         </div>
-        <div class="table-responsive my-4">
-            <table class="table table-sm">
-                <thead>
+    <div class="row-lg-7 my-4 text-center mx-0">
+        <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded">
+            <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+                                border-collapse: collapse">
+                <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>
                     <tr>
-                        <th scope="col">Quincenas</th>
-                        <th scope="col">Mes</th>
-                        <th scope="col">Abono</th>
-                        <th scope="col">Saldos</th>
+                        <th>Quincenas</th>
+                        <th>Mes</th>
+                        <th>Abono</th>
+                        <th>Saldos</th>
+                        <th>check</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
 
                     <?php
                     while ($i < 24) {
@@ -73,37 +105,52 @@
                         $saldo = $saldo + $abono;
                     ?>
                         <tr>
-                            <th scope="row"><?php echo $i+1 ?></th>
+                            <th><?php echo $i+1 ?></th>
                             <?php 
                                 if($i == 0 || $i == 1){
+                                echo'<td>Diciembre</td>';                                                     
+                                }elseif($i == 2 || $i == 3){
                                     echo'<td>Enero</td>';
-                                } elseif($i == 2 || $i == 3){
-                                    echo'<td>Febrero</td>';
                                 } elseif($i == 4 || $i == 5){
-                                    echo'<td>Marzo</td>';
+                                    echo'<td>Febrero</td>';
                                 } elseif($i == 6 || $i == 7){
-                                    echo'<td>Abril</td>';
+                                    echo'<td>Marzo</td>';
                                 } elseif($i == 8 || $i == 9){
-                                    echo'<td>Mayo</td>';
+                                    echo'<td>Abril</td>';
                                 } elseif($i == 10 || $i == 11){
-                                    echo'<td>Junio</td>';
+                                    echo'<td>Mayo</td>';
                                 } elseif($i == 12 || $i == 13){
-                                    echo'<td>Julio</td>';
+                                    echo'<td>Junio</td>';
                                 } elseif($i == 14 || $i == 15){
-                                    echo'<td>Agosto</td>';
+                                    echo'<td>Julio</td>';
                                 } elseif($i == 16 || $i == 17){
-                                    echo'<td>Septiembre</td>';
+                                    echo'<td>Agosto</td>';
                                 } elseif($i == 18 || $i == 19){
-                                    echo'<td>Octubre</td>';
+                                    echo'<td>Septiembre</td>';
                                 } elseif($i == 20 || $i == 21){
-                                    echo'<td>Noviembre</td>';
+                                    echo'<td>Octubre</td>';
                                 } elseif($i == 22 || $i == 23){
-                                    echo'<td>Diciembre</td>';
-                                }
+                                    echo'<td>Noviembre</td>';
+                                } 
 
                                 ?>
                             <td>$<?php echo $abono ?></td>
                             <td><strong>$<?php echo $saldo ?></strong></td>
+                            <?php 
+                                // date_default_timezone_set("America/Monterrey");
+                                // $dia = date("j");
+                                $dia = 1;
+                                $mitad = 15;
+                                $inicio = 1;
+                                $fin = 31;
+                                if($dia <= $mitad && $dia >= $inicio){ 
+                                    echo '<td>Prueba1</td>'; 
+                                }elseif($dia >= $mitad && $dia <= $fin){
+                                    echo'<td>Prueba2</td>'; 
+                                }
+
+
+                                ?>
                         </tr>
                     <?php
                     $i++;
@@ -112,7 +159,11 @@
                 </tbody>
             </table>
         </div>
-         <?php include("footer.php");
+    </div>
+</div>
+        <?php
+    }
+          include("footer.php");
     ?>
 </body>
 </html>
