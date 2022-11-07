@@ -41,15 +41,16 @@
                     <p class="nota-aval">NOTA: El archivo solicitado se encuentra en la normateca con el nombre de "PAGARE 2023". Debe
                         de estar llenado correctamente como se solicita, de lo contrario la solicitud será rechazada.
                     </p>
+                    
             </div>  <!--  Cierra: Col 1 -->
 
             <div class="col-lg-5 tetx center my-1"> <!--  Col 2 -->
                 <h2>Préstamo por Aval</h2>
                 <div class="row my-2 "> <!--  Q -->
                         <div class="col-md-auto mt-2">
-                            <label for="CantidadSolicitar" class="form-label fw-bold">Cantidad a solicitar</label>    
+                            <label for="input_monto" class="form-label fw-bold">Cantidad a solicitar</label>    
                             <!-- <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-dollar-sign"></i></span> -->
-                            <input type="text" class="form-control" id="CantidadSolicitar" placeholder="Ejemp: 1500" />
+                            <input type="text" class="form-control" id="input_monto" placeholder="Ejemp: 1500" />
                         </div> 
                         <div class="col-md-auto mt-2">
                             <label for="numEmpleado" class="form-label fw-bold">No. Empleado (Aval)</label>
@@ -62,8 +63,9 @@
                             <input type="number" class="form-control" id="descuentoQuincenal" placeholder="1500.00" disabled>
                         </div>
                         <div class="col-md-auto mt-2">
-                            <label for="numEmpleado" class="form-label fw-bold">Interes Quincenal</label>
-                            <input type="number" class="form-control" id="intQuincenal" placeholder="2% Quincenal" disabled>
+                            <label for="input_tasa" class="form-label fw-bold">Interes Mensual</label>
+                            <input type="number" class="form-control" id="input_tasa" value="2" disabled>
+                            
                         </div>
                         
                 </div> <!--  Cierra: Q2 -->
@@ -80,62 +82,77 @@
                                 </select>    
                         </form> 
                      </div>   
-                    <div class="col-md-auto mt-2">
-                        <label for="numEmpleado" class="form-label fw-bold mb-2">Plazo de Pago</label>
-                        <input type="number" class="form-control" id="plazoPAgo" placeholder="4 quincenas">
+                     <div class="col-md-auto mt-2">
+                        <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de Pago</label>
+                        <input type="number" class="form-control" id="input_cuotas" placeholder="4 quincenas">
                     </div>
                 </div> <!--  Cierra: Q3 -->
                 <div class="col-md-auto">
                     <label for="formatoPagare" class="form-label fw-bold mt-1">Formato Pagaré</label>
                     <input type="file" class="form-control mt-2 mb-3" id="formatoPagare" placeholder="">
                 </div>
-
-                <div class="d-flex">
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">CANCELAR</button>
-                    <button type="button" class="btn btn-primary d-block mx-auto my-4" onclick=location.href="prestamos.php">ACEPTAR</button>
-                </div> 
+                <div class="d-flex justify-content-center">
+                    <div class="d-grid m-3">
+                        <label for="select_periodo" class="col col-form-label fw-bold">
+                        Pago:
+                        </label>
+                        <select id="select_periodo" style="width: 100%" disabled> 
+                            <option value="quincenal" >Quincenal</option>
+                        </select>
+                    </div>
+                    <div class="d-grid m-3">
+                        <label for="select_periodo" class="col col-form-label fw-bold">
+                            Intereses:
+                        </label>
+                        <select id="select_tasa_tipo" style="width: 100%" disabled>
+                            <option value="mensual" selected="selected" id="select_tasa_tipo">Quincenales</option>
+                        </select> 
+                    </div>
+                    
+                </div>
 
             </div> <!--  Cierra: Col 2 -->  
         </div> <!--CIERRA: B -->
 
-        <div class="table-responsive my-4"> <!-- C -->
-            <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">Quincenas</th>
-                            <th scope="col">Amortización capital</th>
-                            <th scope="col">Intereses</th>
-                            <th scope="col">Abonos</th>
-                            <th scope="col">Saldos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>10000.00<strong></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>$955.82</td>
-                            <td>$100.00</td>
-                            <td>$1055.82</td>
-                            <td>9044.18</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>$965.38</td>
-                            <td>$90.44</td>
-                            <td>$1055.82</td>
-                            <td>8078.80</td>
-                        </tr>
-                        <tr>
+        <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded"> <!-- C -->
+        <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+                            order-collapse: collapse">
+                            <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>
+                                <th >Quincena</th>
+                                <th>Amortización captial</th>
+                                <th>Intereses</th>
+                                <th>Abonos</th>
+                                <th>Saldos</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_1" class="text-center">
 
-                    </tbody>
-            </table>
+                            </tbody>
+                        </table>
         </div> <!--CIERRA: C -->
+        <div class="d-flex justify-content-center text-center">
+                        <div class="row m-2">
+                            <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
+                                CANCELAR
+                            </button>
+                        </div>
+                        <div class="row m-2">
+                            <button type="button" class="btn btn-primary boton-ingresar" onclick="calcular();" name="calcular">
+                                ¡CALCULAR!
+                            </button>
+                            <?php
+                            if (isset($_POST['calcular'])) {
+                                echo $_POST['CantidadSolicitada'];
+                            }
+                            ?>
+                        </div>
+                        <div class="row m-2">
+                            <button type="button" class="btn btn-success boton-ingresar" onclick="alertaPrestamos()">
+                                ¡SOLICITAR!
+                            </button>
+                        </div>
+
+                </div>
 
     </div> <!--CIERRA: A -->
 
@@ -148,6 +165,7 @@
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript" src="js/prestamo.js"></script>
 </body>
 
 </html>

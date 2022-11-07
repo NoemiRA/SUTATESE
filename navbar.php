@@ -22,10 +22,10 @@
                     <div class="collapse navbar-collapse navbar-color " id="navbarTogglerDemo02">
                         <ul class="navbar-nav ms-auto" style="margin-left: 10%;">
                             <li class="nav-item">
-                                <a class="nav-link" href="inicio.php"><i class="fa-solid fa-house mx-2"></i>Inicio</a>
+                                <a class="nav-link" onclick=location.href="inicio.php"><i class="fa-solid fa-house mx-2"></i>Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="perfil.php"><i class="fa-solid fa-user mx-2"></i>Datos Generales</a>
+                                <a class="nav-link" onclick=location.href="perfil.php"><i class="fa-solid fa-user mx-2"></i>Datos Generales</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="prestamos.php">Prestamos</a>
@@ -34,7 +34,7 @@
                                 <a class="nav-link" aria-current="page" href="registroCA.php">Caja de ahorro</a>
                             </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="cerrarSesion.php"><i class="fa-solid fa-power-off mx-2"></i> Cerrar sesión </a>
+                                <a class="nav-link" onclick=location.href="cerrarSesion.php"><i class="fa-solid fa-power-off mx-2"></i> Cerrar sesión </a>
                             </li>
                         </ul>
                     </div>

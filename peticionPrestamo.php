@@ -27,8 +27,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
 </head>
 
 <body onload="plazo();">
+    
     <div class="text-center m-5 p-3 rounded">
-        <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
+    <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
         <div class="row bg-light">
             <div class="col-lg-5">
                 <div class="form-group row mx-3 my-2 d-grid">
@@ -38,7 +39,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="col">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" value="$ <?php echo $poderCrediticio ?>" disabled>
-
+                            
                             <span class="input-group-text " id="basic-addon2">
                                 <abbr title="¡Conoce más sobre tu poder crediticio!" onclick=location.href="#"><i class="fa-solid fa-circle-info"></i></abbr>
                             </span>
@@ -50,7 +51,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </div>
                 <div class="form-group row mx-3 my-2 d-grid">
                     <label for="description" class="col col-form-label">
-                        Cantidad Disponible
+                       Cantidad Disponible
                     </label>
                     <div class="col">
                         <input type="text" class="form-control" value="$" disabled>
@@ -58,10 +59,18 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </div>
                 <div class="form-group row mx-3 my-2 d-grid">
                     <label for="description" class="col col-form-label">
-                        Interés quincenal
+
+                        Interés mensual
+
                     </label>
                     <div class="col">
-                        <input type="text" class="form-control" value="1%" disabled>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" value="2" disabled id="input_tasa">
+                            
+                            <span class="input-group-text " id="basic-addon2">
+                                <i class="fa-solid fa-percent"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -70,28 +79,50 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         Plazo de máximo a pagar:
                     </label>
                     <div class="col">
-                        <input type="text" class="form-control" id="meses" style="height: 38px;" disabled></input>
+                    <input type="text" class="form-control" id="meses" style="height: 38px;" disabled ></input>
                     </div>
                 </div>
 
                 <div class="form-group row mx-3 my-2 d-grid">
-                    <label for="description" class="col col-form-label fw-bold">
+                    <label for="input_monto" class="col col-form-label fw-bold">
                         Cantidad a solicitar
                     </label>
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Ejemp: 1500.00" name="CantidadSolicitada" id="CantidadSolicitada">
+                        <input type="number" class="form-control" placeholder="Ejemp: 1500.00" name="CantidadSolicitada" id="input_monto">
                     </div>
                 </div>
 
                 <div class="form-group row mx-3 my-2 d-grid">
-                    <label for="description" class="col col-form-label fw-bold">
+                    <label for="input_cuotas" class="col col-form-label fw-bold">
                         Plazo de pago en quincenas:
                     </label>
                     <div class="col">
-                        <input type="number" class="form-control" placeholder="Ejemp: 5" name="CantidadSolicitada" id="plazoPago">
+                        <input type="number" class="form-control" placeholder="Ejemp: 5" name="CantidadSolicitada" id="input_cuotas">
                     </div>
-                </div>
-                <!-- <form>
+
+                      
+                    
+                    
+                    <div class="d-flex justify-content-center">
+                        <div class="d-grid m-3">
+                            <label for="select_periodo" class="col col-form-label fw-bold">
+                            Pago:
+                            </label>
+                            <select id="select_periodo" style="width: 100%" disabled> 
+                                <option value="quincenal" >Quincenal</option>
+                            </select>
+                        </div>
+                        <div class="d-grid m-3">
+                            <label for="select_periodo" class="col col-form-label fw-bold">
+                                Intereses:
+                            </label>
+                            <select id="select_tasa_tipo" style="width: 100%" disabled>
+                                <option value="mensual" selected="selected" id="select_tasa_tipo">Quincenales</option>
+                            </select> 
+                        </div>
+                    </div>
+            </div>   
+        <!-- <form>
             <div class="form-group row m-3">
                 <label for="pago" class="col col-form-label fw-bold">Forma de Pago:</label>
                     <div class=" col">
@@ -110,14 +141,14 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </div>
     </form> -->
-                <div class="d-flex justify-content-center my-3">
+    <div class="d-flex flex-column mb-3">
                     <div class="row m-3">
                         <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
                             CANCELAR
                         </button>
                     </div>
                     <div class="row m-3">
-                        <button type="button" class="btn btn-primary boton-ingresar" onclick=location.href="prestamoNomina.php" name="calcular">
+                        <button type="button" class="btn btn-primary boton-ingresar" onclick="calcular();" name="calcular">
                             ¡CALCULAR!
                         </button>
                         <?php
@@ -133,64 +164,47 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
 
                 </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="table-responsive my-4 ">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">Quincenas</th>
-                                <th scope="col">Amortización capital</th>
-                                <th scope="col">Intereses</th>
-                                <th scope="col">Abonos</th>
-                                <th scope="col">Saldos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><strong>10000.00<strong></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>$955.82</td>
-                                <td>$100.00</td>
-                                <td>$1055.82</td>
-                                <td>9044.18</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>$965.38</td>
-                                <td>$90.44</td>
-                                <td>$1055.82</td>
-                                <td>8078.80</td>
-                            </tr>
-                            <tr>
+</div>
+            <div class="col-lg-7 ">
+                <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded">
+                    <!-- <table class="table table-sm"> -->
+                        <!-- <thead> -->
+                    <!-- <div class="shadow p-3 mb-5 bg-body rounded"> -->
+                        <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+                            order-collapse: collapse">
+                            <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>
+                                <th >Quincena</th>
+                                <th>Amortización captial</th>
+                                <th>Intereses</th>
+                                <th>Abonos</th>
+                                <th>Saldos</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_1" class="text-center">
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    <!-- </div> -->
                 </div>
-            </div>
         </div>
     </div>
+</div>
 
-
-    </div>
+   
+        </div>
 
     <?php include("footer.php");
     ?>
+            
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="js/plazo.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-
-
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="js/plazo.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+            <script type="text/javascript" src="js/prestamo.js"></script>
+            
+            
 
 
 
