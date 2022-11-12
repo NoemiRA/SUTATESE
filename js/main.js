@@ -64,6 +64,20 @@ function hacerSuma() {
     document.getElementById("cantMax").value = cantidadMax;
     document.getElementById("poderCred").value = poderCrediticio;
 
-  } catch (e) { }
 
+
+  } catch (e) { }
+  
+  
 }
+
+  
+function prue(){
+
+  CM = document.getElementById("cantMax").value || 0;
+  PC = document.getElementById("poderCred").value || 0;
+  window.location.href = "?w1=" + PC + "&w2=" + CM;
+  
+}
+
+

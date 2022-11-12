@@ -114,7 +114,7 @@
             </div> <!--  Cierra: Col 2 -->  
         </div> <!--CIERRA: B -->
 
-        <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded"> <!-- C -->
+        <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded"> <!-- C -->
         <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
                             order-collapse: collapse">
                             <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>

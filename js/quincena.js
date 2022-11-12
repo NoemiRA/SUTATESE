@@ -1,14 +1,14 @@
     function quincenas(){
 
     
-            var fechaActual = new Date();
+             var fechaActual = new Date();
                var dia = (fechaActual.getDate());
-                var mes = (fechaActual.getMonth()+1); //enero = 1 y diciembre = 12
+                 var mes = (fechaActual.getMonth()+1); //enero = 1 y diciembre = 12
            
 
         //-----SIMULAR
-              // dia = 1;
-              // mes = 8;
+              //  dia = 1;
+              //  mes = 2;
 
           //CALCULO PARA LOS RECIBOS DE LAS QUINCENAS
           mesDos = mes;

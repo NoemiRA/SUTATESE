@@ -55,20 +55,20 @@ function setMoneda(num) {
             var cuotas = document.getElementById("input_cuotas").value;
              var tasa = document.getElementById("input_tasa").value;
             if (!monto) {
-                alert('Indique el monto');
-                return;
+                swal("¡Advertencia!", "Indique la cantidad a solicitar", "warning");
+                return; 
             }
             if (!cuotas) {
-                alert('Indique las cuotas');
-                return;
+                swal("¡Advertencia!", "Indique el plazo a pagar", "warning");
+                return; 
             }
             if (!tasa) {
-                alert('Indique la tasa');
-                return;
+                swal("¡Advertencia!", "Indique la tasa de interes", "warning");
+                return; 
             }
             if (parseInt(cuotas) < 1) {
-                alert('Las cuotas deben ser de 1 en adelante');
-                return;
+                swal("¡Advertencia!", "Ha indicado una cantidad invalida para las cuotas, porfavor ingrese un número positivo", "warning");
+                return; 
             }
              var select_periodo = document.getElementById("select_periodo");
              periodo = select_periodo.options[select_periodo.selectedIndex].value;
@@ -78,7 +78,10 @@ function setMoneda(num) {
             var tbody = document.getElementById("tbody_1");
             tbody.innerHTML = "";
   
-if (parseInt(cuotas) > 21) { alert("Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala a menos de 21"); return; }
+        if (parseInt(cuotas) > 21) { 
+            swal("¡Advertencia!", "Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala a 21 o menos", "warning");
+            return; 
+        }
 
             for (i = 0; i < items.length; i++) {
                 item = items[i];

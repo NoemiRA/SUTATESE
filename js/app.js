@@ -82,7 +82,7 @@ function Saludo(){
     
 }
  
- cargarReloj();
+//  cargarReloj();
 
 
 function alertaPrestamos(){

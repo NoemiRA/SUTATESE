@@ -20,11 +20,18 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <title>SUTATESE - Prestamo Nómina</title>
 
     <?php include("navbar.php");
-    $poderCrediticio = 1481.06;
-    $descuentoQuincenal = 0;
+
+    $poderCrediticio = 1500.00;
+    // $poderCrediticio = $_REQUEST["PodCre"];
+    // $descuentoQuincenal = 0;
+    
+    // $poderCrediticio = $_POST["poderCred"];
+    // $cantMax = $_POST["cantMax"];
 
     ?>
 </head>
+
+
 
 <body onload="plazo();">
     
@@ -39,18 +46,11 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="col">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" value="$ <?php echo $poderCrediticio ?>" disabled>
-                            
-                            <span class="input-group-text " id="basic-addon2">
-                                <abbr title="¡Conoce más sobre tu poder crediticio!" onclick=location.href="#"><i class="fa-solid fa-circle-info"></i></abbr>
-                            </span>
-                            <!-- <div class="input-group-append">
-                                <abbr class="btn" type="button" title="¡Conoce más sobre tu poder crediticio!" onclick=location.href="#"><i class="fa-solid fa-circle-info"></i></button>
-                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="form-group row mx-3 my-2 d-grid">
-                    <label for="description" class="col col-form-label">
+                    <label for="description" class="col col-form-label fw-bold">
                        Cantidad Disponible
                     </label>
                     <div class="col">
@@ -58,7 +58,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
                 </div>
                 <div class="form-group row mx-3 my-2 d-grid">
-                    <label for="description" class="col col-form-label">
+                    <label for="description" class="col col-form-label fw-bold">
 
                         Interés mensual
 
@@ -75,7 +75,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </div>
 
                 <div class="form-group row mx-3 my-2 d-grid">
-                    <label for="description" class="col col-form-label">
+                    <label for="description" class="col col-form-label fw-bold">
                         Plazo de máximo a pagar:
                     </label>
                     <div class="col">
@@ -122,25 +122,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>
                     </div>
             </div>   
-        <!-- <form>
-            <div class="form-group row m-3">
-                <label for="pago" class="col col-form-label fw-bold">Forma de Pago:</label>
-                    <div class=" col">
-                        <div class="input-group mb-3">
-                        
-                                <select class="form-select" aria-label="Division">
-                                    <option disabled selected>Selecciona forma de pago</option>
-                                    <option value="efectivo" >Efectivo</option>
-                                    <option value="nomina">Nómina</option>
-                                    <option value="banco">Transferencia/Depósito</option>
-                                </select>
-                                <span id="basic-addon2" class="input-group-text">
-                                    <i class="fa-regular fa-credit-card"></i>
-                                </span>
-                </div>
-            </div>
-        </div>
-    </form> -->
+
     <div class="d-flex flex-column mb-3">
                     <div class="row m-3">
                         <button type="button" class="btn btn-danger boton-ingresar" onclick=location.href="prestamos.php">
@@ -166,10 +148,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </div>
 </div>
             <div class="col-lg-7 ">
-                <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded">
-                    <!-- <table class="table table-sm"> -->
-                        <!-- <thead> -->
-                    <!-- <div class="shadow p-3 mb-5 bg-body rounded"> -->
+                <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
                         <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
                             order-collapse: collapse">
                             <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>
@@ -184,7 +163,6 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                             </tbody>
                         </table>
-                    <!-- </div> -->
                 </div>
         </div>
     </div>
@@ -200,7 +178,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script type="text/javascript" src="js/plazo.js"></script>
-            <script type="text/javascript" src="js/main.js"></script>
+            <!-- <script type="text/javascript" src="js/main.js"></script> -->
             <script type="text/javascript" src="js/app.js"></script>
             <script type="text/javascript" src="js/prestamo.js"></script>
             

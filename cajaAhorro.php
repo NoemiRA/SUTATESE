@@ -68,7 +68,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         Descuento quincenal:
                     </label>
                     <div class="col">
-                        <input type="text" class="form-control" value="<?php echo $row[2] ?>" disabled>
+                        <input type="text" class="form-control" value="$<?php echo $row[2] ?> MXN" disabled>
                     </div>
                     
                 </div>
@@ -85,7 +85,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </div>
     <div class="row-lg-7 my-4 text-center mx-0">
-        <div class="table-responsive my-4 shadow p-3 mb-5 bg-body rounded">
+        <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
             <table id="table-2"  class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
                                 border-collapse: collapse">
                 <thead class="text-center" style="background-color:#00102E; color: #ffffff;"><tr>
@@ -108,9 +108,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <th><?php echo $i+1 ?></th>
                             <?php 
                                 if($i == 0 || $i == 1){
-                                echo'<td>Diciembre</td>';                                                     
+                                    echo'<td>Diciembre</td>'; 
                                 }elseif($i == 2 || $i == 3){
-                                    echo'<td>Enero</td>';
+                                    echo'<td>Enero</td>';                             
                                 } elseif($i == 4 || $i == 5){
                                     echo'<td>Febrero</td>';
                                 } elseif($i == 6 || $i == 7){
@@ -136,20 +136,26 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 ?>
                             <td>$<?php echo $abono ?></td>
                             <td><strong>$<?php echo $saldo ?></strong></td>
-                            <?php 
-                                // date_default_timezone_set("America/Monterrey");
-                                // $dia = date("j");
+                                <?php
+                                //  date_default_timezone_set("America/Monterrey");
+                                //  $dia = date("j");
+                                //  $mes = date("m");
                                 $dia = 1;
-                                $mitad = 15;
-                                $inicio = 1;
-                                $fin = 31;
-                                if($dia <= $mitad && $dia >= $inicio){ 
-                                    echo '<td>Prueba1</td>'; 
-                                }elseif($dia >= $mitad && $dia <= $fin){
-                                    echo'<td>Prueba2</td>'; 
-                                }
-
-
+                                $mes= 6;
+                               $mitad = 15;
+                               $inicio = 1;
+                               $fin = 31;
+                            //    if($i == 0 || $i == 1){
+                                if($mes == $i){ 
+                                    if($dia <= $mitad && $dia >= $inicio && $i==$mes){
+                                        echo '<td>Prueba1</td>';
+                                    }
+                                             
+                                elseif($dia >= $mitad && $dia <= $fin && $i==$mes){
+                                            echo'<td>Prueba2</td>'; 
+                                        }
+                                     }
+                                    
                                 ?>
                         </tr>
                     <?php
