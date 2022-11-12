@@ -77,13 +77,11 @@
                 if (isset($_SESSION['NumEmpleado5'])) {
                     $NumEmpleado = $_SESSION['NumEmpleado5'];
 
-
                     $ahorrador = "SELECT IdAhorrador, NumEmpleado1 from cajaahorro where NumEmpleado1 = '$NumEmpleado'";
                     $resultahorrador = mysqli_query($conn, $ahorrador);
                     $row = mysqli_fetch_array($resultahorrador);
                     $IdAhorrador = $row['IdAhorrador'];
                     $countahorrador = mysqli_num_rows($resultahorrador);
-
 
                     $sql_absence = "SELECT SUM(Porcentaje) AS percentage_absence from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 WHERE NumEmpleado1 = $NumEmpleado and IdTipoBeneficiario1 = 'TB1'";
                     $result_absence = mysqli_query($conn, $sql_absence);

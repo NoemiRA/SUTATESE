@@ -1,8 +1,10 @@
 <?php
-    session_start();
-    if(empty($_SESSION['NumEmpleado5'])){
-        header("location: index.php");
-    }
+session_start();
+include('conexion.php');
+
+if (empty($_SESSION['NumEmpleado5'])) {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,55 +26,55 @@
 </head>
 
 <body>
+    <?php
+        if (isset($_SESSION['NumEmpleado5'])) {
+            $NumEmpleado = $_SESSION['NumEmpleado5'];
+            $sql = "SELECT IdAhorrador, CantidadQuincenal FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_array($result);
+    ?>
+    
     <h1 class=" fw-bold text-center mx-5 my-5">PRÉSTAMO POR CAJA DE AHORRO</h1>
     <section class="login">
         <div class="container-xl">
-            <div class="row g-5 h-100">
-                <form class="col-lg-6 d-flex p-0">
-                    <div class="col d-flex text-center">
-                        <label for="CantidadDisp" class="form-label fw-bold mx-2 mt-2 fs-5" style="width:100%;">Cantidad Disponible</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-dollar-sign"></i></span>
-                            <input type="number" class="form-control " id="CantidadDisp" placeholder="17892" disabled>
-                        </div>
+            <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <div class="col p-3">
+                    <label for="CantidadDisp" class="form-label fw-bold mx-2 mt-2 fs-5" style="width:100%;">Cantidad Disponible</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-dollar-sign"></i></span>
+                        <input type="number" class="form-control " value="<?php echo $row['CantidadQuincenal'] ?>" disabled>
                     </div>
-                </form>
+                </div>
 
-                <div class="col d-flex text-center p-0">
+                <div class="col p-3">
                     <label for="CantidadSolicitar" class="form-label fw-bold mx-2 mt-2 fs-5" style="width:100%;">Cantidad a Solicitar</label>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-dollar-sign"></i></span>
-                        <input type="text" class="form-control" id="CantidadSolicitar" placeholder="Ejemp: 1500" />
+                        <input type="text" class="form-control" name="CantidadSolicitar" placeholder="Ejemp: 1500" />
                     </div>
                 </div>
-            </div>
-            <br><br>
-        </div>
-
-        <!-- <form>
-            <div class="col d-grid text-center">
-                <label for="division" class="form-label text-center fw-bold fs-5 mb-3"">Forma de Pago</label>
-                <div class=" input-group">
-                    <span class="input-group-text" id="basic-addon2"><i class="fa-regular fa-credit-card"></i></i></span>
-                    <select class="form-select" aria-label="Division">
-                        <option disabled selected class="text-center">Selecciona tu forma de pago</option>
-                        <option value="efectivo" class="text-center">Pago por vía: Efectivo</option>
-                        <option value="banco" class="text-center">Pago por vía: Transferencia/Depósito</option>
-                    </select>
-                </div>
-            </div>
-        </form> -->
-    </section>
+            </form>
+    
     <div class="col-lg text-center mb-5">
-        <button type="button" class="btn btn-primary mx-5 text-center" style="width: 25%; height: 75px;" onclick=location.href="prestamos.php">
+        <button type="button" class="btn btn-primary mx-5 text-center" onclick=location.href="prestamos.php">
             Cancelar
         </button>
-        <button type="button" class="btn btn-primary mx-5 text-center" style="width: 25%; height: 75px;" onclick="alertaPrestamos()">
-            Solicitar Préstamo
-        </button>
+        <input type="submit" class="btn btn-primary mx-5 text-center" value="Solicitar" name="Request">
     </div>
-
-    <?php include("footer.php");
+    </section>
+    <?php 
+        
+            // Request
+            if (isset($_POST['Request'])) {
+                $CantidadSolicitar = $_POST['CantidadSolicitar'];
+                if($CantidadSolicitar <= $row['CantidadQuincenal']){
+                    echo 'La cantidad es permitida';
+                }else{
+                    echo'La cantidad es mayor a la permitida, por favor intente nuevamente';
+                }
+            }
+        }
+        include("footer.php");
     ?>
 
 

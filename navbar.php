@@ -14,11 +14,9 @@
             <?php
                 if(isset($_SESSION['NumEmpleado5'])){
                 ?>
-                <!-- <div class=" d-grid"> -->
                     <button class="navbar-toggler my-3 mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                <!-- </div> -->
                     <div class="collapse navbar-collapse navbar-color " id="navbarTogglerDemo02">
                         <ul class="navbar-nav ms-auto" style="margin-left: 10%;">
                             <li class="nav-item">
@@ -27,12 +25,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" onclick=location.href="perfil.php"><i class="fa-solid fa-user mx-2"></i>Datos Generales</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="prestamos.php">Prestamos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="registroCA.php">Caja de ahorro</a>
-                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" onclick=location.href="cerrarSesion.php"><i class="fa-solid fa-power-off mx-2"></i> Cerrar sesión </a>
                             </li>

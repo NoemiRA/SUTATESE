@@ -59,7 +59,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         <div class="col p-3">
                             <div class="form-group">
                                 <label for="Banco" class="form-label">Institución Bancaria</label>
-                                <select class="form-control" id="IB" name="IB">
+                                <select class="form-control" id="IB" name="IB" disabled>
                                     <option selected value="<?php echo $banco ?>"><?php echo $InstB?></option>
                                     <?php
                                         $ejecucion = $conn->query("Select * from banco where IdBanco <> '$banco'");
@@ -76,7 +76,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         <div class="p-3">
                             <label for="clabe" class="form-label">No. CLABE</label>
                             <div class="input-group">
-                                <input type="text" class="form-control text-center" name="clabe" id="clabe" value="<?php echo $clabeB ?>" minlength="10" maxlength="18" />
+                                <input type="text" class="form-control text-center" name="clabe" id="clabe" value="<?php echo $clabeB ?>" minlength="10" maxlength="18" disabled />
                                 <span class="input-group-text" id="basic-addon2">
                                     <abbr title="El número de cuenta son 18 dígitos, en caso de que el banco sea Banorte el número de cuenta son 10 dígitos "><i class="fa-solid fa-circle-info"></i></abbr>
                                 </span>
@@ -84,7 +84,6 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>
                         <div>
                             <input type="button" class="btn boton-ingresar" value="Regresar" onclick="window.history.go(-1);"></input>
-                            <input type="submit" class="btn" value="Aceptar" name="Update">
                             </input>
                         </div>
                     </form>
@@ -125,47 +124,47 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </div>
                         </div>
                         <div>
-                            <button type="button" class="btn boton-ingresar" onclick="window.history.go(-1);">Cancelar</button>
+                            <button type="button" class="btn boton-ingresar" onclick="window.history.go(-2);">Cancelar</button>
                             <input type="submit" class="btn" value="Aceptar" name="Insert"></input>
                         </div>
                     </form>
                 <?php
             }
-        }
+        
         
         // Update
-        if (isset($_POST['Update'])) {
-            $clabebancaria = $_POST['clabe'];
-            $InstBanc = filter_input(INPUT_POST, "IB");
-            if ($clabebancaria == "") {
-                echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-                        then(function(result){
-                            if(result.value){                   
-                            window.location = "datosBancarios.php";
-                            }
-                        });
-                        </script>';
-            } else {
-                $ejecucion = $conn->query("UPDATE datosbancarios set Clabe = '$clabebancaria', IdBanco1 = '$InstBanc' WHERE NumEmpleado2 = '$NumEmpleado'");
-                if ($ejecucion === TRUE) {
-                    echo '<script> Swal.fire({icon: "success", title: "Datos Actualizados", text: "¡Los DATOS BANCARIOS han sido actualizados!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-                        then(function(result){
-                            if(result.value){                   
-                            window.location = "datosBancarios.php";
-                            }
-                        });
-                        </script>';
-                } else {
-                    echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-                        then(function(result){
-                            if(result.value){                   
-                            window.location = "datosBancarios.php";
-                            }
-                        });
-                        </script>';
-                }
-            }
-        }
+        // if (isset($_POST['Update'])) {
+        //     $clabebancaria = $_POST['clabe'];
+        //     $InstBanc = filter_input(INPUT_POST, "IB");
+        //     if ($clabebancaria == "") {
+        //         echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+        //                 then(function(result){
+        //                     if(result.value){                   
+        //                     window.location = "datosBancarios.php";
+        //                     }
+        //                 });
+        //                 </script>';
+        //     } else {
+        //         $ejecucion = $conn->query("UPDATE datosbancarios set Clabe = '$clabebancaria', IdBanco1 = '$InstBanc' WHERE NumEmpleado2 = '$NumEmpleado'");
+        //         if ($ejecucion === TRUE) {
+        //             echo '<script> Swal.fire({icon: "success", title: "Datos Actualizados", text: "¡Los DATOS BANCARIOS han sido actualizados!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+        //                 then(function(result){
+        //                     if(result.value){                   
+        //                     window.location = "datosBancarios.php";
+        //                     }
+        //                 });
+        //                 </script>';
+        //         } else {
+        //             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+        //                 then(function(result){
+        //                     if(result.value){                   
+        //                     window.location = "datosBancarios.php";
+        //                     }
+        //                 });
+        //                 </script>';
+        //         }
+        //     }
+        // }
         // Insert
         if (isset($_POST['Insert'])) {
             $clabebancaria = $_POST['clabe'];
@@ -199,12 +198,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 }
             }
         }
+    }
         ?>
     </div>
-    <?php include("footer.php");
+    <?php 
+        include("footer.php");
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
-
 </html>
