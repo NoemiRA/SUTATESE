@@ -22,9 +22,37 @@
         
     <title>SUTATESE - Poder Crediticio</title>
    
-
     <?php include("navbar.php");
-    ?>
+
+   
+if (isset($_GET["w1"]) && isset($_GET["w2"])) {
+
+        
+         $PoderCrediticio = $_GET["w1"];
+         $CantidadMaxima = $_GET["w2"];
+
+         echo '<script> swal({
+             title: "Valores Guardados",
+             text: "¿Desea solicitar el préstamo?",
+             icon: "success",
+             buttons: true,
+             bottons: true,
+      })
+           .then((value) => {
+            if (value) {
+               window.location.href = "peticionPrestamo.php";
+             } else {
+                
+                 window.location.href = "poderCrediticio.php";
+            }
+           });
+                  
+                        
+                         </script>';
+     } 
+
+?>
+
 
 </head>
 
@@ -45,7 +73,7 @@
                 <div class="form-group row my-3 mx-3 fw-bold">
                     <label for="quincena" class="col-sm-2 col-form-label">Recibos Solicitados:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control bg-info bg-opacity-50" id="quincena" style="height: 38px;" disabled ></input>
+                        <input type="text" class="form-control bg-info bg-opacity-50" id="quincena" style="height: 38px;" disabled >
                     </div>
                 </div>
 
@@ -53,6 +81,7 @@
                     <label for="tpercepciones" class="col-sm-2 col-form-label">Total Percepciones: </label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" id="tpercepciones" placeholder="Ejemp: 1500.00" oninput="hacerSuma();" min="100">
+                        
                     </div>
                 </div>
 
@@ -62,7 +91,7 @@
                         <input type="number" class="form-control" id="isr" placeholder="Ejemp: 1500.00" oninput="hacerSuma();">
                     </div>
                 </div>
-
+                
                 <div class="form-group row my-3 mx-3 fw-bold">
                     <label for="issemym" class="col-sm-2 col-form-label">Sumatoria ISSEMyM: </label>
                     <div class="col-sm-10">
@@ -92,22 +121,26 @@
                 <div class="form-group row my-3 mx-3 fw-bold">
                     <label for="poderCred" class="col-sm-2 col-form-label">Poder crediticio: </label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control bg-warning bg-opacity-50" id="poderCred" style="height: 38px;" disabled ></input>
+                        <input type="number" class="form-control bg-warning bg-opacity-50" id="poderCred" style="height: 38px;" disabled >
                     </div> 
                 </div>
                 <div class="form-group row my-3 mx-3 fw-bold">
                     <label for="cantMax" class="col-sm-2 col-form-label">Cantidad Máxima: </label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control bg-warning bg-opacity-50" id="cantMax" style="height: 38px;" disabled ></input>
+                        <input type="number" class="form-control bg-warning bg-opacity-50" id="cantMax" style="height: 38px;" disabled >
+
                     </div> 
                 </div>
+
+                
 
                 <button type="button" class="btn btn-danger m-2" onclick=location.href="prestamos.php">
                     Cancelar
                 </button>
-            <button type="button" class="btn btn-primary m-2" id="solicitar"  onclick=location.href="peticionPrestamo.php">
+            <button type="button" class="btn btn-primary m-2" id="solicitar"  onclick="prue()"; onclick=location.href="peticionPrestamo.php">
                     Solicitar Préstamo Por Nómina
             </button>
+            
             <hr>
             <div class="form-group row ">
                     <small class="form-text text-muted my-0">
