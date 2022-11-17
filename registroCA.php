@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form class="row g-3 mt-3 mx-0" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="col-lg-7 d-flex">
             <div class="content mx-auto p-5 parrafo-aval">
                 <h1><b>REGISTRO A LA CAJA DE AHORRO</b></h1>
@@ -70,9 +70,9 @@
                 </ul>
             </div>
         </div>
-        <div class="col-lg-5 d-flex p-3 bg-light">
+        <div class="col-lg-5 d-flex p-0 m-0 bg-light">
             <div class="my-auto">
-            <?php
+                <?php
             
                 if (isset($_SESSION['NumEmpleado5'])) {
                     $NumEmpleado = $_SESSION['NumEmpleado5'];
@@ -198,7 +198,7 @@
         
     </form>
 
-    </div>
+    
         <?php 
             include("footer.php");
         ?>

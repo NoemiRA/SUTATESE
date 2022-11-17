@@ -39,7 +39,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     ?>
         <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS</strong></h2>
         <h6 class="p-2 text-center mt-4"><i>**Solo puede registrar máximo 3 Beneficiarios por cada tipo, recuerde cumplir el 100% para cada uno.**</i></h6>
-        <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form class="row g-3 mt-3 mx-0" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
             <div class="col-lg-5 d-block">
                 <div class="content px-3 my-auto text-center">
@@ -157,8 +157,10 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                         <td><?php echo $row['Porcentaje']; ?>%</td>
                                         <td><?php echo $row['Parentesco']; ?></td>
                                         <td>
-                                        <a href="edit.php?id=<?php echo $id_encoded;?>" title="Editar beneficiario" class="btn btn-warning" type="submit"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a href="registrobeneficiarios.php?id=<?php echo $id_encoded;?>" title="Eliminar beneficiario" class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm ('¿Esta seguro de eliminar el Beneficiario?')"><i class="fa-solid fa-trash"></i></a>
+                                        <div class="d-flex">
+                                            <a href="edit.php?id=<?php echo $id_encoded;?>" title="Editar beneficiario" class="btn btn-warning mx-1" type="submit"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="registrobeneficiarios.php?id=<?php echo $id_encoded;?>" title="Eliminar beneficiario" class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm ('¿Esta seguro de eliminar el Beneficiario?')"><i class="fa-solid fa-trash"></i></a>
+                                        </div>
                                         </td>
                                     </tr>
                                 <?php
@@ -201,8 +203,10 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                         <td><?php echo $row['Porcentaje']; ?>%</td>
                                         <td><?php echo $row['Parentesco']; ?></td>
                                         <td>
-                                            <a href="edit.php?id=<?php echo $id_encoded;?>" title="Editar beneficiario" class="btn btn-warning" type="submit"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a href="registrobeneficiarios.php?id=<?php echo $id_encoded;?>" title="Eliminar beneficiario" class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm ('¿Esta seguro de eliminar el Beneficiario?')"><i class="fa-solid fa-trash"></i></a>
+                                            <div class="d-flex">
+                                                <a href="edit.php?id=<?php echo $id_encoded;?>" title="Editar beneficiario" class="btn btn-warning mx-1" type="submit"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="registrobeneficiarios.php?id=<?php echo $id_encoded;?>" title="Eliminar beneficiario" class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm ('¿Esta seguro de eliminar el Beneficiario?')"><i class="fa-solid fa-trash"></i></a>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php
