@@ -17,38 +17,11 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <title>SUTATESE - Poder Crediticio</title>
 
-    <?php include("navbar.php");
-
-
-    if (isset($_GET["w1"]) && isset($_GET["w2"])) {
-
-
-        $PoderCrediticio = $_GET["w1"];
-        $CantidadMaxima = $_GET["w2"];
-
-        echo '<script> swal({
-            title: "Valores Guardados",
-            text: "¿Desea solicitar el préstamo?",
-            icon: "success",
-            buttons: true,
-            bottons: true,
-        })
-            .then((value) => {
-                if (value) {
-                    window.location.href = "peticionPrestamo.php";
-                } else { 
-                    window.location.href = "poderCrediticio.php";
-                }
-            });
-                        
-        </script>';
-    }
-
-    ?>
+    <?php include("navbar.php"); ?>
 </head>
 
 <body onload="quincenas();">
@@ -60,7 +33,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
         <h1 class="text-center">PODER CREDITICIO</h1>
         <div class="row g-0 h-50 p-5">
             <div class="col-lg-6 bg-light justify-content-center">
-                <form class="text-center">
+                <form class="text-center" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <p class="text-center fs-4 fw-bold p-4">Favor de introducir los datos reales de su recibo de nómina correspondiente a la quincena indicada</p>
                     <div class="form-group row my-3 mx-3 fw-bold">
                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre:</label>
@@ -70,74 +43,165 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
 
                     <div class="form-group row my-3 mx-3 fw-bold">
-                        <label for="quincena" class="col-sm-2 col-form-label">Recibos Solicitados:</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-12 mb-4">
                             <input type="text" class="form-control bg-info bg-opacity-50" id="quincena" style="height: 38px;" disabled>
                         </div>
                     </div>
 
-                    <div class="form-group row my-4 mx-5 fw-bold">
-                        <label for="reciboNomina" class="form-label ">Subir cualquiera de los recibos de nómina (PDF) de los meses que se solicitan en el recuadro azul:</label>
-                        <input type="file" class="form-control mb-3 mx-3" id="reciboNomina" placeholder="Ingresa recibo de nómina">
-                    </div>
-
                     <div class="form-group row my-3 mx-3 fw-bold">
                         <label for="tpercepciones" class="col-sm-2 col-form-label">Total Percepciones: </label>
+
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="tpercepciones" placeholder="Ejemp: 1500.00" oninput="hacerSuma();" min="100">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="tpercepciones" placeholder="Ejemp: 1500.00" step="0.01">
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group row my-3 mx-3 fw-bold">
                         <label for="isr" class="col-sm-2 col-form-label">ISR: </label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="isr" placeholder="Ejemp: 1500.00" oninput="hacerSuma();">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="isr" placeholder="Ejemp: 1500.00" step="0.01">
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group row my-3 mx-3 fw-bold">
                         <label for="issemym" class="col-sm-2 col-form-label">Sumatoria ISSEMyM: </label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="issemym" placeholder="Ejemp: 1500.00" oninput="hacerSuma();">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="issemym" placeholder="Ejemp: 1500.00" step="0.01">
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group row my-3 mx-3 fw-bold">
                         <label for="tdeducciones" class="col-sm-2 col-form-label">Total Deducciones: </label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="tdeducciones" placeholder="Ejemp: 1500.00" oninput="hacerSuma();">
-                        </div>
-                    </div>
-
-                    <div class="form-group row my-3 mx-3 fw-bold">
-                        <label for="poderCred" class="col-sm-2 col-form-label">Poder crediticio: </label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control bg-warning bg-opacity-50" id="poderCred" style="height: 38px;" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row my-3 mx-3 fw-bold">
-                        <label for="cantMax" class="col-sm-2 col-form-label">Cantidad Máxima: </label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control bg-warning bg-opacity-50" id="cantMax" style="height: 38px;" disabled>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" name="tdeducciones" placeholder="Ejemp: 1500.00" step="0.01">
+                            </div>
                         </div>
                     </div>
 
                     <button type="button" class="btn btn-danger m-2" onclick=location.href="prestamos.php">
                         Cancelar
                     </button>
-                    <button type="button" class="btn btn-primary m-2" id="solicitar" onclick="prue()" ; onclick=location.href="peticionPrestamo.php">
-                        Solicitar Préstamo Por Nómina
-                    </button>
+                    <input type="submit" class="btn btn-success mx-5" value="Calcular" name="Request" onclick="prue">
 
-                    <hr>
-                    <div class="form-group row ">
-                        <small class="form-text text-muted my-0">
-                            <p class="my-0">¿Necesitas un préstamo de mayor cantidad?</p>
-                        </small>
-                    </div>
-                    <small class="form-text text-muted my-0">
-                        <a href="registroaval.php">Registra un Aval</a>
-                    </small>
+                    <?php
+
+                    function alertdata()
+                    {
+                        echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+                            then(function(result){
+                                if(result.value){                   
+                                }
+                            });
+                            </script>';
+                    }
+
+                    if (isset($_POST['Request'])) {
+                        date_default_timezone_set('America/Mexico_City');
+                        $day = date('d');
+                        $month = date('m');
+
+                        $perceptions = $_POST['tpercepciones'];
+                        $isr = $_POST['isr'];
+                        $issemym = $_POST['issemym'];
+                        $deductions = $_POST['tdeducciones'];
+
+                        
+                        if (empty($perceptions) || empty($isr) || empty($issemym) || empty($deductions)) {
+                            alertdata();
+                        } else {
+                            $PoderCred = (($perceptions - ($isr + $issemym)) * 0.3) - ($deductions - $isr - $issemym);
+                            
+                            $totalQuincenas = 21;
+                            $totalMeses = 13;
+                            
+                            $quincenasPago = ($totalQuincenas) - ($month * 2);
+                        
+                            if ($day <= 15 && $day >= 1) {
+                                $quincenasPago = $quincenasPago + 1;
+                                $cantidadMax = $PoderCred * $quincenasPago;
+
+                                if ($month == 11 && $day <= 15) {
+                                    $quincenasPago = $quincenasPago + 1;
+                                    $cantidadMax = $PoderCred * $quincenasPago;
+                                    $cantidadMax = $cantidadMax;
+                                }
+
+                                if ($month == 12 && $day <= 15) {
+                                $quincenasPago = ($month * 2) - 2;
+                                $cantidadMax = $PoderCred * $quincenasPago;
+                                }
+
+                            } else if ($day >= 15 && $day <= 31) {
+                                $quincenasPago = $quincenasPago;
+                                $cantidadMax = $PoderCred * $quincenasPago;
+                                $resultadoDos = $quincenasPago;
+                        
+                                if ($month == 11 && $day >= 16) {
+                                    $quincenasPago = -1 * ($quincenasPago);
+                                    $cantidadMax = $PoderCred * $quincenasPago;
+                                }
+                                if ($month == 12 && $day >= 16) {
+                                    $quincenasPago = ($month * 2) - 3;
+                                    $resultadoDos = $quincenasPago;
+                                    $cantidadMax = $PoderCred * $quincenasPago;
+                                }
+                            }
+                            $PoderCredC = base64_encode($PoderCred);
+                            $cantidadMaxC = base64_encode($cantidadMax);
+                            $quincenasPagoC = base64_encode($quincenasPago);
+                    ?>
+                            <div class="form-group row my-3 mx-3 fw-bold">
+                                <label for="poderCred" class="col-sm-2 col-form-label">Poder crediticio: </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control bg-warning bg-opacity-50" name="poderCred" value="<?php echo $PoderCred ?>" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row my-3 mx-3 fw-bold">
+                                <label for="cantMax" class="col-sm-2 col-form-label">Cantidad Máxima: </label>
+                                <div class="col-sm-10">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control bg-warning bg-opacity-50" name="cantMax" value="<?php echo $cantidadMax ?>" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <a href="peticionPrestamo.php?pc=<?php echo $PoderCredC;?>&cm=<?php echo $cantidadMaxC;?>&q=<?php echo $quincenasPagoC;?>" title="¡Deseo Solicitar el Prestamo!" class="btn btn-primary" type="submit" value="Solicitar" onclick="return confirm ('¿Esta seguro de solicitar el prestamo?')">¡Solicitar prestamo por nómina!</a>
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <small class="form-text text-muted my-0">
+                                    <p class="my-0">¿Necesitas un préstamo de mayor cantidad?</p>
+                                </small>
+                            </div>
+                            <small class="form-text text-muted my-0">
+                            <a href="registroaval.php?pc=<?php echo $PoderCredC;?>&cm=<?php echo $cantidadMaxC;?>&q=<?php echo $quincenasPagoC;?>" title="¡Deseo Solicitar el Prestamo!" type="submit" value="Solicitar">¡Deseo registrar un aval!</a>
+                            </small>
+
+                    <?php
+                        }
+                    }
+
+                    ?>
                 </form>
             </div>
 

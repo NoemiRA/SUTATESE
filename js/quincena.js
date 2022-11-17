@@ -111,7 +111,7 @@ function quincenas() {
     }
 
     var resultado =
-      "Meses comprendidos para subir recibo: " +
+      "Meses comprendidos para su recibo: " +
       nombreMes +
       " - " +
       nombreMesDos;
@@ -210,7 +210,7 @@ function quincenas() {
     // var resultado = "1era de "+nombreMes+' ó 1era y/o 2da de '+nombreMesDos;
 
     var resultado =
-      "Meses comprendidos para subir recibo: " +
+      "Meses comprendidos para su recibo: " +
       nombreMesDos +
       " - " +
       nombreMes;
