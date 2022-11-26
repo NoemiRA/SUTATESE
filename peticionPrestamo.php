@@ -18,6 +18,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <title>SUTATESE - Prestamo Nómina</title>
 
@@ -26,7 +27,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
 
 
-<body onload="plazo();">
+<body onload="quincenas();">
     <?php
     if (isset($_SESSION['NumEmpleado5'])) {
         if (isset($_GET['pc']) && isset($_GET['cm']) && isset($_GET['q'])) {
@@ -45,7 +46,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     ?>
         <div class="text-center m-5 p-3 rounded">
             <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
-            <form class="row bg-light" method="post" action="" enctype="multipart/form-data">
+            <form class="row bg-light" method="post" action="" enctype="multipart/form-data"> 
                 <div class="col-lg-5">
                     <div class="row mx-3 my-2">
                         <div class="col-md-6">
@@ -125,7 +126,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                 <div class="row mx-3 my-2 d-grid">
                     <div class="col-sm-12 mb-4">
-                        <input type="text" class="form-control bg-info bg-opacity-50" id="quincena" style="height: 38px;" disabled>
+                    <input type="text" class="form-control bg-info bg-opacity-50 fs-6" id="quincena" style="height: 38px;" disabled>
                     </div>
                 </div>
 
@@ -139,11 +140,12 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="row m-3">
                         <button class="btn btn-danger" onclick=location.href="/prestamos.php">CANCELAR</button>
                     </div>
-                    <div class="row m-3">
+                    <!-- <div class="row m-3">
                         <button type="button" class="btn btn-primary boton-ingresar" onclick="calcular();" name="calcular">
                             ¡CALCULAR TABLA DE AMORTIZACIÓN!
                         </button>
-                    </div>
+                        
+                    </div> -->
                     <div class="row m-3">
                         <input type="submit" class="btn btn-success" value="¡SOLICITAR PRESTAMO!" name="Request">
                     </div>
@@ -165,8 +167,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </thead>
                     <tbody id="tbody_1" class="text-center">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <?php
@@ -252,24 +255,22 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 } else {
                     alertdata();
                 }
-            }
-        }
-        ?>
+            ?>
         </form>
-        </div>
+    </div>
 
 
-    <?php
-    }
-    include("footer.php");
+    <?php 
+        }
+        include("footer.php");
     ?>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="js/plazo.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/prestamo.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" src="js/plazo.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+            <script type="text/javascript" src="js/prestamo.js"></script>
 </body>
 
 </html>
