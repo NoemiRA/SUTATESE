@@ -73,10 +73,11 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </div>
         <div class="col-lg-5 d-flex bg-light">
-            <div class="content mx-auto align-self-center px-4 my-4">
-                <button type="button" class="btn btn-warning my-4" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
+            <div class="content mx-auto align-self-center px-4 my-3">
+                <button type="button" class="btn btn-warning" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
                 <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoCA.php">PRÉSTAMO POR CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-primary my-4" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA O POR AVAL</button>
+                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA </button>
+                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroaval.php">PRÉSTAMO POR AVAL</button>
             </div>
         </div>
     </div>

@@ -70,9 +70,9 @@ $pdf->SetFont('helvetica','',10);
 $pdf->Cell(145,10,utf8_decode('Ecatepec de Morelos, Estado de México a '),0,0,'R');
 $pdf->Cell(45,10,utf8_decode($day.' de '.$month.' del '.$year),0,1,'C');
 $pdf->Ln(15);
-$pdf->Cell(190,10,utf8_decode('PROF. NICOLÁS CORTÉS MARTÍNEZ'),0,1,'L');
-$pdf->Cell(190,10,utf8_decode('SECRETARIO GENERAL'),0,1,'L');
-$pdf->Cell(190,10,utf8_decode('P R E S E N T E'),0,1,'L');
+$pdf->Cell(190,5,utf8_decode('PROF. NICOLÁS CORTÉS MARTÍNEZ'),0,1,'L');
+$pdf->Cell(190,5,utf8_decode('SECRETARIO GENERAL'),0,1,'L');
+$pdf->Cell(190,5,utf8_decode('P R E S E N T E'),0,1,'L');
 $pdf->Ln(10);
 $pdf->MultiCell(0, 7, utf8_decode('El que suscribe servidor público '.$row[0].' '.$row[1].' '.$row[2].' con número de empleado '.$NumEmpleado.' adscrito a la División de '.$row[5].' solicito de manera voluntaria que el Tecnológico de Estudios Superiores de Ecatepec, a través del Departamento de Personal descuente de mi sueldo de forma quincenal y por vía nómina la cantidad de $'.$row[3].' ( '.$letra.' 00/100 M.N.), por el periodo comprendido: DE LA PRIMERA  QUINCENA DE DICIEMBRE  DE 2022 A LA SEGUNDA QUINCENA DE NOVIEMBRE DE 2023, con depósito en la cuenta del Sindicato S.U.T.A.T.E.S.E.'), 0, 'J');
 $pdf->Ln(7);
@@ -83,7 +83,6 @@ $pdf->Ln(15);
 $pdf->Cell(190,10,'___________________________',0,1,'C');
 $pdf->Cell(190,10,'NOMBRE Y FIRMA',0,1,'C');
 
-//$pdf->setAutoPageBreak(true,0); Salto de pagina cuando se termina la pagina
 $pdf->Close();
 $pdf->Output('D','Formato_Cuota_SUTATESE.pdf');  
 

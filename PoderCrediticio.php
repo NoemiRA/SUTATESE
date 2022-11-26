@@ -194,7 +194,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 </small>
                             </div>
                             <small class="form-text text-muted my-0">
-                            <a href="registroaval.php?pc=<?php echo $PoderCredC;?>&cm=<?php echo $cantidadMaxC;?>&q=<?php echo $quincenasPagoC;?>" title="¡Deseo Solicitar el Prestamo!" type="submit" value="Solicitar">¡Deseo registrar un aval!</a>
+                                <a href="registroaval.php " title="¡Deseo Solicitar el Prestamo!" value="Solicitar">¡Deseo registrar un aval!</a>
                             </small>
 
                     <?php

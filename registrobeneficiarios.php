@@ -30,10 +30,16 @@ if (empty($_SESSION['NumEmpleado5'])) {
     if (isset($_SESSION['NumEmpleado5'])) {
         $NumEmpleado = $_SESSION['NumEmpleado5'];
 
-        $sql = "SELECT IdAhorrador FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado'";
+        $sql = "SELECT IdAhorrador  FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado' ";
         $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result);
-        $IdAhorrador = $row['IdAhorrador'];
+        $count = mysqli_num_rows($result);
+
+        if($count > 0){
+
+            $sql = "SELECT IdAhorrador FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_array($result);
+            $IdAhorrador = $row['IdAhorrador'];
 
     ?>
         <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS</strong></h2>
@@ -337,9 +343,25 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     ?>
                 </div>
             </div>
-            
         </form>
     <?php
+        }
+        else{
+            ?>
+                <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS</strong></h2>
+                <div class="card text-center m-5">
+                    <div class="card-header display-6">
+                        Error...
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-text display-6">Para acceder a los beneficiarios, es importante que primero registre su infromación en <b>"Cantidad a ahorrar"</b>.</h1>
+                        <a href="registroCA.php" class="btn btn-danger">REGRESAR</a>
+                    </div>
+                </div>
+
+            <?php
+        }
+        
     }
     include("footer.php");
     ?>

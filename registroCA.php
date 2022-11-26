@@ -77,23 +77,41 @@
                 if (isset($_SESSION['NumEmpleado5'])) {
                     $NumEmpleado = $_SESSION['NumEmpleado5'];
 
-                    $ahorrador = "SELECT IdAhorrador, NumEmpleado1 from cajaahorro where NumEmpleado1 = '$NumEmpleado'";
-                    $resultahorrador = mysqli_query($conn, $ahorrador);
-                    $row = mysqli_fetch_array($resultahorrador);
-                    $IdAhorrador = $row['IdAhorrador'];
-                    $countahorrador = mysqli_num_rows($resultahorrador);
+                    $dot = "SELECT IdAhorrador  FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado' ";
+                    $result_dot = mysqli_query($conn, $dot);
+                    $count_dot = mysqli_num_rows($result_dot);
 
-                    $sql_absence = "SELECT SUM(Porcentaje) AS percentage_absence from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 WHERE NumEmpleado1 = $NumEmpleado and IdTipoBeneficiario1 = 'TB1'";
-                    $result_absence = mysqli_query($conn, $sql_absence);
-                    $row_absence = mysqli_fetch_array($result_absence);
-                    $absence = $row_absence['percentage_absence'];
+                    if($count_dot > 0){
 
-                    $sql_death = "SELECT SUM(Porcentaje) AS percentage_death from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 WHERE NumEmpleado1 = $NumEmpleado and IdTipoBeneficiario1 = 'TB2'";
-                    $result_death = mysqli_query($conn, $sql_death);
-                    $row_death = mysqli_fetch_array($result_death);
-                    $death = $row_death['percentage_death'];
+                        $ahorrador = "SELECT IdAhorrador, NumEmpleado1 from cajaahorro where NumEmpleado1 = '$NumEmpleado'";
+                        $resultahorrador = mysqli_query($conn, $ahorrador);
+                        $row = mysqli_fetch_array($resultahorrador);
+                        $IdAhorrador = $row['IdAhorrador'];
+                        $countahorrador = mysqli_num_rows($resultahorrador);
 
-                    $flag = $absence + $death;
+                        $sql_absence = "SELECT SUM(Porcentaje) AS percentage_absence from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 WHERE NumEmpleado1 = $NumEmpleado and IdTipoBeneficiario1 = 'TB1'";
+                        $result_absence = mysqli_query($conn, $sql_absence);
+                        $row_absence = mysqli_fetch_array($result_absence);
+                        $absence = $row_absence['percentage_absence'];
+
+                        $sql_death = "SELECT SUM(Porcentaje) AS percentage_death from beneficiario inner join cajaahorro on cajaahorro.IdAhorrador = beneficiario.IdAhorrador1 WHERE NumEmpleado1 = $NumEmpleado and IdTipoBeneficiario1 = 'TB2'";
+                        $result_death = mysqli_query($conn, $sql_death);
+                        $row_death = mysqli_fetch_array($result_death);
+                        $death = $row_death['percentage_death'];
+
+                        $flag = $absence + $death;
+
+
+                        $sql = "SELECT IdAhorrador, Estatus, FormatoCuota, SolicitudAportacion FROM cajaahorro WHERE IdAhorrador = '$IdAhorrador'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_array($result);
+                        $Estatus = $row['Estatus'];
+
+                    }else{
+                        $Estatus = 0;
+                        $countahorrador = 0;
+                        $absence = 0;
+                    }
 
                     function Etapas($point, $opc1, $opc2, $opc3){
                         ?>
@@ -140,13 +158,10 @@
                         <?php
                     }
 
-                    $sql = "SELECT IdAhorrador, Estatus, FormatoCuota, SolicitudAportacion FROM cajaahorro WHERE IdAhorrador = '$IdAhorrador'";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_array($result);
-                    $Estatus = $row['Estatus'];
-                    $FormatoCuota = $row['FormatoCuota'];
-                    $SolicitudAportacion = $row['SolicitudAportacion'];
+                    
 
+                    //Aqui iba el codigo de consulta
+                
                     if($Estatus == 0){
                         if($countahorrador == 1 && $flag == 200){
                             $point = 1;
@@ -175,13 +190,12 @@
                         Etapas($point, $opc1, $opc2, $opc3);
                         $point = 3;
                     }
-                    if($Estatus == 3){
+                    if($Estatus >= 3){
                         $point = 3;
                         $opc1 = 'disabled';
                         $opc2 = 'disabled';
                         $opc3 = '';
                         Etapas($point, $opc1, $opc2, $opc3);
-                        $point = 4;
                     }
 
                     if (isset($_POST['Accept'])) {

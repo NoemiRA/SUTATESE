@@ -29,15 +29,14 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <?php
     if (isset($_SESSION['NumEmpleado5'])) {
         $NumEmpleado = $_SESSION['NumEmpleado5'];
-        $NombreEmp = $_SESSION['Nombres'];
-        $ApellidoPatEmp = $_SESSION['ApellidoPat'];
-        $ApellidoMatEmp = $_SESSION['ApellidoMat'];
+        $NombreEmp = $_SESSION['Nombres'].' '. $_SESSION['ApellidoPat'].' '. $_SESSION['ApellidoMat'];
+
 
         $sql = "SELECT IdAhorrador, NumEmpleado1, CantidadQuincenal, FormatoCuota, SolicitudAportacion, IdTipoAhorro, TipoAhorro  FROM cajaahorro inner join tipoahorro on cajaahorro.IdTipoAhorro1 = tipoahorro.IdTipoAhorro WHERE NumEmpleado1 = '$NumEmpleado' ";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
         $count = mysqli_num_rows($result);
-        $id = $row[5];
+        
     ?>
         <div class="container-xl text-center login">
             <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -73,13 +72,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                         <div class="col-md-auto my-4">
                             <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="<?php echo $NombreEmp . " " . $ApellidoPatEmp . " " . $ApellidoMatEmp ?>" disabled>
+                            <input type="text" class="form-control" id="nombre" placeholder="<?php echo $NombreEmp ?>" disabled>
                         </div>
 
                         <?php
                         if ($count >= 1) {
                         ?>
-
+                            $id = $row[5];
                             <div class="col mt-4">
                                 <div class="col-md-auto">
                                     <label for="tipo" class="form-label">Seleccione un tipo de fondo</label>

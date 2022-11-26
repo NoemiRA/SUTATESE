@@ -128,8 +128,6 @@ $pdf->Cell(90,5,utf8_decode('PROF. NICOLÁS CORTÉS MARTÍNEZ'),0,1,'C');
 $pdf->Cell(90,4,'ASOCIADO',0,0,'C');
 $pdf->Cell(90,4,'SECRETARIO GENERAL',0,1,'C');
 
-//$pdf->setAutoPageBreak(true,0); Salto de pagina cuando se termina la pagina
-
 $pdf->Close();
 $pdf->Output('D','Solicitud_Aportación_SUTATESE.pdf',true);  
 
