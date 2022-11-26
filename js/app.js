@@ -106,7 +106,7 @@ function cargarReloj() {
   setTimeout(cargarReloj, 500);
 }
 
-cargarReloj();
+// cargarReloj();
 
 function alertaPrestamos() {
   swal(
