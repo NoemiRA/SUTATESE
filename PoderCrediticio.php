@@ -160,6 +160,16 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             $PoderCredC = base64_encode($PoderCred);
                             $cantidadMaxC = base64_encode($cantidadMax);
                             $quincenasPagoC = base64_encode($quincenasPago);
+
+                            if($PoderCred < 0){
+                                echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡No puede solicitar un préstamo por nómina dado a que su poder créditicio es muy bajo!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+                            then(function(result){
+                                if(result.value){ 
+                                    window.location = "poderCrediticio.php";                    
+                                }
+                            });
+                            </script>';
+                            }
                     ?>
                             <div class="form-group row my-3 mx-3 fw-bold">
                                 <label for="poderCred" class="col-sm-2 col-form-label">Poder crediticio: </label>

@@ -44,7 +44,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             $interest = $row[0];
         }
     ?>
-        <div class="text-center m-5 p-3 rounded">
+        <div class="text-center m-5 p-3 rounded mb-0 pb-0">
             <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
             <form class="row bg-light" method="post" action="" enctype="multipart/form-data"> 
                 <div class="col-lg-5">
@@ -75,20 +75,15 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="input_cuotas" class="col col-form-label fw-bold">Plazo de pago en quincenas:</label>
+                            <label for="input_cuotas" class="col col-form-label fw-bold">Plazo de pago:</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" value="<?php echo $quincenasPago ?>" disabled>
+                                <input type="text" class="form-control" value="<?php echo $quincenasPago ?>" disabled name="PlazoPago" id="input_cuotas">
                                 <span class="input-group-text">Quincenas</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row mx-3 my-2 d-grid">
-                        <label for="description" class="col col-form-label fw-bold">Plazo de máximo a pagar:</label>
-                        <div class="col">
-                            <input type="text" class="form-control" id="meses" style="height: 38px;" disabled></input>
-                        </div>
-                    </div>
+                    
 
                     <div class="row mx-3 my-2 d-grid">
                         <label for="input_monto" class="col col-form-label fw-bold">Cantidad a solicitar</label>
@@ -138,14 +133,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                 <div class="d-flex flex-column mb-3">
                     <div class="row m-3">
-                        <button class="btn btn-danger" onclick=location.href="/prestamos.php">CANCELAR</button>
+                        <a class="btn btn-danger" onclick=location.href="poderCrediticio.php">CANCELAR</a>
                     </div>
-                    <!-- <div class="row m-3">
-                        <button type="button" class="btn btn-primary boton-ingresar" onclick="calcular();" name="calcular">
-                            ¡CALCULAR TABLA DE AMORTIZACIÓN!
-                        </button>
-                        
-                    </div> -->
                     <div class="row m-3">
                         <input type="submit" class="btn btn-success" value="¡SOLICITAR PRESTAMO!" name="Request">
                     </div>
@@ -153,10 +142,12 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
 
         <div class="col-lg-7 ">
+            <h2 class="mt-4 fw-bold">TABLA DE AMORTIZACIÓN</h2>
             <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
                 <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
                         order-collapse: collapse">
                     <thead class="text-center" style="background-color:#00102E; color: #ffffff;">
+                    
                         <tr>
                             <th>Quincena</th>
                             <th>Amortización captial</th>
@@ -255,10 +246,15 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 } else {
                     alertdata();
                 }
+           }
+        }
             ?>
         </form>
+        <div class="d-flex flex-column col-lg-5 mb-4 ms-4 me-4"> 
+            <button type="button" class="btn btn-primary mt-1 ms-5 me-5" onclick="calcular();" name="calcular">¡CALCULAR TABLA DE AMORTIZACIÓN!</button> 
+        </div>
     </div>
-
+    
 
     <?php 
         }
@@ -271,6 +267,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             <script type="text/javascript" src="js/plazo.js"></script>
             <script type="text/javascript" src="js/app.js"></script>
             <script type="text/javascript" src="js/prestamo.js"></script>
+            <script type="text/javascript" src="js/quincena.js"></script>
 </body>
 
 </html>
