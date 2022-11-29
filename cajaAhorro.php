@@ -57,13 +57,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>
                     </div>
 
-                    <div class="col-lg-9">
+                    <div class="col-xs-9">
                         <div class="form-group row m-3 ">
                             <label for="description" class="col col-form-label fw-bold text-end">Tipo de fondo:</label>
                             <div class="col">
                                 <input type="text" class="form-control " name="tipoFondo" id="tipoFondo" value="<?php echo $row[6] ?>" disabled>
 
-                            </div>
+                        </div>
                         </div>
                         <?php
                         $i = 0;

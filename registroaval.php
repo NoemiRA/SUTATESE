@@ -18,7 +18,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <title>SUTATESE-Aval</title>
+    <title>SUTATESE - Aval</title>
 
     <?php include("navbar.php");
     ?>
@@ -89,7 +89,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
         
     ?>
         <form method="post" action="" enctype="multipart/form-data">
-            <div class="parrafo-aval p-5">
+            <div class="parrafo-aval p-5 pb-0">
                 <div class="row">
                     <div class="col-lg-6 mx-1">
                         <h2>¿Qué es un Aval?</h2>
@@ -157,7 +157,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <div class="col-md-4">
                                 <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" <?php echo $amortization ?> name="plazoPago" value="<?php echo $quincenasPago ?>">
+                                    <input id="input_cuotas"type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" <?php echo $amortization ?> name="plazoPago" value="<?php echo $quincenasPago ?>">
                                     <span class="input-group-text">quincenas</span>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <div class="col-md-4">
                                 <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" name="plazoPago" placeholder="Ingrese quincenas">
+                                    <input  id="input_cuotas"type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" name="plazoPago" placeholder="Ingrese quincenas">
                                     <span class="input-group-text">quincenas</span>
                                 </div>
                             </div>
@@ -207,10 +207,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
 
                         <div class="row m-2">
-                            <button type="button" class="btn btn-primary my-2" onclick="calcular();" name="calcular">
-                                ¡DESEO VER MI TABLA DE AMORTIZACIÓN!
-                            </button>
-                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!" onclick="return confirmacion()">
+                            
+                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!">
                             <button type="button" class="btn btn-success my-2" <?php echo $format?> onclick=location.href="pagare.php">¡DESEO GENERAR MI PAGARÉ!</button>
                         </div>
 
@@ -220,12 +218,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>
                         <div class="row my-4">
                             <div class="col">
-                                <input type="submit" class="btn btn-success" name="request" <?php echo $format?> value="¡SOLICITAR PRESTAMO!">
+                                <input type="submit" class="btn btn-success m-2" name="request" <?php echo $format?> value="¡SOLICITAR PRESTAMO!">
                             </div>
                             <div class="col">
-                                <input type="submit" class="btn btn-danger" name="cancel" <?php echo $format?> value="¡CANCELAR PRESTAMO!" onclick="return cancelar()">
+                                <input type="submit" class="btn btn-danger m-2" name="cancel" <?php echo $format?> value="¡CANCELAR PRESTAMO!" onclick="return confirmacion()">
                             </div>
                         </div>
+                        <p><span class="fw-bold">Nota: </span>No olvide revisar su <span class=" fst-italic fw-bold">"Tabla de Amortización"</span> en la parte de abajo.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
@@ -247,23 +246,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
                 </div>
 
-                <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
-                    <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
-                            order-collapse: collapse">
-                        <thead class="text-center" style="background-color:#00102E; color: white;">
-                            <tr>
-                                <th>Quincena</th>
-                                <th>Amortización capital</th>
-                                <th>Intereses</th>
-                                <th>Abonos</th>
-                                <th>Saldos</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody_1" class="text-center">
-
-                        </tbody>
-                    </table>
-                </div>
+                
 
                 <?php
                 function alertsuccess()
@@ -386,6 +369,30 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 ?>
             </div>
         </form>
+        <div class="text-center mt-2">
+            <button type="button" class="btn btn-primary my-2" onclick="calcular();" name="calcular" <?php echo $amortization ?>>
+                ¡DESEO VER MI TABLA DE AMORTIZACIÓN!
+            </button>
+        </div>
+        <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
+                    <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+                            order-collapse: collapse">
+                        <thead class="text-center" style="background-color:#00102E; color: white;">
+                            <tr>
+                                <th>Quincena</th>
+                                <th>Amortización capital</th>
+                                <th>Intereses</th>
+                                <th>Abonos</th>
+                                <th>Saldos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_1" class="text-center">
+
+                        </tbody>
+                    </table>
+                </div>
+
+
     <?php
     }
     include("footer.php");
