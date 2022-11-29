@@ -57,7 +57,7 @@
             }
         }
 
-        $loanInterest = intval($interest) * 0.01;
+        $loanInterest = (intval($interest) * 0.01) / 2;
         $capital = intval($row[2]) * $loanInterest * intval($row[3]);
         $id= (int) filter_var($row[0], FILTER_SANITIZE_NUMBER_INT); 
         $pdf = new PDF();

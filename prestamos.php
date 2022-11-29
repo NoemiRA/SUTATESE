@@ -24,27 +24,28 @@ if (empty($_SESSION['NumEmpleado5'])) {
 </head>
 
 <body>
+    <?php
+        if (isset($_SESSION['NumEmpleado5'])) {
+            $NumEmpleado = $_SESSION['NumEmpleado5'];
+    ?>
     <div class="row g-0 h-50 p-5">
         <div class="col-lg-7 d-flex">
             <div class="content px-3 my-auto">
                 <h2 class="p-2 text-center"><strong>PRÉSTAMOS</strong></h2>
                 <marquee>
-                    <h1 class="display-6"><em>Es importante tener la información bancaria actualizada o dada de alta antes de solicitar un préstamo.<em></h1>
+                    <h1 class="display-6"><em>Es importante tener la información bancaria dada de alta antes de solicitar un préstamo.<em></h1>
                 </marquee>
                 <ul>
+                    <li>
+                        <p class="parrafo-aval">
+                            Si los botones aparecen deshabilitados, es importante que ingrese su <strong>Información Bancaria</strong>.
+                        </p>
+                    </li>
                     <li>
                         <p class="parrafo-aval">
                             <strong>Conoce tu poder crediticio: </strong>
                             Se presenta una lista detallada acerca de sus percepciones y deducciones que se presentan en su nómina,
                             indicando a usted el poder crediticio con el que cuenta quincenalmente.
-                        </p>
-                    </li>
-                    <li>
-                        <p class="parrafo-aval">
-                            <strong>Conoce tu estatus de préstamos: </strong>
-                            Puede acceder a la opción una vez que ya ha realizado previa solicitud a un préstamo en cualquiera de las tres
-                            opciones que también se encuentran en el menú y que a continuación se detallarán, se indica si su préstamo no
-                            ha sido procedente o en caso de que lo sea, podrá visualizar el estatus de pago realizado quincenalmente.
                         </p>
                     </li>
                     <li>
@@ -72,18 +73,29 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 </ul>
             </div>
         </div>
+        <?php
+            $exist = "SELECT * FROM datosbancarios WHERE NumEmpleado2 = $NumEmpleado";
+            $result = mysqli_query($conn, $exist);
+            $countExist = mysqli_num_rows($result);
+            if ($countExist > 0) {
+                $btn = '';
+            }else{
+                $btn='disabled';
+            }
+        ?>
         <div class="col-lg-5 d-flex bg-light">
             <div class="content mx-auto align-self-center px-4 my-3">
-                <button type="button" class="btn btn-warning" style="width: 100%; height: 100px;" onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="prestamoCA.php">PRÉSTAMO POR CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA </button>
-                <button type="button" class="btn btn-primary" style="width: 100%; height: 100px;" onclick=location.href="registroaval.php">PRÉSTAMO POR AVAL</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="prestamoCA.php">PRÉSTAMO POR CAJA DE AHORRO</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA </button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="registroaval.php">PRÉSTAMO POR AVAL</button>
             </div>
         </div>
     </div>
 
     <?php
-    include("footer.php");
+            }
+            include("footer.php");
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

@@ -255,6 +255,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 } else {
                     alertdata();
                 }
+            }
+        }
             ?>
         </form>
     </div>

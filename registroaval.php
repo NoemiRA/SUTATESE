@@ -25,7 +25,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
 </head>
 <script>
-    function confirmacion(){
+    function cancelar(){
         var respuesta = confirm("¿Desea cancelar el prestamo?");
         if(respuesta == true){
             return true;
@@ -33,7 +33,18 @@ if (empty($_SESSION['NumEmpleado5'])) {
             return false;
         }
     }
+
+    function confirmacion(){
+        var respuesta = confirm("¿Está seguro de la información que ha registrado para su aval y préstamo?");
+        if(respuesta == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 </script>
+
 <body>
     <?php
     if (isset($_SESSION['NumEmpleado5'])) {
@@ -165,7 +176,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 <select class="form-control" name="ne">
                                         <option selected disabled>Elige el futuro aval...</option>
                                         <?php
-                                        $combo = $conn->query("Select NumEmpleado, IdAhorrador, Nombres, ApellidoPat, ApellidoMat from empleado INNER JOIN cajaahorro ON empleado.NumEmpleado = cajaahorro.NumEmpleado1 WHERE NumEmpleado <> $NumEmpleado ORDER BY ApellidoPat");
+                                        $combo = $conn->query("Select NumEmpleado, IdAhorrador, Nombres, ApellidoPat, ApellidoMat from empleado INNER JOIN cajaahorro ON empleado.NumEmpleado = cajaahorro.NumEmpleado1 WHERE NumEmpleado <> $NumEmpleado");
                                         foreach ($combo as $opc) :
                                         ?>
                                             <option value="<?php echo $opc['IdAhorrador'] ?>"><?php echo $opc['NumEmpleado'] . ' - ' . $opc['ApellidoPat'] . ' ' . $opc['ApellidoMat'] . ' ' . $opc['Nombres'] ?></option>
@@ -199,7 +210,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <button type="button" class="btn btn-primary my-2" onclick="calcular();" name="calcular">
                                 ¡DESEO VER MI TABLA DE AMORTIZACIÓN!
                             </button>
-                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!">
+                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!" onclick="return confirmacion()">
                             <button type="button" class="btn btn-success my-2" <?php echo $format?> onclick=location.href="pagare.php">¡DESEO GENERAR MI PAGARÉ!</button>
                         </div>
 
@@ -212,7 +223,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 <input type="submit" class="btn btn-success" name="request" <?php echo $format?> value="¡SOLICITAR PRESTAMO!">
                             </div>
                             <div class="col">
-                                <input type="submit" class="btn btn-danger" name="cancel" <?php echo $format?> value="¡CANCELAR PRESTAMO!" onclick="return confirmacion()">
+                                <input type="submit" class="btn btn-danger" name="cancel" <?php echo $format?> value="¡CANCELAR PRESTAMO!" onclick="return cancelar()">
                             </div>
                         </div>
                     </div>
@@ -320,7 +331,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 if (isset($_POST['date'])) {
                     $aval = filter_input(INPUT_POST, "ne");
                     $cantidadSolicitar = $_POST['cantSolicitada'];
+
                     $plazoPago = $_POST['plazoPago'];
+                    
                     if (empty($aval) || empty($cantidadSolicitar) || empty($plazoPago)) {
                         alertdata();
                     }else{
@@ -358,6 +371,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 alerterror();
                             }
                         }
+                    }else{
+                        alertdata();
                     }
                 }
                 if (isset($_POST['cancel'])) {
