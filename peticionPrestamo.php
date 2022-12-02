@@ -60,7 +60,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <label for="description" class="col col-form-label fw-bold">Cantidad máxima a solicitar</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">$</span>
-                                <input type="text" class="form-control" value="<?php echo $cantidadMax ?>" disabled>
+                                <input type="text" class="form-control" id="cantMax" value="<?php echo $cantidadMax ?>" disabled>
                             </div>
                         </div>
                     </div>
