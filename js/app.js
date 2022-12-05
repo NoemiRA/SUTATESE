@@ -72,8 +72,7 @@ function contraseña() {
     setTimeout(cargarReloj, 500);
     
 }
- 
-//  cargarReloj();
+ cargarReloj();
 
 
 function alertaPrestamos(){

@@ -54,20 +54,50 @@ function setMoneda(num) {
             var monto = document.getElementById("input_monto").value;
             var cuotas = document.getElementById("input_cuotas").value;
              var tasa = document.getElementById("input_tasa").value;
+             var cantMax = document.getElementById("cantMax").value;
+             
+             if(parseFloat(monto) > cantMax){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error...',
+                    text: "La cantidad que solicitó: \"$"+monto+"\", es mayor a su cantidad dispoible: \"$"+ cantMax+"\"."
+                   
+                  });
+                return; 
+             }
             if (!monto) {
-                swal("¡Advertencia!", "Indique la cantidad a solicitar", "warning");
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¡Advertencia!',
+                    text: "Indique la cantidad a solicitar."
+                   
+                  });
                 return; 
             }
             if (!cuotas) {
-                swal("¡Advertencia!", "Indique el plazo a pagar", "warning");
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¡Advertencia!',
+                    text: "Indique el plazo a pagar."
+                  });
                 return; 
             }
             if (!tasa) {
-                swal("¡Advertencia!", "Indique la tasa de interes", "warning");
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¡Advertencia!',
+                    text: "Indique la tasa de interes."
+                   
+                  });
                 return; 
             }
             if (parseInt(cuotas) < 1) {
-                swal("¡Advertencia!", "Ha indicado una cantidad invalida para las cuotas, porfavor ingrese un número positivo", "warning");
+                Swal.fire({
+                    icon: 'warning',
+                    title: '¡Advertencia!',
+                    text: "Ha indicado una cantidad invalida para las cuotas, porfavor ingrese un número positivo."
+                   
+                  });
                 return; 
             }
              var select_periodo = document.getElementById("select_periodo");
@@ -79,7 +109,11 @@ function setMoneda(num) {
             tbody.innerHTML = "";
   
         if (parseInt(cuotas) > 21) { 
-            swal("¡Advertencia!", "Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala a 21 o menos", "warning");
+            Swal.fire({
+                icon: 'warning',
+                title: '¡Advertencia!',
+                text: "Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala a 21 o menos."
+              });
             return; 
         }
 
