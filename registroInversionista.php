@@ -81,7 +81,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             <div class="col-lg-5 d-flex p-3 bg-light">
                 <div class="my-auto">
                     <?php
-                        $sql = "SELECT IdInversionista, Estatus FROM inversionista WHERE NumEmpleado6 = '$NumEmpleado'";
+                        $sql = "SELECT IdInversionista, Estatus, FechaDevolucion FROM inversionista WHERE NumEmpleado6 = '$NumEmpleado'";
                         $result = mysqli_query($conn, $sql);
                         $row = mysqli_fetch_array($result);
                         $resp = mysqli_num_rows($result);
@@ -128,7 +128,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 case 6:
                                     $register = 'disabled';
                                     $voucher = 'disabled';
-                                    $mss = "Su pago de inversión final se entregará el dia ...";
+                                    $mss = "Su pago de inversión final se entregará el dia ". $row['FechaDevolucion'];
                                     estate($register, $voucher, $mss);
                                     break;
 

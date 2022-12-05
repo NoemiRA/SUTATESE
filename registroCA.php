@@ -17,11 +17,23 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <title>SUTATESE-Caja ahorro</title>
     <?php include("navbar.php");
     ?>
 </head>
+
+<script>
+    function confirmacion(){
+        var respuesta = confirm("¿Está seguro de haber registrado correctamente los datos y pasar a la siguiente etapa?");
+        if(respuesta == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
 
 <body>
     <form class="row g-3 mt-3 mx-0" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -128,7 +140,7 @@
                             </div>
                             <?php
                                 if($point == 1){
-                                    echo'<input type="submit"'. $opc1 .' class="btn btn-success" value="¡He llenado completamente mi registro DESEO PASAR A LA SIGUIENTE ETAPA!" name="Accept"></input>';
+                                    echo'<input type="submit"'. $opc1 .' class="btn btn-success" value="¡He llenado completamente mi registro DESEO PASAR A LA SIGUIENTE ETAPA!" name="Accept" onclick="return confirmacion()" onclick="return confirmacion()"></input>';
                                 }
                             ?>
                             <div class="d-flex">
@@ -158,9 +170,26 @@
                         <?php
                     }
 
-                    
-
-                    //Aqui iba el codigo de consulta
+                    function alertsuccess()
+                    {
+                        echo '<script> Swal.fire({icon: "success", title: "Datos Ingresados", text: "¡Los datos han sido ingresados correctamente!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+                            then(function(result){
+                                if(result.value){                   
+                                    window.location = "registroCA.php";
+                                }
+                            });
+                            </script>';
+                    }
+                    function alerterror()
+                    {
+                        echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+                            then(function(result){
+                                if(result.value){                   
+                                window.location = "registroCA.php";
+                                }
+                            });
+                            </script>';
+                    }
                 
                     if($Estatus == 0){
                         if($countahorrador == 1 && $flag == 200){
@@ -202,7 +231,9 @@
                         $point=2;
                         $ejecucion = $conn->query("UPDATE cajaahorro SET Estatus = '$point' WHERE IdAhorrador = '$IdAhorrador'");
                         if ($ejecucion === TRUE) {
-                            echo '<meta http-equiv=refresh content="1; registroCA.php">';
+                            alertsuccess();
+                        }else{
+                            alerterror();
                         }
                     }                  
                 }

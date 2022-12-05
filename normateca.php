@@ -39,23 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 my-3 mb-5">
-            <div class="card text-center" style="height: 100%;">
-                <div class="card-body">
-                    <h2 class="card-title"><b> Formato Pagare 2023 </b></h2>
-                    <p class="card-text">
-                        Documento contable que contiene la promesa incondicional de una persona, denominada deudor,
-                        que pagará a una segunda persona, llamada beneficiario o acreedor, una suma monetaria en un
-                        determinado plazo.
-                    </p>
-                    <footer class="blockquote-footer my-3">Deberá ser debidamente llenado, escaneado y subirlo en la
-                        parte correspondiente de  <cite title="Source Title">Préstamo por aval</cite>.</footer>
-                    <a type="button" class="btn btn-outline-dark my-4" target="_black" href="http://localhost/SUTATESE/docs/Pagare2023.pdf">
-                        Ver archivo
-                    </a>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <?php include("footer.php");
     ?>

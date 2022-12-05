@@ -36,9 +36,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
         <?php
         if (isset($_SESSION['NumEmpleado5'])) {
             $NumEmpleado = $_SESSION['NumEmpleado5'];
-            $NombreEmp = $_SESSION['Nombres'];
-            $ApellidoPatEmp = $_SESSION['ApellidoPat'];
-            $ApellidoMatEmp = $_SESSION['ApellidoMat'];
+            $NombreEmp = $_SESSION['Nombres']. ' ' . $_SESSION['ApellidoPat']. ' ' . $_SESSION['ApellidoMat'];
+
             $sql = "SELECT Nombres, ApellidoMat, ApellidoPat, NumEmpleado, IdBanco1, InstitucionBancaria, Clabe  FROM datosbancarios inner join empleado on datosbancarios.NumEmpleado2 = empleado.NumEmpleado inner join banco on banco.IdBanco = datosbancarios.IdBanco1 WHERE NumEmpleado2 = '$NumEmpleado' ";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_array($result);
@@ -54,7 +53,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <div class="col p-3">
                             <label for="titular" class="form-label">Nombre TITULAR</label>
-                            <input type="text" class="form-control text-center" id="titular" value="<?php echo $NombreEmp . " " . $ApellidoPatEmp . " " . $ApellidoMatEmp ?>" disabled>
+                            <input type="text" class="form-control text-center" id="titular" value="<?php echo $NombreEmp?>" disabled>
                         </div>
                         <div class="col p-3">
                             <div class="form-group">
@@ -95,7 +94,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <div class="col p-3">
                             <label for="titular" class="form-label">Nombre TITULAR</label>
-                            <input type="text" class="form-control text-center" id="titular" value="<?php echo $NombreEmp . " " . $ApellidoPatEmp . " " . $ApellidoMatEmp ?>" disabled>
+                            <input type="text" class="form-control text-center" id="titular" value="<?php echo $NombreEmp ?>" disabled>
                         </div>
                         <div class="col p-3">
                             <div class="form-group">
@@ -124,47 +123,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </div>
                         </div>
                         <div>
-                            <button type="button" class="btn boton-ingresar" onclick="window.history.go(-2);">Cancelar</button>
+                            <button type="button" class="btn boton-ingresar" onclick="window.history.go(-1);">Cancelar</button>
                             <input type="submit" class="btn" value="Aceptar" name="Insert"></input>
                         </div>
                     </form>
                 <?php
             }
         
-        
-        // Update
-        // if (isset($_POST['Update'])) {
-        //     $clabebancaria = $_POST['clabe'];
-        //     $InstBanc = filter_input(INPUT_POST, "IB");
-        //     if ($clabebancaria == "") {
-        //         echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-        //                 then(function(result){
-        //                     if(result.value){                   
-        //                     window.location = "datosBancarios.php";
-        //                     }
-        //                 });
-        //                 </script>';
-        //     } else {
-        //         $ejecucion = $conn->query("UPDATE datosbancarios set Clabe = '$clabebancaria', IdBanco1 = '$InstBanc' WHERE NumEmpleado2 = '$NumEmpleado'");
-        //         if ($ejecucion === TRUE) {
-        //             echo '<script> Swal.fire({icon: "success", title: "Datos Actualizados", text: "¡Los DATOS BANCARIOS han sido actualizados!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-        //                 then(function(result){
-        //                     if(result.value){                   
-        //                     window.location = "datosBancarios.php";
-        //                     }
-        //                 });
-        //                 </script>';
-        //         } else {
-        //             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-        //                 then(function(result){
-        //                     if(result.value){                   
-        //                     window.location = "datosBancarios.php";
-        //                     }
-        //                 });
-        //                 </script>';
-        //         }
-        //     }
-        // }
         // Insert
         if (isset($_POST['Insert'])) {
             $clabebancaria = $_POST['clabe'];
@@ -183,7 +148,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     echo '<script> Swal.fire({icon: "success", title: "Datos Ingresados", text: "¡Los DATOS BANCARIOS han sido registrados!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                         then(function(result){
                             if(result.value){                   
-                            window.location = "datosBancarios.php";
+                            window.location = "inicio.php";
                             }
                         });
                         </script>';

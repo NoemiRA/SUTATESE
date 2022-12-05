@@ -29,6 +29,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <?php
     if (isset($_SESSION['NumEmpleado5'])) {
         $NumEmpleado = $_SESSION['NumEmpleado5'];
+        $NombreEmp = $_SESSION['Nombres']. ' ' . $_SESSION['ApellidoPat']. ' ' . $_SESSION['ApellidoMat'];
 
         $sql = "SELECT IdAhorrador FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado'";
         $result = mysqli_query($conn, $sql);
@@ -72,7 +73,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 </div>
                                 <div class="col-md-auto">
                                     <label for="nombre" class="form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Noemi Ruiz" disabled>
+                                    <input type="text" class="form-control" id="nombre" value="<?php echo $NombreEmp; ?>" disabled>
                                 </div>
                             </div>
                             <hr>

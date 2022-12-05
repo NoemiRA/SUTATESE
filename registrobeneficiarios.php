@@ -354,7 +354,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         Error...
                     </div>
                     <div class="card-body">
-                        <h1 class="card-text display-6">Para acceder a los beneficiarios, es importante que primero registre su infromación en <b>"Cantidad a ahorrar"</b>.</h1>
+                        <h1 class="card-text display-6">Para acceder a los beneficiarios, es importante que primero registre su información en <b>"Cantidad a ahorrar"</b>.</h1>
                         <a href="registroCA.php" class="btn btn-danger">REGRESAR</a>
                     </div>
                 </div>

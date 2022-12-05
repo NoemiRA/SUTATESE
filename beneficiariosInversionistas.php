@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(empty($_SESSION['NumEmpleado5'])){
-        header("location: index.php");
-    }
+session_start();
+if (empty($_SESSION['NumEmpleado5'])) {
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,6 @@
 </head>
 
 <body>
-    <!-- <section id="hero"> Si se quita este hero se hace pequeña la pagina de abajo -->
     <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS INVERSIONISTAS</strong></h2>
     <div class="row g-0 h-50 p-3">
         <div class="col-lg-6 d-flex">
@@ -134,12 +133,10 @@
                         </div>
                     </div>
                 </form>
-
                 <hr>
-
             </div>
         </div>
-        
+
         <div class="col-lg-6 d-flex bg-light">
             <div class="content px-3 my-auto">
                 <h6><i>En caso de que el docente o administrativo y agremiado a la Caja de Ahorro fallezca.</i></h6>
@@ -177,9 +174,8 @@
                         </div>
                     </div>
                 </form>
-
                 <hr>
-
+                
                 <form class="row g-3 m-2">
                     <h2>Beneficiario 2</h2>
                     <div class="col-md-4">
@@ -213,7 +209,6 @@
                         </div>
                     </div>
                 </form>
-
                 <hr>
 
                 <form class="row g-3 m-2">

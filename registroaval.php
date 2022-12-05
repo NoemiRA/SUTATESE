@@ -25,24 +25,23 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
 </head>
 <script>
-    function cancelar(){
+    function cancelar() {
         var respuesta = confirm("¿Desea cancelar el prestamo?");
-        if(respuesta == true){
+        if (respuesta == true) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    function confirmacion(){
+    function confirmacion() {
         var respuesta = confirm("¿Está seguro de la información que ha registrado para su aval y préstamo?");
-        if(respuesta == true){
+        if (respuesta == true) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-
 </script>
 
 <body>
@@ -86,7 +85,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                 $quincenasPago = ($month * 2) - 3;
             }
         }
-        
+
     ?>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="parrafo-aval p-5 pb-0">
@@ -96,13 +95,14 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         <p class="parrafo-aval">El aval es un contrato en el que se refleja el compromiso de cumplimiento de ciertas obligaciones ante un tercero. En práctica, <i>una persona o entidad se compromete a garantizar tu deuda o las obligaciones no dinerarias que hayas contraído ante el acreedor</i>.</p>
                         <h2>Instrucciones para registrar un aval</h2>
                         <ol>
-                            <li>Deberá tener a la mano <b>el número y nombre del empleado quien será su aval</b>, al igual que estar <b>consciente de la cantidad que tiene en ahorro su aval</b>. <i>Es importante que tenga los datos previos al trámite ya que de ingresar una cantidad no permitida por parte de su aval se rechazará dicho préstamo.</i></li>
-                            <li>Ingrese los datos de su futuro Aval, la cantidad que sea solicitar y las quincenas en las que desea cubrir su préstamo, para visualizar su tabla de amortización seleccione el boton con la leyenda <b>¡DESEO VER MI TABLA DE AMORTIZACIÓN!</b>.</li>
-                            <li>Una vez que usted esta seguro de los datos ingresados para solicitar su prestamo, presione el botón <b>¡HE LLENADO LOS DATOS Y DESEO GENERAR MI PAGARÉ!</b> y así se generará la descarga de su PDF que deberá llenar.</li>
-                            <li>Lleno su documento deberá escanearlo en formato PDF no mayor a 200KB. y subirlo en el apartado correspondiente, y presionar el boton de <b>¡SOLICITAR!</b></li>
-                            <li>Tiene un lapso de 30 dias antes de que su tramite este en baja si no concluye con el mismo.</li>
+                            <li>Deberá tener a la mano <b>el número y nombre del empleado quien será su aval</b>, al igual que estar <b>consciente de la cantidad que tiene en ahorro su aval</b>. <i>Es importante que tenga los datos previos al trámite ya que de ingresar una cantidad no permitida se rechazará dicho préstamo.</i></li>
+                            <li>Ingrese los datos de su futuro Aval, la cantidad que sea solicitar y las quincenas en las que desea cubrir su préstamo (recuerdde que las quincenas de plazo deben ser menores a la SEGUNDA QUINCENA DE NOVIEMBRE), para visualizar su tabla de amortización seleccione el botón con la leyenda <b>¡DESEO VER MI TABLA DE AMORTIZACIÓN!</b> que se encuentra en la parte inferior, recuerde que puede consultarla las veces que lo requiera, siempre y cuando no pase al siguiente punto, ya que esta se deshabilitará.</li>
+                            <li>Una vez que esta seguro de los datos ingresados para solicitar su prestamo, presione el botón <b>¡HE LLENADO LOS DATOS!</b>, así se dará de alta su préstamo más no estará solicitado, hasta que termine el proceso.</li>
+                            <li>Posteriormente, se habilitará el botón <b>¡DESEO GENERAR MI PAGARÉ!</b> y así se generará la descarga de su PDF que deberá firmar usted y su futuro aval.</li>
+                            <li>Si desea cancelar la petición al préstamo puede realizarlo presionando el botón <b>¡CANCELAR PRÉSTAMO!</b> en caso contrario, continue con los puntos restantes.</li>
+                            <li>Lleno su documento deberá escanearlo en formato PDF no mayor a 200KB. y subirlo en el apartado correspondiente, y presionar el botón <b>¡SOLICITAR!</b>.</li>
+                            <li>Una vez que su préstamo este solicitado, podrá ver el estatus de esté en el apartado de <b>ESTATUS DE PRÉSTAMO</b> o respuesta por medio de correo electrónco.</li>
                         </ol>
-                        <p>Nota: El plazo de pago serán las quincenas permitidas restantes hasta el fin del mes de Noviembre.</p>
                     </div>
                     <div class="col-lg-5 text-center my-1">
                         <h2>Préstamo por Aval</h2>
@@ -121,59 +121,59 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         </div>
 
                         <?php
-                            $exist = "SELECT NumEmpleado3, CantidadSolicitada, Plazo, IdAhorrador1, NumEmpleado, Nombres, ApellidoPat, ApellidoMat, IdPrestamo, prestamo.Estatus from prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on empleado.NumEmpleado = cajaahorro.NumEmpleado1 where NumEmpleado3 = $NumEmpleado and IdTipoPrestamo1 = 'P1' and (prestamo.Estatus = '1' OR prestamo.Estatus = '2')";
-                            $result_exist = mysqli_query($conn, $exist);
-                            $rowExist = mysqli_fetch_array($result_exist);
-                            $countExist = mysqli_num_rows($result_exist);
+                        $exist = "SELECT NumEmpleado3, CantidadSolicitada, Plazo, IdAhorrador1, NumEmpleado, Nombres, ApellidoPat, ApellidoMat, IdPrestamo, prestamo.Estatus from prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on empleado.NumEmpleado = cajaahorro.NumEmpleado1 where NumEmpleado3 = $NumEmpleado and IdTipoPrestamo1 = 'P1' and (prestamo.Estatus = '1' OR prestamo.Estatus = '2')";
+                        $result_exist = mysqli_query($conn, $exist);
+                        $rowExist = mysqli_fetch_array($result_exist);
+                        $countExist = mysqli_num_rows($result_exist);
 
-                            if($countExist >= 1){
-                                $Estatus = $rowExist[9];
-                                $NameAval = $rowExist[6]. ' '. $rowExist[7]. ' '. $rowExist[5];
-                                $IdPrestamo = $rowExist[8];
-                                switch($Estatus){
-                                    case 1:
-                                        $amortization = 'disabled';
-                                        $format = '';
+                        if ($countExist >= 1) {
+                            $Estatus = $rowExist[9];
+                            $NameAval = $rowExist[6] . ' ' . $rowExist[7] . ' ' . $rowExist[5];
+                            $IdPrestamo = $rowExist[8];
+                            switch ($Estatus) {
+                                case 1:
+                                    $amortization = 'disabled';
+                                    $format = '';
                                     break;
-                                    case 2:
-                                        $amortization = 'disabled';
-                                        $format = 'disabled';
+                                case 2:
+                                    $amortization = 'disabled';
+                                    $format = 'disabled';
                                     break;
-                                }
-                            
+                            }
+
                         ?>
-                        <div class="row my-2">
-                            <div class="col-md-4">
-                                <label for="numEmpleado" class="form-label fw-bold">No. Empleado (Aval)</label>
-                                <input type="text" class="form-control" id="input_monto" name="NumEmp" value="<?php echo $rowExist[4], ' - ', $NameAval ?>" title="<?php echo $rowExist[4], ' - ', $NameAval ?>" disabled />
-                            </div>
-                            <div class="col-md-4">
-                                <label for="input_monto" class="form-label fw-bold">Cantidad a solicitar</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-                                    <input type="number" class="form-control" id="input_monto" <?php echo $amortization ?> name="cantSolicitada" value="<?php echo $rowExist[1] ?>" />
+                            <div class="row my-2">
+                                <div class="col-md-4">
+                                    <label for="numEmpleado" class="form-label fw-bold">No. Empleado (Aval)</label>
+                                    <input type="text" class="form-control" id="input_monto" name="NumEmp" value="<?php echo $rowExist[4], ' - ', $NameAval ?>" title="<?php echo $rowExist[4], ' - ', $NameAval ?>" disabled />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="input_monto" class="form-label fw-bold">Cantidad a solicitar</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="input_monto" <?php echo $amortization ?> name="cantSolicitada" value="<?php echo $rowExist[1] ?>" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
+                                    <div class="input-group">
+                                        <input id="input_cuotas" type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" <?php echo $amortization ?> name="plazoPago" value="<?php echo $quincenasPago ?>">
+                                        <span class="input-group-text">quincenas</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
-                                <div class="input-group">
-                                    <input id="input_cuotas"type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" <?php echo $amortization ?> name="plazoPago" value="<?php echo $quincenasPago ?>">
-                                    <span class="input-group-text">quincenas</span>
-                                </div>
-                            </div>
-                        </div>
 
                         <?php
-                            }else{
-                                $amortization = '';
-                                $format = 'disabled';
+                        } else {
+                            $amortization = '';
+                            $format = 'disabled';
 
                         ?>
 
-                        <div class="row my-2">
-                            <div class="col-md-4">
-                                <label for="numEmpleado" class="form-label fw-bold">No. Empleado (Aval)</label>
-                                <select class="form-control" name="ne">
+                            <div class="row my-2">
+                                <div class="col-md-4">
+                                    <label for="numEmpleado" class="form-label fw-bold">No. Empleado (Aval)</label>
+                                    <select class="form-control" name="ne">
                                         <option selected disabled>Elige el futuro aval...</option>
                                         <?php
                                         $combo = $conn->query("Select NumEmpleado, IdAhorrador, Nombres, ApellidoPat, ApellidoMat from empleado INNER JOIN cajaahorro ON empleado.NumEmpleado = cajaahorro.NumEmpleado1 WHERE NumEmpleado <> $NumEmpleado");
@@ -184,47 +184,44 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                         endforeach;
                                         ?>
                                     </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="input_monto" class="form-label fw-bold">Cantidad a solicitar</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-                                    <input type="number" class="form-control" id="input_monto" name="cantSolicitada" placeholder="Ejemp: 1500" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="input_monto" class="form-label fw-bold">Cantidad a solicitar</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="input_monto" name="cantSolicitada" placeholder="Ejemp: 1500" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
+                                    <div class="input-group">
+                                        <input id="input_cuotas" type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" name="plazoPago" placeholder="Ingrese quincenas">
+                                        <span class="input-group-text">quincenas</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <label for="input_cuotas" class="form-label fw-bold mb-2">Plazo de pago</label>
-                                <div class="input-group">
-                                    <input  id="input_cuotas"type="number" class="form-control" min="1" max="<?php echo $quincenasPago ?>" name="plazoPago" placeholder="Ingrese quincenas">
-                                    <span class="input-group-text">quincenas</span>
-                                </div>
-                            </div>
-                        </div>
 
                         <?php
-                            }
+                        }
                         ?>
 
-
                         <div class="row m-2">
-                            
-                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!">
-                            <button type="button" class="btn btn-success my-2" <?php echo $format?> onclick=location.href="pagare.php">¡DESEO GENERAR MI PAGARÉ!</button>
+                            <input type="submit" class="btn btn-warning my-2" name="date" <?php echo $amortization ?> value="¡HE LLENADO MIS DATOS!" onclick="return confirmacion()">
+                            <button type="button" class="btn btn-success my-2" <?php echo $format ?> onclick=location.href="pagare.php">¡DESEO GENERAR MI PAGARÉ!</button>
                         </div>
 
                         <div class="col">
                             <label for="format" class="form-label fw-bold">Formato Pagaré</label>
-                            <input type="file" class="form-control" <?php echo $format?> name="format">
+                            <input type="file" class="form-control" <?php echo $format ?> name="format">
                         </div>
                         <div class="row my-4">
                             <div class="col">
-                                <input type="submit" class="btn btn-success m-2" name="request" <?php echo $format?> value="¡SOLICITAR PRESTAMO!">
+                                <input type="submit" class="btn btn-success m-2" name="request" <?php echo $format ?> value="¡SOLICITAR PRESTAMO!">
                             </div>
                             <div class="col">
-                                <input type="submit" class="btn btn-danger m-2" name="cancel" <?php echo $format?> value="¡CANCELAR PRESTAMO!" onclick="return confirmacion()">
+                                <input type="submit" class="btn btn-danger m-2" name="cancel" <?php echo $format ?> value="¡CANCELAR PRESTAMO!" onclick="return cancelar()">
                             </div>
                         </div>
-                        <p><span class="fw-bold">Nota: </span>No olvide revisar su <span class=" fst-italic fw-bold">"Tabla de Amortización"</span> en la parte de abajo.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
@@ -246,7 +243,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
                 </div>
 
-                
+
 
                 <?php
                 function alertsuccess()
@@ -316,10 +313,10 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     $cantidadSolicitar = $_POST['cantSolicitada'];
 
                     $plazoPago = $_POST['plazoPago'];
-                    
+
                     if (empty($aval) || empty($cantidadSolicitar) || empty($plazoPago)) {
                         alertdata();
-                    }else{
+                    } else {
                         if ($plazoPago > 0 && $plazoPago <= $quincenasPago) {
                             $ejecucion = $conn->query("CALL insert_PresAval($NumEmpleado, $cantidadSolicitar, '$aval', $plazoPago);");
                             if ($ejecucion === TRUE) {
@@ -337,7 +334,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         $ruta = fopen($_FILES['format']['tmp_name'], 'r');
                         $subida = fread($ruta, $tamanio);
                         $subida = mysqli_escape_string($conn, $subida);
-                    
+
                         if ($tipo != 'application/pdf' || $tamanio >= 204800) {
                             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡El pagare no corresponde al archivo o es demasiado grande! Por favor, intente de nuevo", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                             then(function(result){
@@ -346,15 +343,15 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 }
                             });
                             </script>';
-                        }else{
+                        } else {
                             $format = $conn->query("UPDATE prestamo SET nomina = '" . $subida . "', Estatus = 2 WHERE IdPrestamo = '" . $IdPrestamo . "'");
                             if ($format === TRUE) {
                                 formatsuccess();
-                            }else{
+                            } else {
                                 alerterror();
                             }
                         }
-                    }else{
+                    } else {
                         alertdata();
                     }
                 }
@@ -362,7 +359,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     $format = $conn->query("UPDATE prestamo SET Estatus = 3 WHERE IdPrestamo = '" . $IdPrestamo . "'");
                     if ($format === TRUE) {
                         cancelsuccess();
-                    }else{
+                    } else {
                         alerterror();
                     }
                 }
@@ -375,22 +372,22 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </button>
         </div>
         <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
-                    <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+            <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
                             order-collapse: collapse">
-                        <thead class="text-center" style="background-color:#00102E; color: white;">
-                            <tr>
-                                <th>Quincena</th>
-                                <th>Amortización capital</th>
-                                <th>Intereses</th>
-                                <th>Abonos</th>
-                                <th>Saldos</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody_1" class="text-center">
+                <thead class="text-center" style="background-color:#00102E; color: white;">
+                    <tr>
+                        <th>Quincena</th>
+                        <th>Amortización capital</th>
+                        <th>Intereses</th>
+                        <th>Abonos</th>
+                        <th>Saldos</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_1" class="text-center">
 
-                        </tbody>
-                    </table>
-                </div>
+                </tbody>
+            </table>
+        </div>
 
 
     <?php

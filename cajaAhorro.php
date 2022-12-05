@@ -20,8 +20,6 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
     <title>SUTATESE - Caja Ahorro</title>
     <?php include("navbar.php");
-    $poderCrediticio = 1481.06;
-    $descuentoQuincenal = 0;
     ?>
 </head>
 
@@ -29,69 +27,65 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <?php
     if (isset($_SESSION['NumEmpleado5'])) {
         $NumEmpleado = $_SESSION['NumEmpleado5'];
-        $NombreEmp = $_SESSION['Nombres'];
-        $ApellidoPatEmp = $_SESSION['ApellidoPat'];
-        $ApellidoMatEmp = $_SESSION['ApellidoMat'];
 
-        $sql = "SELECT IdAhorrador, NumEmpleado1, CantidadQuincenal, FormatoCuota, SolicitudAportacion, IdTipoAhorro, TipoAhorro  FROM cajaahorro inner join tipoahorro on cajaahorro.IdTipoAhorro1 = tipoahorro.IdTipoAhorro WHERE NumEmpleado1 = '$NumEmpleado' ";
+        $sql = "SELECT IdAhorrador, NumEmpleado1, CantidadQuincenal, FormatoCuota, SolicitudAportacion, IdTipoAhorro, TipoAhorro, Estatus FROM cajaahorro inner join tipoahorro on cajaahorro.IdTipoAhorro1 = tipoahorro.IdTipoAhorro WHERE NumEmpleado1 = '$NumEmpleado' ";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
-        $count = mysqli_num_rows($result);
-        $id = $row[5];
+
+        if($row["Estatus"] == 3){
+            ?>
+            <div class="text-center m-5">
+                    <h1 class="p-3">CAJA DE AHORRO</h1>
+                    <div class="card text-center m-3">
+                        <div class="card-header display-6">
+                            Error...
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-text display-6">Su solicitud está pendiente de aprobación, por favor intente más tarde.</h1>
+                            <a href="registroCA.php" class="btn btn-danger">REGRESAR</a>
+                        </div>
+                    </div>
+            </div>
+
+            <?php
+        }
+        if($row["Estatus"] == 4){
     ?>
         <div class="text-center m-5 p-3 rounded">
             <div class="row bg-light">
-                <h1 class="m-3">CAJA DE AHORRO</h1>
+                <h1 class="p-3">CAJA DE AHORRO</h1>
                 <div class="col-lg-3">
-                    <h3 class="display-5"><strong>Agremiado a la caja de ahorro</strong></h3>
+                    <h3 class="display-6"><strong>Agremiado a la caja de ahorro</strong></h3>
                 </div>
 
                 <div class="col-lg-9">
-                    <div class="form-group row m-3 ">
-                        <label for="description" class="col col-form-label fw-bold text-end">
-                            Tipo de fondo:
-                        </label>
-                        <div class="col">
-                            <input type="text" class="form-control " name="tipoFondo" id="tipoFondo" value="<?php echo $row[6] ?>" disabled>
-
-                        </div>
-                    </div>
-
                     <div class="col-xs-9">
-                        <div class="form-group row m-3 ">
+                        <div class="row m-3">
                             <label for="description" class="col col-form-label fw-bold text-end">Tipo de fondo:</label>
                             <div class="col">
                                 <input type="text" class="form-control " name="tipoFondo" id="tipoFondo" value="<?php echo $row[6] ?>" disabled>
-
-                        </div>
+                            </div>
                         </div>
                         <?php
                         $i = 0;
-                        $abono = "$row[2]";
                         $saldo = 0;
-                        $total = $abono * 24;
-
+                        $total = $row[2] * 24;
                         ?>
-                        <div class="form-group row m-3">
+                        <div class="row m-3">
                             <label for="description" class="col col-form-label fw-bold text-end">Descuento quincenal:</label>
                             <div class="col">
                                 <input type="text" class="form-control" value="$<?php echo $row[2] ?> MXN" disabled>
                             </div>
-
                         </div>
-
                     </div>
-                    <div class="form-group row m-3">
-                        <label for="description" class="col col-form-label fw-bold text-end">
-                            Total a ahorrar:
-                        </label>
+                    <div class="row m-3">
+                        <label for="description" class="col col-form-label fw-bold text-end">Total a ahorrar:</label>
                         <div class="col">
                             <input type="text" class="form-control" value="$<?php echo $total ?> MXN" disabled>
                         </div>
-
                     </div>
-
                 </div>
+
             </div>
             <div class="row-lg-7 my-4 text-center mx-0">
                 <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
@@ -113,7 +107,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             $i = 1;
                             while ($i <= 24) {
 
-                                $saldo = $saldo + $abono;
+                                $saldo = $saldo + $row[2];
                             ?>
                                 <tr>
                                     <th><?php echo $i ?></th>
@@ -145,7 +139,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                     }
 
                                     ?>
-                                    <td>$<?php echo $abono ?></td>
+                                    <td>$<?php echo $row[2] ?></td>
                                     <td><strong>$<?php echo $saldo ?></strong></td>
 
                                 </tr>
@@ -159,6 +153,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </div>
     <?php
+        }
     }
     include("footer.php");
     ?>

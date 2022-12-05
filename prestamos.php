@@ -43,31 +43,30 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </li>
                     <li>
                         <p class="parrafo-aval">
-                            <strong>Conoce tu poder crediticio: </strong>
-                            Se presenta una lista detallada acerca de sus percepciones y deducciones que se presentan en su nómina,
-                            indicando a usted el poder crediticio con el que cuenta quincenalmente.
+                            <strong>¿YA SOLICITASTE UN PRÉSTAMO? ¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</strong>
+                            Esta opción le permitirá ver los estados de aprobación en los que se encuentra un préstamo solicitado, al igual que subir los comprobantes de pago correspondientes al préstamo por aval.
                         </p>
                     </li>
                     <li>
                         <p class="parrafo-aval">
-                            <strong>Préstamo por caja de ahorro: </strong>
+                            <strong>PRÉSTAMO POR CAJA DE AHORRO: </strong>
                             Pertenecer a la caja de ahorro ofrece diversas ventajas para usted, una de ellas es el préstamo que puede
                             solicitar con la tasa de interés del 2%, mostrando la cantidad disponible con la que cuenta para solicitar
-                            su préstamo, y la forma en la que será realizado el pago.
+                            su préstamo.
                         </p>
                     </li>
                     <li>
                         <p class="parrafo-aval"><strong>
-                                Préstamo vía nómina: </strong> Este apartado le permite a usted solicitar un préstamo aplicando el debido
-                            interés, mostrando detalladamente cada uno de los movimientos en ayuda de una tabla de amortización.
+                            PRÉSTAMO VÍA NOMINA: </strong> Este apartado le permite a usted solicitar un préstamo aplicando el debido
+                            interés si usted es agremiado a la caja de ahorro o no y mostrando detalladamente cada uno de los movimientos en ayuda de una tabla de amortización.
                         </p>
                     </li>
                     <li>
                         <p class="parrafo-aval">
-                            <strong>Préstamo por un aval: </strong>
+                            <strong>PRÉSTAMO POR AVAL: </strong>
                             Un préstamo por aval le permite conseguir un préstamo en caso de que no cumpla con el perfil adecuado para
                             las opciones anteriores, cumpliendo con las cláusulas que lo competen, es importante que usted considere
-                            llenar el formato de pagaré antes de comenzar con su tramite.
+                            el número y nombre de empleado quien será su futuro aval, así como la cantidad de ahorro con la que dispone.
                         </p>
                     </li>
                 </ul>
@@ -85,17 +84,17 @@ if (empty($_SESSION['NumEmpleado5'])) {
         ?>
         <div class="col-lg-5 d-flex bg-light">
             <div class="content mx-auto align-self-center px-4 my-3">
-                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="#">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="EstatusPrestamos.php">¿YA SOLICITASTE UN PRÉSTAMO? <br>¡CONOCE EL ESTATUS DE TUS PRÉSTAMOS!</button>
                 <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="prestamoCA.php">PRÉSTAMO POR CAJA DE AHORRO</button>
-                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA </button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="PoderCrediticio.php">PRÉSTAMO VÍA NOMINA</button>
                 <button type="button" class="btn btn-secondary" style="width: 100%; height: 100px;" <?php echo $btn?> onclick=location.href="registroaval.php">PRÉSTAMO POR AVAL</button>
             </div>
         </div>
     </div>
 
     <?php
-            }
-            include("footer.php");
+        }
+        include("footer.php");
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
