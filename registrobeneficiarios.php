@@ -35,13 +35,12 @@ if (empty($_SESSION['NumEmpleado5'])) {
         $count = mysqli_num_rows($result);
 
         if($count > 0){
-
             $sql = "SELECT IdAhorrador FROM cajaahorro WHERE NumEmpleado1 = '$NumEmpleado'";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_array($result);
             $IdAhorrador = $row['IdAhorrador'];
-
     ?>
+    
         <h2 class="p-2 text-center mt-4"><strong>BENEFICIARIOS</strong></h2>
         <h6 class="p-2 text-center mt-4"><i>**Solo puede registrar máximo 3 Beneficiarios por cada tipo, recuerde cumplir el 100% para cada uno.**</i></h6>
         <form class="row g-3 mt-3 mx-0" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">

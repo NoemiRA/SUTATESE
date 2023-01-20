@@ -112,7 +112,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 case 2:
                                     $register = 'disabled';
                                     $voucher = '';
-                                    $mss = "Inversionista aceptado";
+                                    $mss = "Inversionista aceptado, aportación pendiente";
                                     estate($register, $voucher, $mss);
                                     break;
                                 case 3:
@@ -124,19 +124,19 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 case 4:
                                     $register = 'disabled';
                                     $voucher = '';
-                                    $mss = "Pago pendiente";
+                                    $mss = "Pago procedente, ¡Felicidades usted ya es INVERSIONISTA!";
                                     estate($register, $voucher, $mss);
                                     break;
                                 case 5:
                                     $register = 'disabled';
                                     $voucher = 'disabled';
-                                    $mss = "Pago procedente, ¡Felicidades usted ya es INVERSIONISTA!";
+                                    $mss = "Su pago de inversión final se entregará a partir del dia ". $row['FechaDevolucion'];
                                     estate($register, $voucher, $mss);
                                     break;
                                 case 6:
                                     $register = 'disabled';
                                     $voucher = 'disabled';
-                                    $mss = "Su pago de inversión final se entregará el dia ". $row['FechaDevolucion'];
+                                    $mss = "Devolución realizada";
                                     estate($register, $voucher, $mss);
                                     break;
 

@@ -140,7 +140,7 @@
                             </div>
                             <?php
                                 if($point == 1){
-                                    echo'<input type="submit"'. $opc1 .' class="btn btn-success" value="¡He llenado completamente mi registro DESEO PASAR A LA SIGUIENTE ETAPA!" name="Accept" onclick="return confirmacion()" onclick="return confirmacion()"></input>';
+                                    echo'<input type="submit"'. $opc1 .' class="btn btn-success" value="¡He llenado completamente mi registro DESEO PASAR A LA SIGUIENTE ETAPA!" name="Accept" onclick="return confirmacion()"></input>';
                                 }
                             ?>
                             <div class="d-flex">

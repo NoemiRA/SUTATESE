@@ -314,11 +314,14 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                     $plazoPago = $_POST['plazoPago'];
 
+                    
+
                     if (empty($aval) || empty($cantidadSolicitar) || empty($plazoPago)) {
                         alertdata();
                     } else {
                         if ($plazoPago > 0 && $plazoPago <= $quincenasPago) {
-                            $ejecucion = $conn->query("CALL insert_PresAval($NumEmpleado, $cantidadSolicitar, '$aval', $plazoPago);");
+                            $inter = ($interest * 0.01)*$cantidadSolicitar*$plazoPago;
+                            $ejecucion = $conn->query("CALL insert_PresAval($NumEmpleado, $cantidadSolicitar, '$aval', $plazoPago, $inter);");
                             if ($ejecucion === TRUE) {
                                 alertsuccess();
                             }

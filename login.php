@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (!empty($_POST["btnIngresar"])) {
     if (!empty($_POST["CorreoElec"]) and !empty($_POST["Contraseña"])) {
         $user = $_POST["CorreoElec"];
