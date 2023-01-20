@@ -10,7 +10,7 @@
                     <p class="mb-2 mt-0 fw-bold">Contactanos:</p>
                     <a onclick=href="https://www.google.com/maps/place/TecNM+-+Tecnol%C3%B3gico+de+Estudios+Superiores+de+Ecatepec/@19.5106769,-99.0427992,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1fa94a2bf91f9:0x700d93a5d515a259!8m2!3d19.5106769!4d-99.0406105" class=" nav-link" target="_blank"><p class="m-0">Av. Tecnológico s/n Col. Valle de Anáhuac, Ecatepec de Morelos, Estado de México, C.P.55210.</p></a>
                     <a onclick=href="tel:+50002357" class="nav-link"><p class="m-0">TEL: 5000 2357</p></a>
-                    <a onclick=href="mailto: SUTATESE@tese.edu.mx" class="nav-link"><p class="m-0">Correo electrónico: SUTATESE@tese.edu.mx</p></a>
+                    <a href="mailto: SUTATESE@tese.edu.mx" class="nav-link"><p class="m-0">Correo electrónico: SUTATESE@tese.edu.mx</p></a>
                     <a class="nav-link me-3" onclick=href="https://www.facebook.com/sindicato.aspatese" target="_blank"><i class="fa-brands fa-facebook me-1 mt-3"></i>Sindicato Aspatese</a>
                     <a class="nav-link" onclick=href="https://twitter.com/S_ASPATESE" target="_blank"><i class="fa-brands fa-twitter me-1"></i>@S_ASPATESE</a>
                                                     

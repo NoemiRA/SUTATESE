@@ -101,7 +101,7 @@
 
             <div class="col-lg-6 d-flex">
                 <div class="content px-4 my-auto">
-                    <p class="parrafo-doc-admin mb-5">Para la correción de un registro es importante que se capture y revise los datos
+                    <p class="parrafo-doc-admin mb-5">Para la corrección  de un registro es importante que se capture y revise los datos
                         ingresados, posteriormente presionar el botón "Guardar" para ver los cambios reflejados.</p>
                     <p class="fst-italic"><i>"Manifiesto bajo protesta de decir verdad que toda la documentación presentada para este trámite, 
                         así como la información ofrecida en respuesta a los formularios de aplicación, es verídica y comprobable."</i></p>

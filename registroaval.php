@@ -96,7 +96,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         <h2>Instrucciones para registrar un aval</h2>
                         <ol>
                             <li>Deberá tener a la mano <b>el número y nombre del empleado quien será su aval</b>, al igual que estar <b>consciente de la cantidad que tiene en ahorro su aval</b>. <i>Es importante que tenga los datos previos al trámite ya que de ingresar una cantidad no permitida se rechazará dicho préstamo.</i></li>
-                            <li>Ingrese los datos de su futuro Aval, la cantidad que sea solicitar y las quincenas en las que desea cubrir su préstamo (recuerdde que las quincenas de plazo deben ser menores a la SEGUNDA QUINCENA DE NOVIEMBRE), para visualizar su tabla de amortización seleccione el botón con la leyenda <b>¡DESEO VER MI TABLA DE AMORTIZACIÓN!</b> que se encuentra en la parte inferior, recuerde que puede consultarla las veces que lo requiera, siempre y cuando no pase al siguiente punto, ya que esta se deshabilitará.</li>
+                            <li>Ingrese los datos de su futuro Aval, la cantidad que sea solicitar y las quincenas en las que desea cubrir su préstamo (recuerde que las quincenas de plazo deben ser menores a la SEGUNDA QUINCENA DE NOVIEMBRE), para visualizar su tabla de amortización seleccione el botón con la leyenda (o click aquí) <b> <a href="#btn-tabla"> ¡DESEO VER MI TABLA DE AMORTIZACIÓN!</b> </a> que se encuentra en la parte inferior. Puede consultarla las veces que lo requiera, siempre y cuando no pase al siguiente punto, ya que esta se deshabilitará.</li>
                             <li>Una vez que esta seguro de los datos ingresados para solicitar su prestamo, presione el botón <b>¡HE LLENADO LOS DATOS!</b>, así se dará de alta su préstamo más no estará solicitado, hasta que termine el proceso.</li>
                             <li>Posteriormente, se habilitará el botón <b>¡DESEO GENERAR MI PAGARÉ!</b> y así se generará la descarga de su PDF que deberá firmar usted y su futuro aval.</li>
                             <li>Si desea cancelar la petición al préstamo puede realizarlo presionando el botón <b>¡CANCELAR PRÉSTAMO!</b> en caso contrario, continue con los puntos restantes.</li>
@@ -367,7 +367,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </div>
         </form>
         <div class="text-center mt-2">
-            <button type="button" class="btn btn-primary my-2" onclick="calcular();" name="calcular" <?php echo $amortization ?>>
+            <button id="btn-tabla" type="button" class="btn btn-primary my-2" onclick="calcular();" name="calcular" <?php echo $amortization ?>>
                 ¡DESEO VER MI TABLA DE AMORTIZACIÓN!
             </button>
         </div>
@@ -397,7 +397,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="js/prestamo.js"></script>
+    <script type="text/javascript" src="js/prestamoAval.js"></script>
     <script type="text/javascript" src="js/quincena.js"></script>
 </body>
 

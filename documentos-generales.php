@@ -45,7 +45,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <h2>Documentos Generales</h2>
                             <br>
                             <p class="parrafo-aval">
-                                En esta sección se suben los documentos que se generaron con su información para inscribirse en la caja de ahorro. Dichos docuemntos fueron creados cuando usted entró al apartado "Caja de Ahorro". Los documentos se encuentan en su computadora en la carpeta de "Descargas" y deben ser los siguientes: <span class="fw-bold"> "FORMATO CUOTA S.U.T.A.T.E.S.E.", "SOLICITUD DE APORTACIÓN A LA CAJA DE AHORRO".</span> Los 2 archivos deben ser haber sido impresos para poderlos firmar por usted y por el director del SUTATESE. Una vez firmados se deben de escanear y guardar en un archivo PDF.
+                                En esta sección se suben los documentos que se generaron con su información para inscribirse en la caja de ahorro. Dichos documentos  fueron creados cuando usted entró al apartado "Caja de Ahorro". Los documentos se encuentran  en su computadora en la carpeta de "Descargas" y deben ser los siguientes: <span class="fw-bold"> "FORMATO CUOTA S.U.T.A.T.E.S.E.", "SOLICITUD DE APORTACIÓN A LA CAJA DE AHORRO".</span> Los 2 archivos deben ser haber sido impresos para poderlos firmar por usted y por el director del SUTATESE. Una vez firmados se deben de escanear y guardar en un archivo PDF.
                             </p>
                             <p class="parrafo-aval">
                                 Todos los archivos que se deben de subir son:
@@ -57,7 +57,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </ul>
                             <br><br>
                             <p class="parrafo-aval">
-                                Una vez generados y guardados los archivos que se muestran en la tabla de arriba, por favor subalos de manera correcta en el apartado correspondiente que se encuentra a la derecha o en la parte de abajo (Si es visto en un celular o dispositivo pequeño) con el nombre indicado en el documento.
+                                Una vez generados y guardados los archivos que se muestran en la tabla de arriba, por favor súbalos de manera correcta en el apartado correspondiente que se encuentra a la derecha o en la parte de abajo (Si es visto en un celular o dispositivo pequeño) con el nombre indicado en el documento.
                             </p>
                         </div>
                     </div>

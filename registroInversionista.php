@@ -62,20 +62,28 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <h2>Procedimiento:</h2>
                     <hr>
                     <ol>
+                        
                         <li>
-                            Deberá ingresar al apartado <b>"REGISTRO INVERSIONISTA"</b> e ingresar la cantidad que desea invertir teniendo como mínimo la cantidad de $20,000.00 M.N y como máximo la cantidad de $30,000.00 M.N.
+                        Deberá ingresar al apartado <b>"REGISTRO INVERSIONISTA"</b> e ingresar la cantidad que desea invertir teniendo como mínimo la cantidad de $20,000.00 M.N y como máximo la cantidad de $30,000.00 M.N. y seleccionar la opción "Continuar." 
+                        
                         </li>
                         <li>
-                            Una vez que ha terminado, deberá llenar el apartado <b>"BENEFICIARIO"</b> en donde se solicita llene completa y correctamente el formulario.
+                            Deberá estar checando el  "Estado" de su solicitud. Cuando sea aceptada se habilitará la opción <b>"Comprobante de Pago"</b> la cual debe de presionar para que se genere y descargue su documento.
                         </li>
                         <li>
-                            Cuando haya terminado el proceso, el botón de <b>"INGRESAR"</b> se habilitará y podrá ingresar a un apartado donde se verá la lista de las personas que también quisieron ser Inversionistas y el orden en el que se encuentren es el orden que se devolverá el dinero a las personas.
+                            Ya que imprimió su "Comprobante de Pago" debe firmarlo y solo faltará que realice su depósito  a la cuenta del SUTATESE para posteriormente acudir al Sindicato y entregar el documento que imprimió junto con su comprobante o váucher de que realizó el depósito  a la cuenta del sindicato.
+                        </li>
+
+                        <li>
+                            Una vez entregados los documentos, entrará en una lista y el administrador le asignará una fecha de devolución de la inversión junto con sus intereses correspondientes.
                         </li>
                         <li>
                             Si además de ser inversionista desea ser ahorrador, favor de dirigirse al apartado <a href="registroCA.php">Caja de Ahorro</a> donde deberá seguir las indicaciones para su registro.
                         </li>
                     </ol>
                     <hr>
+                    <h3><i>Nota:</i></h3>
+                <medium>No olvide antes de descargar el "Comprobante de Pago" haber llenado sus Datos Bancarios ya que ahí será donde se deposite la devolución de la inversión.</medium>
                 </div>
             </div>
             <div class="col-lg-5 d-flex p-3 bg-light">

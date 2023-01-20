@@ -54,27 +54,17 @@ function setMoneda(num) {
             var monto = document.getElementById("input_monto").value;
             var cuotas = document.getElementById("input_cuotas").value;
              var tasa = document.getElementById("input_tasa").value;
-             var cantMax = document.getElementById("cantMax").value;
-             var cuotaMax = document.getElementById("cuotaMax").value;
+            //  var cuotaMax = document.getElementById("cuotaMax").value;
              
-             if(parseFloat(cuotas) > cuotaMax){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error...',
-                    text: "El plazo que ingresó, es mayor al plazo dispoible: \""+ cuotaMax+"\" quincenas."
+            //  if(parseFloat(monto) > cantMax){
+            //     Swal.fire({
+            //         icon: 'error',
+            //         title: 'Error...',
+            //         text: "La cantidad que solicitó: \"$"+monto+"\", es mayor a su cantidad dispoible: \"$"+ cantMax+"\"."
                    
-                  });
-                return; 
-             }
-             if(parseFloat(monto) > cantMax){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error...',
-                    text: "La cantidad que solicitó: \"$"+monto+"\", es mayor a su cantidad dispoible: \"$"+ cantMax+"\"."
-                   
-                  });
-                return; 
-             }
+            //       });
+            //     return; 
+            //  }
             if (!monto) {
                 Swal.fire({
                     icon: 'warning',
@@ -122,7 +112,7 @@ function setMoneda(num) {
             Swal.fire({
                 icon: 'warning',
                 title: '¡Advertencia!',
-                text: "Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala a 21 o menos."
+                text: "Ha indicado una cantidad excesiva de cuotas, porfavor reduzcala."
               });
             return; 
         }

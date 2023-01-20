@@ -52,7 +52,7 @@
                     <li>
                         Posteriormente, aparecerá un botón con la leyenda <b>"¡He llenado completamente mi registro DESEO PASAR A LA SIGUIENTE ETAPA!</b> si usted está seguro de haber llenado 
                         sus datos correctamente puede presionarlo para pasar a la siguiente etapa, usted puede modificar aún <b>"CANTIDAD A AHORRAR"</b> y <b>"BENEFICIARIOS"</b>, una vez presionado 
-                        el botón YA NO PODRÁ MODIFICAR DICHOS APARTADOS (Si dicho botón no lo puede visualizar, por favor verifique que toda la información recopilada este correcta y cada uno de los tipos de beneficairios cumpla el 100%).
+                        el botón YA NO PODRÁ MODIFICAR DICHOS APARTADOS (Si dicho botón no lo puede visualizar, por favor verifique que toda la información recopilada este correcta y cada uno de los tipos de beneficiarios  cumpla el 100%).
                     </li>
                     <li>
                         Cuando se haya terminado el proceso, las opciones de <b>"FORMATO DE CUOTA" </b> y <b>"SOLICITUD DE APORTACIÓN" </b> serán habilitadas, es cuando usted podrá visualizarlas, 
@@ -60,7 +60,7 @@
                     </li>
                     <li>
                         Una vez descargados, deberá imprimirlos y dirigirse al <i>Sindicato Único de Trabajadores Académicos
-                            del Tecnológico de Estudios Superiores de Ecatepec</i> para solicitar la firma correspondiente del <i>prof. Nicolás Cortés Martínez</i>, Secretario general.
+                            del Tecnológico de Estudios Superiores de Ecatepec</i> para solicitar la firma correspondiente del <i>Prof. Nicolás Cortés Martínez</i>, secretario general.
                     </li>
                     <li>
                         Ya firmado deberá escanear por separado tanto el <b>"FORMATO CUOTA"</b> y <b>"SOLICITUD APORTACIÓN"</b> para subirlos en el apartado <b>"SUBIR ARCHIVOS"</b>.

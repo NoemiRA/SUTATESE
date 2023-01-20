@@ -193,7 +193,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                             <div class="row">
                                 <div class="col">
-                                    <a href="peticionPrestamo.php?pc=<?php echo $PoderCredC;?>&cm=<?php echo $cantidadMaxC;?>&q=<?php echo $quincenasPagoC;?>" title="¡Deseo Solicitar el Prestamo!" class="btn btn-primary" type="submit" value="Solicitar" onclick="return confirm ('¿Esta seguro de solicitar el prestamo?')">¡Solicitar prestamo por nómina!</a>
+                                    <a href="peticionPrestamo.php?pc=<?php echo $PoderCredC;?>&cm=<?php echo $cantidadMaxC;?>&q=<?php echo $quincenasPagoC;?>" title="¡Deseo Solicitar el Préstamo!" class="btn btn-primary" type="submit" value="Solicitar" onclick="return confirm ('¿Esta seguro de solicitar el préstamo?')">¡Solicitar préstamo por nómina!</a>
                                     <hr>
                                 </div>
                             </div>

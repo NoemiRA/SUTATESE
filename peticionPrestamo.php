@@ -44,8 +44,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
             $interest = $row[0];
         }
     ?>
-        <div class="text-center m-5 p-3 rounded mb-0 pb-0">
-            <h1 class="m-3 fw-bold">PRÉSTAMO POR NÓMINA</h1>
+        <div class="text-center m-2 p-3 rounded mb-0 pb-0">
+            <h1 class="fw-bold">PRÉSTAMO POR NÓMINA</h1>
+            
             <form class="row bg-light" method="post" action="" enctype="multipart/form-data"> 
                 <div class="col-lg-5">
                     <div class="row mx-3 my-2">
@@ -75,17 +76,31 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="input_cuotas" class="col col-form-label fw-bold">Plazo de pago:</label>
+                            <label for="input_cuotas" class="col col-form-label fw-bold">Plazo de pago máximo:</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" value="<?php echo $quincenasPago ?>" disabled name="PlazoPago" id="input_cuotas">
+                                <input type="text" class="form-control" value="<?php echo $quincenasPago ?>" disabled name="PlazoPagoMax" id="cuotaMax" >
                                 <span class="input-group-text">Quincenas</span>
                             </div>
                         </div>
-                    </div>
 
-                    
-
-                    <div class="row mx-3 my-2 d-grid">
+                        <div class="col-md-6">
+                            <label for="input_monto" class="col col-form-label fw-bold">Cantidad a solicitar:</label>
+                            <div class="input-group mb-3">
+                                <!-- <div class="input-group mb-3"> -->
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" placeholder="Ejemp: 1500.00" name="CantidadSolicitada" id="input_monto" max="<?php echo $cantidadMax ?>">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="input_monto" class="col col-form-label fw-bold">Plazo a pagar en quincenas:</label>
+                            <div class="input-group mb-3">
+                                    <input type="number" class="form-control" placeholder="Ejemp: 10" name="PlazoPago" id="input_cuotas">                               
+                                </div>
+                            </div>
+                        </div>
+                
+                    <!-- <div class="row mx-3 my-2 d-grid">
                         <label for="input_monto" class="col col-form-label fw-bold">Cantidad a solicitar</label>
                         <div class="col">
                             <div class="input-group mb-3">
@@ -93,11 +108,17 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 <input type="number" class="form-control" placeholder="Ejemp: 1500.00" name="CantidadSolicitada" id="input_monto" max="<?php echo $cantidadMax ?>">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <!-- <div class="row mx-3 my-2 d-grid">
+                        <label for="input_monto" class="col col-form-label fw-bold">Plazo a pagar en quincenas:</label>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" placeholder="Ejemp: 10" name="PlazoPago" id="input_cuotas">
+                            </div>
+                        </div>
+                    </div> -->
 
-                    <div class="row mx-3 my-2 d-grid">
-
-                    </div>
+                    
 
                     <div class="d-flex justify-content-center">
                         <div class="d-grid m-3">
@@ -131,17 +152,82 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <input type="file" class="form-control mb-3 mx-3" name="reciboNomina" placeholder="Ingresa recibo de nómina">
                 </div>
 
-                <div class="d-flex flex-column mb-3">
+                <!-- <div class="d-flex flex-column mb-3">
                     <div class="row m-3">
                         <a class="btn btn-danger" onclick=location.href="poderCrediticio.php">CANCELAR</a>
                     </div>
                     <div class="row m-3">
                         <input type="submit" class="btn btn-success" value="¡SOLICITAR PRESTAMO!" name="Request">
                     </div>
-                </div>
+                </div> -->
             </div>
 
-        <div class="col-lg-7 ">
+        <div class="col-lg-7 text-center">
+            
+            <!-- <div class="container text-center m-3">
+                 <div class="row"> 
+                    <div class="col">
+                        <a class="btn btn-danger" onclick=location.href="poderCrediticio.php">CANCELAR</a>
+                    </div>
+                <div class="col">
+                    <input type="submit" class="btn btn-success" value="¡SOLICITAR PRESTAMO!" name="Request">
+                </div>
+             </div> 
+        </div> -->
+                <div class="row mb-3">
+                    
+                    <div class="col m-3">
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                            INSTRUCCIONES
+                        </button>
+                        <!--Ventana Modal -->
+                        <div class="modal fade text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog text-center">
+                                    <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5 text-center fw-bold" id="exampleModalLabel">Instrucciones de uso para pedir el préstamo</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <div class="col-md-auto text-center shadow-lg p-3 mb-2 bg-body rounded text-justify">
+                                                <ol class="text-start">
+                                                    <li>
+                                                        En la parte izquierda se muestran 3 apartados que debe de llenar: 
+                                                        <ul>
+                                                            <li> <b> Cantidad a solicitar: </b> Deberá ingresar la cantidad que desea solicitar para su préstamo cuidando que dicha cantidad sea menor a lo máximo que puede pedir. </li>
+                                                            <li><b>Plazo a pagar en quincenas:</b> Deberá ingresar la cantidad de quincenas en las que desee liquidar el préstamo siempre y cuando sea menor al plazo de pago máximo.</li>
+                                                            <li><b>Subir recibo de nómina:</b> Deberá subir su recibo de nómina correspondiente a los meses solicitados en el recuadro azul, dicho recibo debe ser el mismo con el que calculó su poder crediticio.</li>
+                                                        </ul> 
+                                                    </li>
+                                                    <li>
+                                                        Si desea calcular su tabla de amortización deberá ingresar la cantidad solicitada, así como el plazo de quincenas a pagar. Posteriormente tiene que presionar el botón azul que se encuentra en la parte inferior "¡Calcular Tabla de Amortización!". Se recomienda ver la tabla de amortización antes de solicitar su préstamo.
+                                                    </li>
+                                                    <li>
+                                                        Una vez que haya revisado su tabla de amortización y que esté de acuerdo con los pagos y las quincenas presione el botón "¡Solicitar Préstamo!" que se encuentra en la parte posterior. 
+                                                    </li>
+                                                </ol>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="modal-footer text-start">
+                                            <input type="submit" class="btn-secondary p-2" style="background: #198754; color: white; border:none; border-radius: 5px" name="Update" value="Cerrar"></input>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <!--Ventana Modal -->
+                    </div>
+                    <div class="col m-3">
+                        <a class="btn btn-danger" onclick=location.href="poderCrediticio.php">CANCELAR</a>
+                    </div>
+                    <div class="col m-3">
+                        <input type="submit" class="btn btn-success" value="¡SOLICITAR PRESTAMO!" name="Request">
+                    </div>
+                </div>
+
             <h2 class="mt-4 fw-bold">TABLA DE AMORTIZACIÓN</h2>
             <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
                 <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
@@ -160,7 +246,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                         </tbody>
                     </table>
-                </div>
+                    
             </div>
         </div>
         <?php
@@ -188,7 +274,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         function alertdata()
         {
-            echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+            echo '<script> Swal.fire({icon: "error", title: "Error...Información Faltante", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                         then(function(result){
                             if(result.value){                   
                             }
@@ -208,7 +294,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         function alertsize()
         {
-            echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡La cantidad solicitada es mayor a lo permitido!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+            echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡La cantidad solicitada o el plazo de pago es mayor a lo permitido!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                         then(function(result){
                             if(result.value){                   
                             }
@@ -218,6 +304,8 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         if (isset($_POST['Request'])) {
             $cantidadSolicitar = $_POST['CantidadSolicitada'];
+            // $plazoMax = $_POST['PlazoPagoMax'];
+            $plazoPago = $_POST['PlazoPago'];
             if (empty($cantidadSolicitar)) {
                 alertdata();
             } else {
@@ -232,7 +320,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     if ($tipoN != 'application/pdf' || $tamanioN >= 204800) {
                         alertdoc();
                     } else {
-                        if (($cantidadSolicitar <= $cantidadMax)) {
+                        if (($cantidadSolicitar <= $cantidadMax  && $plazoPago <= $quincenasPago )) {
                             $ejecucion = $conn->query("CALL insert_PresNomina($NumEmpleado, $PoderCred, $cantidadSolicitar, '$subidaN');");
                             if ($ejecucion === TRUE) {
                                 alertsuccess();
@@ -250,7 +338,10 @@ if (empty($_SESSION['NumEmpleado5'])) {
         }
             ?>
         </form>
-        <div class="d-flex flex-column col-lg-5 mb-4 ms-4 me-4"> 
+        <!-- <div class="d-flex flex-column col-lg-5 mb-4 ms-4 me-4"> 
+            <button type="button" class="btn btn-primary mt-1 ms-5 me-5" onclick="calcular();" name="calcular">¡CALCULAR TABLA DE AMORTIZACIÓN!</button> 
+        </div> -->
+        <div class="d-flex flex-column col-lg-5 mb-4 ms-2 me-3"> 
             <button type="button" class="btn btn-primary mt-1 ms-5 me-5" onclick="calcular();" name="calcular">¡CALCULAR TABLA DE AMORTIZACIÓN!</button> 
         </div>
     </div>

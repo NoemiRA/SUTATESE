@@ -44,7 +44,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <div class="content px-4 my-auto parrafo-aval"">
                         <h2>Aportaciones a la caja de ahorro </h2>
                         <br>
-                        <p>1. Las aportaciones a la Caja de Ahorro tendrá 3 orígenes: </p>
+                        <p>1. Las aportaciones a la Caja de Ahorro tendrán 3 orígenes: </p>
                         <p>a) Fondo SUTATESE. Es la aportación del Ahorrador. Se brinda de forma quincenal vía nómina del TESE con un mínimo de $100.00
                             (cien pesos 00/100 M.N.) y múltiplos de $50.00 (Cincuenta pesos 00/100 M.N). La cantidad recabada a lo largo de las 24 quincenas más el interés
                             generado, será devuelto los primeros diez días del mes de Diciembre después del cierre del ejercicio.</p>
@@ -57,7 +57,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             inversión es de $20,000.00 (Veinte mil pesos 00/100 M.N.) y máxima de $30,000.00 (Treinta mil pesos 00/100 M.N.).</p>
                         <p>El límite de ahorro quincenal (inciso a) será del 30% del sueldo, considerando la suma de los Fondos. </p>
                         <p>Solo se permiten las aportaciones indicadas en este capítulo. </p>
-                        <p class="nota-aval">NOTA: Leer el el Titulo Quinto "Aportaciones" del reglamento de la Caja de Ahorro.</p>
+                        <p class="nota-aval">NOTA: Leer el Titulo Quinto "Aportaciones" del reglamento de la Caja de Ahorro.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex">

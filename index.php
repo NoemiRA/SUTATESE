@@ -63,7 +63,7 @@
                     <hr>
                     <h3>Registrarse</h3>
                     <div class="d-flex">
-                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Registrate</button>
+                        <button type="button" class="btn btn-primary d-block mx-1 my-4" style="width: 100%; height: 100%" onclick=location.href="registro.php">Regístrate</button>
                     
                     </div>
                 </div>
