@@ -73,7 +73,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         function notAllowed()
         {
-            echo '<script> Swal.fire({icon: "error", title: "Cantidad no permitida", text: "¡La cantidad que ha ingresado es superior a su ahorro!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
+            echo '<script> Swal.fire({icon: "error", title: "Cantidad no permitida", text: "¡La cantidad que ha ingresado es superior a su ahorro, contemple los intereses generados a las quincenas faltantes!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
         then(function(result){
             if(result.value){                   
             }
@@ -83,7 +83,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         if (isset($_SESSION['NumEmpleado5'])) {
             $NumEmpleado = $_SESSION['NumEmpleado5'];
-            $ejecucion = $conn->query("CALL savingsAvailable($NumEmpleado, @saldo);");
+            $ejecucion = $conn->query("CALL savingsAvailable($NumEmpleado, @saldo)");
             if ($ejecucion === TRUE) {
                 $sql = "SELECT @saldo;";
                 $result = mysqli_query($conn, $sql);
@@ -110,14 +110,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
         ?>
             <form class="row g-3 mt-3" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <h1 class=" fw-bold m-5">PRÉSTAMO POR CAJA DE AHORRO</h1>
+                <h1 class=" fw-bold m-4">PRÉSTAMO POR CAJA DE AHORRO</h1>
 
                 <?php
-                    $aval = "SELECT CantidadSolicitada FROM prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on cajaahorro.NumEmpleado1 = empleado.NumEmpleado WHERE NumEmpleado1 = $NumEmpleado and prestamo.Estatus = 4";
+                    $aval = "SELECT SUM(CantidadSolicitada + Interes) FROM prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on cajaahorro.NumEmpleado1 = empleado.NumEmpleado WHERE NumEmpleado1 = $NumEmpleado and prestamo.Estatus = 4";
                     $result_aval = mysqli_query($conn, $aval);
                     $row_aval = mysqli_fetch_array($result_aval);
-                    $resp = mysqli_num_rows($result_aval);
-                    if($resp > 0){
+                    if(isset($row_aval[0])){
                         ?>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 Usted es aval por la cantidad de <strong>$<?php echo $row_aval[0]?></strong> más interés que genere el prestatario.
@@ -142,7 +141,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </div>
                 </div>
 
-                <div>
+                <div class="m-3">
                     <button type="button" class="btn btn-primary mx-5" onclick=location.href="prestamos.php">
                         Cancelar
                     </button>
@@ -185,10 +184,11 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         alertdata();
                     } else {
                         $CantidadSolicitar = $_POST['CantidadSolicitar'];
-                        $CantidadSolicitar = ($CantidadSolicitar * 0.01 * $quincenasPago) + $CantidadSolicitar;
+                        $Interes = ($CantidadSolicitar * 0.01 * $quincenasPago);
+                        $OptionCant = $CantidadSolicitar + $Interes;
 
-                        if ($CantidadSolicitar <= $amount) {
-                            $ejecucion = $conn->query("CALL insert_PresCajaAhorro($NumEmpleado, $CantidadSolicitar)");
+                        if ($OptionCant <= $amount) {
+                            $ejecucion = $conn->query("CALL insert_PresCajaAhorro($NumEmpleado, $CantidadSolicitar, $Interes)");
                             if ($ejecucion === TRUE) {
                                 alertsuccess();
                             } else {
