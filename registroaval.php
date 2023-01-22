@@ -108,7 +108,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         <h2>Préstamo por Aval</h2>
                         <div class="row my-4">
                             <div class="col-md-6">
-                                <label for="input_tasa" class="form-label fw-bold">Interés</label>
+                                <label for="input_tasa" class="form-label fw-bold">Interés mensuales</label>
                                 <div class="input-group">
                                     <input type="number" class="form-control" id="input_tasa" value="<?php echo $interest ?>" disabled>
                                     <span class="input-group-text">%</span>
