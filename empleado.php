@@ -40,7 +40,7 @@ if (empty($_SESSION['User'])) {
     <div class="principal">
             <h1 class="display-3 m-4">REGISTRO EMPLEADOS</h1>
             <a href="empleado.php" class="btn btn-success m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#accepted"><i class="fa-solid fa-list-check"></i> EMPLEADOS ACEPTADOS</a>
-            <a href="empleado.php" class="btn btn-warning m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#drop"><i class="fa-solid fa-user"></i> ELIMINAR ACCESO</a>  
+            <a href="empleado.php" class="btn btn-warning m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#drop"><i class="fa-solid fa-user"></i> BLOQUEAR ACCESO</a>  
             <a href="empleado.php" class="btn btn-danger m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#block"><i class="fa-solid fa-user"></i> CUENTAS BLOQUEADAS</a>  
 
             <div class="table-responsive mx-1">
@@ -139,29 +139,29 @@ if (empty($_SESSION['User'])) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $query = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, FechaIng, CorreoElec, Celular, Telefono, Calle, Numero, DelMun, Colonia, IdEstado1, Cp, IdDivision1, ExpProfesional, ExpDocAdmin, Licenciatura, CedLic, InstLic, Maestria, CedMae, InstMae, Doctorado, CedDoc, InstDoc, Nomina, Credencial, Foto, Division, Estado, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN estado ON empleado.IdEstado1 = estado.IdEstado INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 0;";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id_request = $row[0];
-                                            $id_encoded_request = base64_encode($id_request);
+                                        $query_a = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, FechaIng, CorreoElec, Celular, Telefono, Calle, Numero, DelMun, Colonia, IdEstado1, Cp, IdDivision1, ExpProfesional, ExpDocAdmin, Licenciatura, CedLic, InstLic, Maestria, CedMae, InstMae, Doctorado, CedDoc, InstDoc, Nomina, Credencial, Foto, Division, Estado, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN estado ON empleado.IdEstado1 = estado.IdEstado INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 0;";
+                                        $result_a = mysqli_query($conn, $query_a);
+                                        while ($row_a = mysqli_fetch_array($result_a)) {
+                                            $id_request_a = $row_a[0];
+                                            $id_encoded_request_a = base64_encode($id_request_a);
                                     ?>
                                         <tr>
-                                            <td><?= $row['NumEmpleado'];?></td>
+                                            <td><?= $row_a['NumEmpleado'];?></td>
                                             <td>
-                                                <img src="data:image/png; base64,<?php echo base64_encode($row['Foto']) ?>" width="80" height="80">
+                                                <img src="data:image/png; base64,<?php echo base64_encode($row_a['Foto']) ?>" width="80" height="80">
                                             </td>
-                                            <td><?= $row['ApellidoPat']. ' ' . $row['ApellidoMat']. ' ' . $row['Nombres'];?></td>
-                                            <td><?= $row['Curp'];?></td>
-                                            <td><?= $row['Rfc'];?></td>
-                                            <td><?= $row['Division'];?></td>
-                                            <td><?= $row['CorreoElec'];?></td>
-                                            <td><?= $row['Celular'];?></td>
-                                            <td><?= $row['Telefono'];?></td>
-                                            <td><?= $row['Calle']. ', ' . $row['Numero']. ', ' . $row['DelMun']. ', ' . $row['Colonia']. ', ' . $row['Estado']. ', ' . $row['Cp'];?></td>
-                                            <td><?= $row['Licenciatura']. ' - ' . $row['CedLic']. ' - ' . $row['InstLic'];?></td>
-                                            <td><?= $row['Maestria']. ' - ' . $row['CedMae']. ' - ' . $row['InstMae'];?></td>
-                                            <td><?= $row['Doctorado']. ' - ' . $row['CedDoc']. ' - ' . $row['InstDoc'];?></td>
-                                            <td><?= $row['Contraseña'];?></td>
+                                            <td><?= $row_a['ApellidoPat']. ' ' . $row_a['ApellidoMat']. ' ' . $row_a['Nombres'];?></td>
+                                            <td><?= $row_a['Curp'];?></td>
+                                            <td><?= $row_a['Rfc'];?></td>
+                                            <td><?= $row_a['Division'];?></td>
+                                            <td><?= $row_a['CorreoElec'];?></td>
+                                            <td><?= $row_a['Celular'];?></td>
+                                            <td><?= $row_a['Telefono'];?></td>
+                                            <td><?= $row_a['Calle']. ', ' . $row['Numero']. ', ' . $row_a['DelMun']. ', ' . $row_a['Colonia']. ', ' . $row_a['Estado']. ', ' . $row_a['Cp'];?></td>
+                                            <td><?= $row_a['Licenciatura']. ' - ' . $row_a['CedLic']. ' - ' . $row_a['InstLic'];?></td>
+                                            <td><?= $row_a['Maestria']. ' - ' . $row_a['CedMae']. ' - ' . $row_a['InstMae'];?></td>
+                                            <td><?= $row_a['Doctorado']. ' - ' . $row_a['CedDoc']. ' - ' . $row_a['InstDoc'];?></td>
+                                            <td><?= $row_a['Contraseña'];?></td>
                                         </tr>
                                     <?php
                                     }
@@ -202,27 +202,27 @@ if (empty($_SESSION['User'])) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $query = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, CorreoElec, Celular, Telefono, IdDivision1, Foto, Division, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 0;";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id_request = $row[0];
-                                            $id_encoded_request = base64_encode($id_request);
+                                        $query_b = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, CorreoElec, Celular, Telefono, IdDivision1, Foto, Division, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 0;";
+                                        $result_b = mysqli_query($conn, $query_b);
+                                        while ($row_b = mysqli_fetch_array($result_b)) {
+                                            $id_request_b = $row_b[0];
+                                            $id_encoded_request_b = base64_encode($id_request_b);
                                     ?>
                                         <tr>
-                                            <td><?= $row['NumEmpleado'];?></td>
+                                            <td><?= $row_b['NumEmpleado'];?></td>
                                             <td>
-                                                <img src="data:image/png; base64,<?php echo base64_encode($row['Foto']) ?>" width="80" height="80">
+                                                <img src="data:image/png; base64,<?php echo base64_encode($row_b['Foto']) ?>" width="80" height="80">
                                             </td>
-                                            <td><?= $row['ApellidoPat']. ' ' . $row['ApellidoMat']. ' ' . $row['Nombres'];?></td>
-                                            <td><?= $row['Curp'];?></td>
-                                            <td><?= $row['Rfc'];?></td>
-                                            <td><?= $row['Division'];?></td>
-                                            <td><?= $row['CorreoElec'];?></td>
-                                            <td><?= $row['Celular'];?></td>
-                                            <td><?= $row['Telefono'];?></td>
-                                            <td><?= $row['Contraseña'];?></td>
+                                            <td><?= $row_b['ApellidoPat']. ' ' . $row_b['ApellidoMat']. ' ' . $row_b['Nombres'];?></td>
+                                            <td><?= $row_b['Curp'];?></td>
+                                            <td><?= $row_b['Rfc'];?></td>
+                                            <td><?= $row_b['Division'];?></td>
+                                            <td><?= $row_b['CorreoElec'];?></td>
+                                            <td><?= $row_b['Celular'];?></td>
+                                            <td><?= $row_b['Telefono'];?></td>
+                                            <td><?= $row_b['Contraseña'];?></td>
                                             <td>
-                                                <a href="empleado.php?id=<?= $id_encoded_request;?>&option=block" class="btn btn-danger mx-1" name="block" onclick="return request()"><i class="fa-solid fa-x"></i></a>
+                                                <a href="empleado.php?id=<?= $id_encoded_request_b;?>&option=block" class="btn btn-danger mx-1" name="block" onclick="return request()"><i class="fa-solid fa-x"></i></a>
                                             </td>
                                         </tr>
                                     <?php
@@ -265,27 +265,27 @@ if (empty($_SESSION['User'])) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $query = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, CorreoElec, Celular, Telefono, IdDivision1, Foto, Division, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 1;";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $id_request = $row[0];
-                                            $id_encoded_request = base64_encode($id_request);
+                                        $query_u = "SELECT NumEmpleado, Nombres, ApellidoPat, ApellidoMat, FechaNac, Curp, Rfc, CorreoElec, Celular, Telefono, IdDivision1, Foto, Division, Contraseña FROM empleado INNER JOIN DIVISION ON Division.IdDivision = empleado.IdDivision1 INNER JOIN logeo on empleado.NumEmpleado = logeo.NumEmpleado5 WHERE User = 1;";
+                                        $result_u = mysqli_query($conn, $query_u);
+                                        while ($row_u = mysqli_fetch_array($result_u)) {
+                                            $id_request_u = $row_u[0];
+                                            $id_encoded_request_u = base64_encode($id_request_u);
                                     ?>
                                         <tr>
-                                            <td><?= $row['NumEmpleado'];?></td>
+                                            <td><?= $row_u['NumEmpleado'];?></td>
                                             <td>
-                                                <img src="data:image/png; base64,<?php echo base64_encode($row['Foto']) ?>" width="80" height="80">
+                                                <img src="data:image/png; base64,<?php echo base64_encode($row_u['Foto']) ?>" width="80" height="80">
                                             </td>
-                                            <td><?= $row['ApellidoPat']. ' ' . $row['ApellidoMat']. ' ' . $row['Nombres'];?></td>
-                                            <td><?= $row['Curp'];?></td>
-                                            <td><?= $row['Rfc'];?></td>
-                                            <td><?= $row['Division'];?></td>
-                                            <td><?= $row['CorreoElec'];?></td>
-                                            <td><?= $row['Celular'];?></td>
-                                            <td><?= $row['Telefono'];?></td>
-                                            <td><?= $row['Contraseña'];?></td>
+                                            <td><?= $row_u['ApellidoPat']. ' ' . $row_u['ApellidoMat']. ' ' . $row_u['Nombres'];?></td>
+                                            <td><?= $row_u['Curp'];?></td>
+                                            <td><?= $row_u['Rfc'];?></td>
+                                            <td><?= $row_u['Division'];?></td>
+                                            <td><?= $row_u['CorreoElec'];?></td>
+                                            <td><?= $row_u['Celular'];?></td>
+                                            <td><?= $row_u['Telefono'];?></td>
+                                            <td><?= $row_u['Contraseña'];?></td>
                                             <td>
-                                                <a href="empleado.php?id=<?= $id_encoded_request;?>&option=unlock" class="btn btn-warning mx-1" name="unlock" onclick="return request()"><i class="fa-solid fa-check"></i> DESBLOQUEAR</a>
+                                                <a href="empleado.php?id=<?= $id_encoded_request_u;?>&option=unlock" class="btn btn-warning mx-1" name="unlock" onclick="return request()"><i class="fa-solid fa-check"></i> DESBLOQUEAR</a>
                                             </td>
                                         </tr>
                                     <?php
