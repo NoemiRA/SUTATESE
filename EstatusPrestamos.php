@@ -35,7 +35,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
         swalWithBootstrapButtons.fire({
             icon: 'warning',
             title: 'Advertencia',
-            text: 'En caso de tener cualquier duda con su préstamo, o cambiar el plazo de pago, por favor acudir al sindicato con el CÓDIGO DE PRÉSTAMO',
+            text: 'En caso de tener cualquier duda con su préstamo, o cambiar el plazo de pago, por favor acudir al sindicato.',
             reverseButtons: true
         })
     </script>
@@ -44,20 +44,16 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
     if (isset($_SESSION['NumEmpleado5'])) {
         $NumEmpleado = $_SESSION['NumEmpleado5'];
-        $NombreEmp = $_SESSION['Nombres'];
-        $ApellidoPatEmp = $_SESSION['ApellidoPat'];
-        $ApellidoMatEmp = $_SESSION['ApellidoMat'];
     ?>
-        <div class="mx-5">
-            <h2 class="my-5 fw-bold text-center fs-1">INFORMACIÓN PRÉSTAMOS</h2>
-            <div class="table-responsive my-4 shadow-lg p-3 mb-5 bg-body rounded">
-                <table id="table-2" class="table table-bordered fs-4 mb-5" style="width: 100%; text-align: right; border: 1px gray solid; 
-                        order-collapse: collapse">
-                    <thead class="text-center" style="background-color:#00102E; color: #ffffff;">
+        <div class="text-center m-5">
+            <h2 class="p-2 text-center"><strong>INFORMACIÓN PRÉSTAMOS</strong></h2>
+            <div class="table-responsive mx-1 shadow-lg p-3 mb-5 bg-body rounded">
+                <table class="table table-bordered table-m text-center">
 
+                    <thead class="text-center table-head" style="background-color:#00102E; color: #ffffff;">
                         <tr>
-                            <th>Código de préstamo</th>
                             <th>Cantidad solicitada</th>
+                            <th>Fecha de solicitud</th>
                             <th>Tipo de préstamo</th>
                             <th>Fecha de Deposito</th>
                             <th>Estatus Préstamo</th>
@@ -67,73 +63,54 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     <tbody id="tbody_1" class="text-center fs-5">
                         <?php
                         if (isset($_SESSION['NumEmpleado5'])) {
-                            $query = "SELECT  NumEmpleado3, IdPrestamo, CantidadSolicitada,  Estatus, FechaDeposito, IdTipoPrestamo1 FROM prestamo WHERE NumEmpleado3 = '$NumEmpleado';";
+                            $query = "SELECT  NumEmpleado3, IdPrestamo, CantidadSolicitada,  FechaSolicitud, Estatus, FechaDeposito, IdTipoPrestamo1, TipoPrestamo FROM prestamo INNER JOIN tipoprestamo on prestamo.IdTipoPrestamo1 = tipoprestamo.IdTipoPrestamo WHERE NumEmpleado3 = '$NumEmpleado';";
                             $result_absence = mysqli_query($conn, $query);
                             while ($row = mysqli_fetch_array($result_absence)) {
-                                $id = $row[0];
-                                $id_encoded = base64_encode($id);
-                                $tipo = $row[5];
-                                $estatus = $row[3];
-                                $fecha = $row[4];
-                        ?>
+                                $es = $row['Estatus'];
+                                $eb = $row['IdTipoPrestamo1'];
+                            ?>
                                 <tr>
-                                    <td class="fw-bold"><?php echo $row['IdPrestamo']; ?> </td>
-                                    <td><?php echo $row['CantidadSolicitada']; ?> pesos</td>
-
+                                <th scope="row">$ <?php echo $row['CantidadSolicitada']; ?> M.N.</td>
                                     <?php
-                                    if ($estatus == 1) {
-                                        $ResEst = "Pendiente de Aprobación";
-                                    }
-                                    if ($estatus == 1 && $tipo == "P1") {
-                                        $ResEst = "Falta archivo Pagaré";
-                                    }
-                                    if ($estatus == 2) {
-                                        $ResEst = "Aceptado (Activo)";
-                                    }
-                                    if ($estatus == 2 && $tipo == "P1") {
-                                        $ResEst = "Pendiente de Aprobación";
-                                    }
-                                    if ($estatus == 3) {
-                                        $ResEst = "Cancelado";
-                                    }
-                                    if ($estatus == 4) {
-                                        $ResEst = "Liquidado";
-                                    }
-                                    if ($estatus == 4 && $tipo == "P1") {
-                                        $ResEst = "Aceptado (Activo)";
-                                    }
-                                    if ($estatus == 5) {
-                                        $ResEst = "Liquidado";
+                                    if($eb == "P2" || $eb == "P3"){
+                                        switch ($es){
+                                            case 1:
+                                                $ms = 'Espera de aprobación';
+                                            break;
+                                            case 2:
+                                                $ms = 'Prestamo Aceptado';
+                                            break;
+                                            case 3:
+                                                $ms = 'No aceptado';
+                                            break;
+                                            case 4:
+                                                $ms = 'Préstamo liquidado';
+                                            break;
+                                        }
+                                    }else{
+                                        switch ($es){
+                                            case 1:
+                                                $ms = 'En proceso de registro';
+                                            break;
+                                            case 2:
+                                                $ms = 'En espera de respuesta';
+                                            break;
+                                            case 3:
+                                                $ms = 'No aceptado';
+                                            break;
+                                            case 4:
+                                                $ms = 'Prestamo Aceptado';
+                                            break;
+                                            case 5:
+                                                $ms = 'Préstamo liquidado';
+                                            break;
+                                        }
                                     }
                                     ?>
-                                    <td class="fw-bold"><?php echo $ResTipo ?></td>
-
-                                    <?php
-                                    if (empty($row['FechaDeposito']) && $estatus == 1) {
-                                        $ResFecha = "Asignando fecha";
-                                    }
-                                    if (empty($row['FechaDeposito']) && $estatus == 2) {
-                                        $ResFecha = "Asignando Fecha";
-                                    } else {
-                                        $ResFecha = $row['FechaDeposito'];
-                                    }
-                                    if (empty($row['FechaDeposito']) && $estatus == 3) {
-                                        $ResFecha = "No se asignó fecha";
-                                    }
-
-                                    if (empty($row['FechaDeposito']) && $estatus == 1 || $estatus == 2 &&  $tipo == "P1") {
-                                        $ResFecha = "Asignando Fecha";
-                                    }
-                                    if (empty($row['FechaDeposito']) && $estatus == 4 &&  $tipo == "P1") {
-                                        $ResFecha = $row['FechaDeposito'];
-                                        $ResFecha = "Asignando Fecha";
-                                    }
-                                    if (empty($row['FechaDeposito']) && $estatus == 5 &&  $tipo == "P1") {
-                                        $ResFecha = $row['FechaDeposito'];
-                                    }
-                                    ?>
-                                        <td><?php echo $ResFecha ?></td>
-                                        <td class="fw-bold"><?php echo $ResEst ?></td>
+                                        <td><?php echo $row['FechaSolicitud'] ?></td>
+                                        <td><?php echo $row['TipoPrestamo'] ?></td>
+                                        <td><?php echo $row['FechaDeposito'] ?></td>
+                                        <td><?php echo $ms ?></td>
                                 </tr>
                         <?php
                             }
@@ -142,11 +119,80 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </tbody>
                 </table>
             </div>
+            <button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#newsModal">RÉGISTRO DE PAGOS</button>
+
+            <!-- Modal NUEVOS AGREMIADOS-->
+            <div class="modal" id="news" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title display-6" id="newsModalLabel">NUEVOS AGREMIADOS</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive mx-1">
+                                <table class="table table-bordered table-m text-center">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">Id Asigando</th>
+                                            <th scope="col">Empleado</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Celular</th>
+                                            <th scope="col">Teléfono</th>
+                                            <th scope="col">Cantidad Quincenal</th>
+                                            <th scope="col">Tipo de Ahorro</th>
+                                            <th scope="col">Formato de Cuota</th>
+                                            <th scope="col">Solicitud Aportación</th>                            
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $query = "SELECT IdAhorrador, NumEmpleado1, Nombres, ApellidoPat, ApellidoMat, CorreoElec, Celular, Telefono, CantidadQuincenal, TipoAhorro FROM empleado INNER JOIN cajaahorro ON empleado.NumEmpleado = cajaahorro.NumEmpleado1 INNER JOIN tipoahorro ON cajaahorro.IdTipoAhorro1 = tipoahorro.IdTipoAhorro WHERE Estatus = 3";
+
+                                        $result = mysqli_query($conn, $query);
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $id_request = $row[0];
+                                            $id_encoded_request = base64_encode($id_request);
+                                        ?>
+                                            <tr>
+                                                <td><?= $row['IdAhorrador'];?></td>
+                                                <td><?= $row['NumEmpleado1'];?></td>
+                                                <td><?= $row['ApellidoPat']. ' ' . $row['ApellidoMat']. ' ' . $row['Nombres'];?></td>
+                                                <td><?= $row['CorreoElec']; ?></td>
+                                                <td><?= $row['Celular']; ?></td>
+                                                <td><?= $row['Telefono']; ?></td>
+                                                <th scope="row">$ <?= $row['CantidadQuincenal'];?> M.N.</td>
+                                                <td><?= $row['TipoAhorro'];?></td>
+                                                <td>
+                                                    <a href="doc.php?id=<?= $id_encoded_request;?>&opt=share" class="btn btn-info" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                                                </td>
+                                                <td>
+                                                    <a href="doc.php?id=<?= $id_encoded_request;?>&opt=input" class="btn btn-info" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                                                </td>
+                                                
+                                                <td class="d-flex justify-content-center">
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=docs" class="btn btn-warning mx-1" name="docs" onclick="return request()"><i class="fa-solid fa-circle-info"></i></a>
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger mx-1" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     <?php
     }
-    ?>
-    <?php
     include("footer.php");
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

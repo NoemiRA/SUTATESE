@@ -1,0 +1,25 @@
+:root{
+    --primary: #00102E;
+    --fondocontenedor: #F8F8FF;
+}
+
+.navbar{
+    background-color: var(--primary) !important;
+}
+
+.navbar-color, .nav-link{
+    color: white;
+}
+
+.principal{
+    margin: 10px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    transition: transform .5s;
+}
