@@ -77,8 +77,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                         <?php
                         if ($count >= 1) {
-                        ?>
                             $id = $row[5];
+                        ?>
+                            
                             <div class="col mt-4">
                                 <div class="col-md-auto">
                                     <label for="tipo" class="form-label">Seleccione un tipo de fondo</label>

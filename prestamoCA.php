@@ -40,8 +40,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
     <div class="row g-0 bg-light text-center m-5">
         <?php
 
-        function alertsuccess()
-        {
+        function alertsuccess(){
             echo '<script> Swal.fire({icon: "success", title: "Prestamo Solicitado", text: "¡Para dar seguimiento a su prestamo puede visitar el apartado de ESTATUS DE PRESTAMOS!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
             then(function(result){
                 if(result.value){                   
@@ -51,8 +50,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </script>';
         }
 
-        function alerterror()
-        {
+        function alerterror(){
             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
             then(function(result){
                 if(result.value){                   
@@ -61,20 +59,18 @@ if (empty($_SESSION['NumEmpleado5'])) {
             </script>';
         }
 
-        function alertdata()
-        {
+        function alertdata(){
             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-        then(function(result){
+            then(function(result){
             if(result.value){                   
             }
         });
         </script>';
         }
 
-        function notAllowed()
-        {
+        function notAllowed(){
             echo '<script> Swal.fire({icon: "error", title: "Cantidad no permitida", text: "¡La cantidad que ha ingresado es superior a su ahorro, contemple los intereses generados a las quincenas faltantes!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-        then(function(result){
+            then(function(result){
             if(result.value){                   
             }
         });
@@ -119,7 +115,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     if(isset($row_aval[0])){
                         ?>
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Usted es aval por la cantidad de <strong>$<?php echo $row_aval[0]?></strong> más interés que genere el prestatario.
+                                Usted es aval por la cantidad de <strong>$<?php echo round($row_aval[0],2)?></strong> más interés que genere el prestatario.
                             </div>
                         <?php
                     }

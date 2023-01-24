@@ -25,13 +25,14 @@ if (empty($_SESSION['NumEmpleado5'])) {
 </head>
 
 <body onload="quincenas();">
-    <?php
-    if (isset($_SESSION['NumEmpleado5'])) {
-        $NumEmpleado = $_SESSION['NumEmpleado5'];
-        $NombreEmp = $_SESSION['Nombres'] . " " . $_SESSION['ApellidoPat'] . " " . $_SESSION['ApellidoMat'];
-    ?>
-        <h1 class="text-center">PODER CREDITICIO</h1>
-        <div class="row g-0 h-50 p-5">
+    <div class="text-center m-2 p-3 rounded">
+        <h1 class="fw-bold">PODER CREDITICIO</h1>
+        <?php
+            if (isset($_SESSION['NumEmpleado5'])) {
+                $NumEmpleado = $_SESSION['NumEmpleado5'];
+                $NombreEmp = $_SESSION['Nombres'] . " " . $_SESSION['ApellidoPat'] . " " . $_SESSION['ApellidoMat'];
+        ?>
+        <div class="row g-0 h-50 m-5">
             <div class="col-lg-6 bg-light justify-content-center">
                 <form class="text-center" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <p class="text-center fs-4 fw-bold p-4">Favor de introducir los datos reales de su recibo de nómina correspondiente a la quincena indicada</p>
@@ -96,8 +97,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                     <?php
 
-                    function alertdata()
-                    {
+                    function alertdata(){
                         echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                             then(function(result){
                                 if(result.value){                   
@@ -106,7 +106,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             </script>';
                     }
 
-                    if (isset($_POST['Request'])) {
+                    if (isset($_POST['Request'])){
                         date_default_timezone_set('America/Mexico_City');
                         $day = date('d');
                         $month = date('m');
@@ -117,9 +117,9 @@ if (empty($_SESSION['NumEmpleado5'])) {
                         $deductions = $_POST['tdeducciones'];
 
                         
-                        if (empty($perceptions) || empty($isr) || empty($issemym) || empty($deductions)) {
+                        if (empty($perceptions) || empty($isr) || empty($issemym) || empty($deductions)){
                             alertdata();
-                        } else {
+                        }else{
                             $PoderCred = (($perceptions - ($isr + $issemym)) * 0.3) - ($deductions - $isr - $issemym);
                             
                             $totalQuincenas = 21;
@@ -142,7 +142,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                 $cantidadMax = $PoderCred * $quincenasPago;
                                 }
 
-                            } else if ($day >= 15 && $day <= 31) {
+                            }else if ($day >= 15 && $day <= 31) {
                                 $quincenasPago = $quincenasPago;
                                 $cantidadMax = $PoderCred * $quincenasPago;
                                 $resultadoDos = $quincenasPago;
@@ -163,14 +163,13 @@ if (empty($_SESSION['NumEmpleado5'])) {
 
                             if($PoderCred < 0){
                                 echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡No puede solicitar un préstamo por nómina dado a que su poder créditicio es muy bajo!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
-                            then(function(result){
-                                if(result.value){ 
-                                    window.location = "poderCrediticio.php";                    
-                                }
-                            });
-                            </script>';
+                                then(function(result){
+                                    if(result.value){ 
+                                        window.location = "poderCrediticio.php";                    
+                                    }
+                                });</script>';
                             }
-                    ?>
+                            ?>
                             <div class="form-group row my-3 mx-3 fw-bold">
                                 <label for="poderCred" class="col-sm-2 col-form-label">Poder crediticio: </label>
                                 <div class="col-sm-10">
@@ -206,20 +205,18 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             <small class="form-text text-muted my-0">
                                 <a href="registroaval.php " title="¡Deseo Solicitar el Prestamo!" value="Solicitar">¡Deseo registrar un aval!</a>
                             </small>
-
                     <?php
                         }
                     }
-
                     ?>
                 </form>
             </div>
-
             <div class="col-lg-6 p-4 bg-light text-center">
-                <p class="text-center fs-4 fw-bold">Imágen guía y de demostración</p>
+                <p class="text-center fs-4 fw-bold">Imágen demostración</p>
                 <img src="resources\reciboNomina.jpg" class="me-3 mx-2 img-fluid" width="695" height="840">
             </div>
         </div>
+    </div>
 
     <?php
     }

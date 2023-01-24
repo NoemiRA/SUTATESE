@@ -32,7 +32,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
 
-        if($row["Estatus"] == 3){
+        if($row["Estatus"] == 3 || $row["Estatus"] == 5){
             ?>
             <div class="text-center m-5">
                     <h1 class="p-3">CAJA DE AHORRO</h1>

@@ -21,7 +21,7 @@
             $interest = $row_interest[0];
         }
 
-        $sql = "SELECT IdPrestamo, NumEmpleado3, CantidadSolicitada, Plazo, IdAhorrador1, NumEmpleado, Nombres, ApellidoPat, ApellidoMat from prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on empleado.NumEmpleado = cajaahorro.NumEmpleado1 where NumEmpleado3 = $NumEmpleado and IdTipoPrestamo1 = 'P1' and (prestamo.Estatus = '1' OR prestamo.Estatus = '2')";
+        $sql = "SELECT IdPrestamo, NumEmpleado3, CantidadSolicitada, Plazo, IdAhorrador1, NumEmpleado, Nombres, ApellidoPat, ApellidoMat, Interes from prestamo inner join cajaahorro on prestamo.IdAhorrador1 = cajaahorro.IdAhorrador inner join empleado on empleado.NumEmpleado = cajaahorro.NumEmpleado1 where NumEmpleado3 = $NumEmpleado and IdTipoPrestamo1 = 'P1' and (prestamo.Estatus = '1' OR prestamo.Estatus = '2')";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
         $NombreAval = $row['Nombres']. ' ' . $row['ApellidoPat']. ' ' . $row['ApellidoMat'];
@@ -56,9 +56,6 @@
                 '), 0, 'C');
             }
         }
-
-        $loanInterest = (intval($interest) * 0.01) / 2;
-        $capital = intval($row[2]) * $loanInterest * intval($row[3]);
         $id= (int) filter_var($row[0], FILTER_SANITIZE_NUMBER_INT); 
         $pdf = new PDF();
         $pdf->AliasNbPages();
@@ -71,7 +68,7 @@
         $pdf->Cell(45,5,utf8_decode($day.' de '.$month.' del '.$year),0,1,'C');
         $pdf->Ln(15);
         $pdf->SetFont('helvetica','B',15);
-        $pdf->Cell(190,5,utf8_decode('BUENO POR: $ '.$row[2].' '),0,1,'R');
+        $pdf->Cell(190,5,utf8_decode('BUENO POR: $ '.$row['CantidadSolicitada'].' '),0,1,'R');
         $pdf->SetFont('helvetica','',10);
         $pdf->Ln(10);
         $pdf->MultiCell(0, 7, utf8_decode(''.$NombreEmp.' DEBO Y PAGARÉ A LA ORDEN DEL SINDICATO ÚNICO DE TRABAJADORES ACADÉMICOS DEL TECNOLÓGICO DE ESTUDIOS SUPERIORES DE ECATEPEC, REPRESENTADO POR EL ING. NICOLÁS CORTÉS MARTÍNEZ EN SU CARÁCTER DE SECRETARIO GENERAL DE DICHO SINDICATO LA CANTIDAD DE $'.$row[2].' ( '.$letra.' 00/100 M.N.), APLICANDOLE UNA TASA DE INTERÉS MENSUAL DEL '.$interest.'% PAGADEROS AL 30 DE NOVIEMBRE DEL 2023 EN LAS OFICINAS QUE OCUPA EL SINDICATO. EL IMPORTE DEL NETO A PAGAR SERA CAPITAL MAS INTERESES.'), 0, 'J');
@@ -84,11 +81,11 @@
         $pdf->Cell(80,7,utf8_decode('MAS  '),0,1,'R');
         $pdf->Cell(80,7,utf8_decode('INTERESES DEL PRESTAMO: '),0,0,'R');
         $pdf->SetFont('helvetica','',12);
-        $pdf->Cell(20,7,utf8_decode('$ '.$capital.''),0,0,'R');
+        $pdf->Cell(20,7,utf8_decode('$ '.$row['Interes'].''),0,0,'R');
         $pdf->Cell(20,7,utf8_decode(' M.N.'),0,1,'L');
         $pdf->SetFont('helvetica','B',12);
         $pdf->Cell(80,7,utf8_decode('TOTAL CAPITAL MAS INTERESES: '),0,0,'R');
-        $pdf->Cell(20,7,utf8_decode('$ '.$capital + intval($row[2]).''),0,0,'R');
+        $pdf->Cell(20,7,utf8_decode('$ '.$row['CantidadSolicitada'] + $row['Interes'].''),0,0,'R');
         $pdf->Cell(20,7,utf8_decode(' M.N.'),0,1,'L');
 
 
