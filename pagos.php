@@ -46,7 +46,7 @@ if (empty($_SESSION['User'])) {
             <div class="row g-0 h-50">
                 <div class="d-grid gap-2 col-6 mx-auto d-md-block">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Buscar... " aria-label="Recipient's username" aria-describedby="button-addon2" name="is">
+                        <input type="text" class="form-control" placeholder="Buscar por datos de empleado... " aria-label="Recipient's username" aria-describedby="button-addon2" name="is">
                         <input type="submit" class="btn btn-primary" value="Buscar" name="search"></input>
                     </div>
                     <a href="calculadora.php" class="btn btn-outline-dark rounded-pill" target="_blank"><i class="fa-solid fa-calculator"></i> CALCULADORA DE TABLA DE AMORTIZACIÓN</a>

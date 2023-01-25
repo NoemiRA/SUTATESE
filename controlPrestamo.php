@@ -54,6 +54,7 @@ if (empty($_SESSION['User'])) {
                     <a href="controlPrestamo.php" class="btn btn-warning m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#deposits"><i class="fa-solid fa-money-bill"></i> DÉPOSITOS PARA HOY</a>
                     <a href="controlPrestamo.php" class="btn btn-success m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#accept"><i class="fa-solid fa-check"></i> PRÉSTAMOS ACEPTADOS</a>
                     <a href="controlPrestamo.php" class="btn btn-danger m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#refused"><i class="fa-solid fa-x"></i> PRÉSTAMOS RECHAZADOS</a>
+                    <a href="pagos.php" class="btn btn-outline-success m-1 rounded-pill"><i class="fa-solid fa-file-invoice"></i> REGISTRO DE PAGOS</a>
                 </div>
                 <div class="d-grid gap-2 col-9 mx-auto d-md-block">
                     <div class="table-responsive mx-1">
