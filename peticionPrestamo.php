@@ -167,7 +167,7 @@
                         echo '<script> Swal.fire({icon: "success", title: "Prestamo Solicitado", text: "¡Los datos han sido ingresados correctamente!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                             then(function(result){
                                 if(result.value){
-                                    window.location = "peticionPrestamo.php";                   
+                                    window.location = "prestamos.php";                   
                                 }
                             });
                             </script>';
