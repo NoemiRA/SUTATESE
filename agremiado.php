@@ -197,9 +197,9 @@ if (empty($_SESSION['User'])) {
                                                 </td>
                                                 
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=docs" class="btn btn-warning mx-1" name="docs" onclick="return request()"><i class="fa-solid fa-circle-info"></i></a>
-                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
-                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger mx-1" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=docs" class="btn btn-warning mx-1" name="docs" onclick="return request()"><i class="fa-solid fa-circle-info"></i>CORREGIR</a>
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i>ACEPTAR</a>
+                                                    <a href="agremiado.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger mx-1" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i>CANCELAR</a>
                                                 </td>
                                             </tr>
                                         <?php

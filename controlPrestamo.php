@@ -18,7 +18,7 @@ if (empty($_SESSION['User'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <title>Prestamos</title>
+    <title>Préstamos</title>
 
     <?php include("navbar.php");?>
 </head>
@@ -49,9 +49,11 @@ if (empty($_SESSION['User'])) {
                         <input type="text" class="form-control" placeholder="Buscar... " aria-label="Recipient's username" aria-describedby="button-addon2" name="is">
                         <input type="submit" class="btn btn-primary" value="Buscar" name="search"></input>
                     </div>
-                    <a href="controlPrestamos.php" class="btn btn-warning m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#deposits"><i class="fa-solid fa-money-bill"></i> DÉPOSITOS PARA HOY</a>
-                    <a href="controlPrestamos.php" class="btn btn-danger m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#refused"><i class="fa-solid fa-x"></i> PRÉSTAMOS RECHAZADOS</a>
-                    <a href="controlPrestamos.php" class="btn btn-success m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#accept"><i class="fa-solid fa-check"></i> PRÉSTAMOS ACEPTADOS</a>
+                </div>
+                <div class="d-grid gap-2 col-10 mx-auto d-md-block">
+                    <a href="controlPrestamo.php" class="btn btn-warning m-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#deposits"><i class="fa-solid fa-money-bill"></i> DÉPOSITOS PARA HOY</a>
+                    <a href="controlPrestamo.php" class="btn btn-success m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#accept"><i class="fa-solid fa-check"></i> PRÉSTAMOS ACEPTADOS</a>
+                    <a href="controlPrestamo.php" class="btn btn-danger m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#refused"><i class="fa-solid fa-x"></i> PRÉSTAMOS RECHAZADOS</a>
                 </div>
                 <div class="d-grid gap-2 col-9 mx-auto d-md-block">
                     <div class="table-responsive mx-1">
@@ -72,14 +74,14 @@ if (empty($_SESSION['User'])) {
                                     ?>                                    
                                 </tr>
                                 <tr>
-                                    <td><a href="controlPrestamos.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#nca"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
-                                    <td><a href="controlPrestamos.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#nn"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
-                                    <td><a href="controlPrestamos.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#av"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#nca"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#nn"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#av"><i class="fa-solid fa-file-circle-plus"></i> PETICIÓN NUEVOS</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="controlPrestamos.php" class="btn btn-info m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repayment"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
-                                    <td><a href="controlPrestamos.php" class="btn btn-info m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repaymentn"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
-                                    <td><a href="controlPrestamos.php" class="btn btn-info m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repaymenta"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-outline-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repayment"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-outline-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repaymentn"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
+                                    <td><a href="controlPrestamo.php" class="btn btn-outline-primary m-1 rounded-pill" data-bs-toggle="modal" data-bs-target="#repaymenta"><i class="fa-solid fa-calendar-days"></i> REGISTRAR DÉPOSITO<a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -275,8 +277,8 @@ if (empty($_SESSION['User'])) {
                                                 <th scope="row">$ <?= $row['CantidadSolicitada'];?> M.N.</td>
                                                 <th scope="row">$ <?= $row['Interes'];?> M.N.</td>
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -327,7 +329,7 @@ if (empty($_SESSION['User'])) {
                                                 <th scope="row">$ <?= $row['CantidadSolicitada'];?> M.N.</td>
                                                 <th scope="row">$ <?= $row['Interes'];?> M.N.</td>
                                                 <td>
-                                                    <a href="controlPrestamos.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
+                                                    <a href="controlPrestamo.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
                                                 </td>
                                             </tr>
                                         <?php
@@ -382,8 +384,8 @@ if (empty($_SESSION['User'])) {
                                                     <a href="doc.php?id=<?= $id_encoded_request;?>&opt=pay" class="btn btn-info" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=accept" class="btn btn-success mx-1" name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger" name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -434,7 +436,7 @@ if (empty($_SESSION['User'])) {
                                                 <th scope="row">$ <?= $row['CantidadSolicitada'];?> M.N.</td>
                                                 <th scope="row">$ <?= $row['Interes'];?> M.N.</td>
                                                 <td>
-                                                    <a href="controlPrestamos.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
+                                                    <a href="controlPrestamo.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
                                                 </td>
                                             </tr>
                                         <?php
@@ -528,9 +530,9 @@ if (empty($_SESSION['User'])) {
                                                 <a href="doc.php?id=<?= $id_encoded_request;?>&opt=promissory " class="btn btn-info" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
                                             </td>
                                                 <td class="d-flex justify-content-center">
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=acceptav" class="btn btn-success mx-1"
-                                                    name="accept" onclick="return request()"><i class="fa-solid fa-check"></i></a>
-                                                    <a href="controlPrestamos.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger"
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=acceptav" class="btn btn-success mx-1"
+                                                    name="acceptv" onclick="return request()"><i class="fa-solid fa-check"></i></a>
+                                                    <a href="controlPrestamo.php?id=<?= $id_encoded_request;?>&option=decline" class="btn btn-danger"
                                                     name="cancel" onclick="return request()"><i class="fa-solid fa-x"></i></a>
                                                 </td>
                                             </tr>
@@ -582,7 +584,7 @@ if (empty($_SESSION['User'])) {
                                                 <th scope="row">$ <?= $row['CantidadSolicitada'];?> M.N.</td>
                                                 <th scope="row">$ <?= $row['Interes'];?> M.N.</td>
                                                 <td>
-                                                    <a href="controlPrestamos.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
+                                                    <a href="controlPrestamo.php" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id = "<?= $id_encoded_request; ?>"><i class="fa-regular fa-calendar"></i> Registrar devolución</a>                                
                                                 </td>
                                             </tr>
                                         <?php
@@ -641,7 +643,7 @@ if (empty($_SESSION['User'])) {
                     echo '<script> Swal.fire({icon: "success", title: "Estatus Cambiado", text: "¡Petición aceptada!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                                 then(function(result){
                                     if(result.value){
-                                        window.location = "controlPrestamos.php";                       
+                                        window.location = "controlPrestamo.php";                       
                                     }
                                 });
                                 </script>';
@@ -651,7 +653,7 @@ if (empty($_SESSION['User'])) {
                     echo '<script> Swal.fire({icon: "success", title: "Estatus Cambiado", text: "¡Se ha rechazado la petición al préstamo!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                                 then(function(result){
                                     if(result.value){ 
-                                        window.location = "controlPrestamos.php";  
+                                        window.location = "controlPrestamo.php";  
                                     }
                                 });
                                 </script>';
@@ -661,7 +663,7 @@ if (empty($_SESSION['User'])) {
                     echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                                 then(function(result){
                                     if(result.value){   
-                                        window.location = "controlPrestamos.php";                  
+                                        window.location = "controlPrestamo.php";                  
                                     }
                                 });
                                 </script>';
@@ -671,7 +673,7 @@ if (empty($_SESSION['User'])) {
                     echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                             then(function(result){
                                 if(result.value){       
-                                    window.location = "controlPrestamos.php";              
+                                    window.location = "controlPrestamo.php";              
                                 }
                             });
                             </script>';
@@ -687,7 +689,7 @@ if (empty($_SESSION['User'])) {
                 }
 
                 function operation($conn, $Estatus, $id_request){
-                    $format = $conn->query("UPDATE prestamo SET Estatus = '" . $Estatus . "' WHERE IdPrestamo = '". $id_request . "'");
+                    $format = $conn->query("UPDATE prestamo SET Estatus = $Estatus WHERE IdPrestamo = '$id_request'");
                     if ($format === TRUE) {
                         formatsuccess();
                     } else {

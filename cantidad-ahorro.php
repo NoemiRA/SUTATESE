@@ -157,7 +157,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, intente más tarde!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                                     then(function(result){
                                         if(result.value){                   
-                                        window.location = "registroCa.php";
+                                        window.location = "cantidad-ahorro.php";
                                         }
                                     });
                                     </script>';
@@ -167,7 +167,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             echo '<script> Swal.fire({icon: "error", title: "Error...", text: "¡Por favor, ingrese correctamente los valores!", showConfirmButton: true, confirmButtonText: "Cerrar"}).
                                 then(function(result){
                                     if(result.value){                   
-                                        window.location = "registroCA.php";
+                                        window.location = "cantidad-ahorro.php";
                                     }
                                 });
                                 </script>';
@@ -198,12 +198,17 @@ if (empty($_SESSION['NumEmpleado5'])) {
                             if ($cantidad == "") {
                                 alertdata();
                             } else {
-                                $ejecucion = $conn->query("CALL insert_ahorrador('$NumEmpleado',$cantidad,'','','$tf')");
-                                if ($ejecucion === TRUE) {
-                                    alertsuccess();
-                                } else {
-                                    alerterror();
+                                if(($cantidad%50==0 && $tf == 'TA1') || ($cantidad > 0 && $tf == 'TA2')){
+                                    $ejecucion = $conn->query("CALL insert_ahorrador($NumEmpleado, $cantidad, '', '', '$tf')");
+                                    if ($ejecucion === TRUE) {
+                                        alertsuccess();
+                                    } else {
+                                        alerterror();
+                                    }
+                                }else{
+                                    alertdata();
                                 }
+                                
                             }
                         }
                         ?>

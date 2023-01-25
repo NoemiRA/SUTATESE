@@ -263,7 +263,8 @@
                     <h3 class="fw-bold m-3">TABLA DE AMORTIZACIÓN</h3>
 
                     <div class="table-responsive my-2 shadow-lg p-2 bg-body rounded">
-                        <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid order-collapse: collapse">
+                        <table id="table-2" class="table table-bordered " style="width: 100%; text-align: right; border: 1px gray solid; 
+                                    order-collapse: collapse">
                             <thead class="text-center" style="background-color:#00102E; color: #ffffff;">
                                 <tr>
                                     <th>Quincena</th>

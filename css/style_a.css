@@ -23,3 +23,8 @@
 .card {
     transition: transform .5s;
 }
+
+.container{
+    margin: 30vh;
+    text-align: center;
+}

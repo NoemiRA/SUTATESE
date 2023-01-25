@@ -12,13 +12,14 @@ if (!empty($_POST["btnIngresar"])) {
             $_SESSION["Nombres"] = $datos->Nombres;
             $_SESSION["ApellidoPat"] = $datos->ApellidoPat;
             $_SESSION["ApellidoMat"] = $datos->ApellidoMat;
+            $_SESSION["User"] = $datos->User;
             header("location: inicio.php");
-            }if($_SESSION["User"] = $datos->User == 1){
+            }elseif ($_SESSION["User"] = $datos->User == 1){
                 echo '<div class="alert alert-danger" role="alert">
                     <b>¡Acceso Bloqueado!</b> Por favor, asista al sindicato.
                 </div>';
             }else{
-                $_SESSION["User"] = $datos->NumEmpleado5;
+                $_SESSION["User"] = $datos->User;
                 header("location: admin.php");
             }
         } else {
