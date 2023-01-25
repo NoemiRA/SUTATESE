@@ -91,12 +91,12 @@ if (empty($_SESSION['User'])) {
             </div>
 
 
-            <!-- Modal DÉPOSITOS DE HOY-->
+            <!-- Modal DEPÓSITOS DE HOY-->
             <div class="modal" id="deposits" tabindex="-1" aria-labelledby="depositsModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title display-6" id="depositsModalLabel">DÉPOSITOS PARA HOY</h1>
+                            <h1 class="modal-title display-6" id="depositsModalLabel">DEPÓSITOS PARA HOY</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -299,7 +299,7 @@ if (empty($_SESSION['User'])) {
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title display-6" id="newModalLabel">DÉPOSITOS</h1>
+                        <h1 class="modal-title display-6" id="newModalLabel">DEPÓSITOS</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -406,7 +406,7 @@ if (empty($_SESSION['User'])) {
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title display-6" id="repaymentnModalLabel">DÉPOSITOS</h1>
+                        <h1 class="modal-title display-6" id="repaymentnModalLabel">DEPÓSITOS</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -554,7 +554,7 @@ if (empty($_SESSION['User'])) {
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title display-6" id="repaymentaModalLabel">DÉPOSITOS</h1>
+                        <h1 class="modal-title display-6" id="repaymentaModalLabel">DEPÓSITOS</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

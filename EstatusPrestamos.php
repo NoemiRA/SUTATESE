@@ -78,7 +78,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                                 $ms = 'Espera de aprobación';
                                             break;
                                             case 2:
-                                                $ms = 'Prestamo Aceptado';
+                                                $ms = 'Préstamo Aceptado';
                                             break;
                                             case 3:
                                                 $ms = 'No aceptado';
@@ -99,7 +99,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                                                 $ms = 'No aceptado';
                                             break;
                                             case 4:
-                                                $ms = 'Prestamo Aceptado';
+                                                $ms = 'Préstamo Aceptado';
                                             break;
                                             case 5:
                                                 $ms = 'Préstamo liquidado';
@@ -119,7 +119,7 @@ if (empty($_SESSION['NumEmpleado5'])) {
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#newsModal">RÉGISTRO DE PAGOS</button>
+            
 
             <!-- Modal NUEVOS AGREMIADOS-->
             <div class="modal" id="news" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
