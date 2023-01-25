@@ -371,7 +371,7 @@ if (empty($_SESSION['User'])) {
                 $Nombre = $row['NumEmpleado'] .' - '. $row['Nombres'] .' '. $row['ApellidoPat'] .' '. $row['Nombres'];
                 $email =$row['CorreoElec'];
                 
-                $format = $conn->query("UPDATE logeo SET Contraseña = $pass WHERE NumEmpleado5 = $id_request;");
+                $format = $conn->query("UPDATE logeo SET Contraseña = '$pass' WHERE NumEmpleado5 = $id_request;");
                 if ($format === TRUE) {
                     formatsuccess($Nombre, $email, $pass);
                 } else {
